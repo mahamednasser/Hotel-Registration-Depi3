@@ -1,0 +1,226 @@
+﻿@model AddRoomViewModel
+@{
+    ViewBag.Title = "Add Room";
+}
+
+<!-- Booking Section -->
+<section id="booking" class="booking section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="reservation-wrapper">
+            <div class="reservation-header text-center" data-aos="fade-up" data-aos-delay="200">
+                <h2>Add Room</h2>
+                <p class="lead">Experience unmatched hospitality with our streamlined room management process</p>
+            </div>
+
+            <div class="booking-grid">
+                <div class="booking-form-section" data-aos="fade-right" data-aos-delay="300">
+                    <div class="form-container">
+
+                        <!-- Main Add Room Form -->
+                        <form class="reservation-form" asp-action="Create" asp-controller="Room" method="post" enctype="multipart/form-data">
+
+                            <!-- Room Information -->
+                            <div class="form-section mb-4">
+                                <h4>Room Information</h4>
+                                <div class="form-grid">
+                                    <div class="form-group full-width mb-3">
+                                        <label asp-for="Name" class="form-label"></label>
+                                        <input asp-for="Name" class="form-control" required />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label asp-for="PricePerNight" class="form-label"></label>
+                                        <input asp-for="PricePerNight" type="number" class="form-control" required />
+                                        <span asp-validation-for="PricePerNight" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Area" class="form-label"></label>
+                                        <input asp-for="Area" type="number" class="form-control" required />
+                                        <span asp-validation-for="Area" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label asp-for="NumberOfRooms" class="form-label"></label>
+                                        <input asp-for="NumberOfRooms" type="number" class="form-control" required />
+                                        <span asp-validation-for="NumberOfRooms" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Capacity" class="form-label"></label>
+                                        <input asp-for="Capacity" type="number" class="form-control" required />
+                                        <span asp-validation-for="Capacity" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Room Type -->
+                            <div class="form-group mb-4">
+                                <label asp-for="RoomtypeId" class="form-label">Room Type</label>
+                                <select asp-for="RoomtypeId" asp-items="Model?.RoomTypes" class="form-select" id="room-type" required>
+                                    <option value="">Select Room Type</option>
+                                </select>
+
+                                <!-- Add Type Modal Trigger -->
+                                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#addTypeModal">
+                                    <i class="bi bi-plus-circle me-1"></i> Add Type
+                                </button>
+                            </div>
+
+                            <!-- Include Room Type Modal -->
+                           
+
+                            <!-- Room Description -->
+                            <div class="form-group mb-3">
+                                <label asp-for="Description" class="form-label"></label>
+                                <textarea asp-for="Description" class="form-control" rows="3" placeholder="Add room description or details..." required></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+
+                            <!-- Room Images -->
+                            <div class="form-section mb-4">
+                                <h4>Room Images</h4>
+
+                                <!-- Room Images -->
+                                <div class="form-section mb-4">
+                                    <h4>Room Images</h4>
+
+                                    <!-- Base Image -->
+                                    <div class="form-group mb-3">
+                                        <label asp-for="BaseImage" class="form-label">Base Image (Cover)</label>
+                                        <input asp-for="BaseImage" type="file" class="form-control" accept="image/*" required />
+                                        <span asp-validation-for="BaseImage" class="text-danger"></span>
+                                    </div>
+
+                                    <!-- Additional Images -->
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Additional Images</label>
+                                        <input type="file" class="form-control" asp-for="RoomImages" accept="image/*" multiple />
+
+                                        <small class="text-muted d-inline-flex align-items-center mt-1">
+                                            <i class="bi bi-info-circle me-1 text-secondary"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-placement="right"
+                                               title="Hold Ctrl (or Command on Mac) to select multiple images."></i>
+                                            You can select multiple images at once
+                                        </small>
+                                        <span asp-validation-for="RoomImages" class="text-danger"></span>
+
+                                        <!-- Preview -->
+                                        @* <div id="preview-container"
+                                             class="d-flex flex-wrap mt-3 border rounded p-2"
+                                             style="gap: 8px; max-height: 120px; overflow-y: auto;">
+                                        </div> *@
+                                    </div>
+                                </div>
+
+
+                                @* <button type="button" class="btn btn-outline-primary btn-sm" id="add-image-btn">
+                                    <i class="bi bi-plus-circle me-1"></i> Add another image
+                                </button> *@
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="form-actions text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-calendar-plus me-2"></i>
+                                    Add Room
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+</section>
+<partial name="_AddRoomTypeModal" model="new AddRoomTypeViewModel()" />
+
+
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" /> 
+
+    <script>
+    
+        // document.getElementById("add-image-btn").addEventListener("click", function () {
+        //     const container = document.getElementById("additional-images-container");
+
+        //     const div = document.createElement("div");
+        //     div.classList.add("form-group", "mb-3");
+
+        //     div.innerHTML = `
+        //         <label class="form-label">Additional Image</label>
+        //         <input type="file" class="form-control" name="RoomImages" accept="image/*">
+        //     `;
+
+        //     container.appendChild(div);
+        // });
+
+
+        //  const roomImagesInput = document.querySelector('input[name="RoomImages"]');
+        // const previewContainer = document.getElementById('preview-container');
+
+        // roomImagesInput.addEventListener('change', function (event) {
+        //     const files = event.target.files;
+        //     previewContainer.innerHTML = ''; clear previews
+
+        //     Array.from(files).forEach(file => {
+        //         if (!file.type.startsWith('image/')) return;
+
+        //         const reader = new FileReader();
+        //         reader.onload = e => {
+        //             const img = document.createElement('img');
+        //             img.src = e.target.result;
+        //             img.classList.add('img-thumbnail');
+        //             img.style.width = '80px';
+        //             img.style.height = '80px';
+        //             img.style.objectFit = 'cover';
+        //             previewContainer.appendChild(img);
+        //         };
+        //         reader.readAsDataURL(file);
+        //     });
+        // });
+
+
+
+        $("#saveTypeBtn").on("click", function () {
+            const form = $("#addTypeForm");
+
+            const formData = {
+                RoomTypeName: $("#RoomTypeName").val(),
+                RoomTypeDescription: $("#RoomTypeDescription").val(),
+            };
+
+            $.ajax({
+                url: '/RoomType/AddType',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function (response) {
+                    if (response.success) {
+
+                      
+                        $("#room-type").append(
+                            `<option value="${response.id}" selected>${response.name}</option>`
+                        );
+
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('addTypeModal'));
+                        modal.hide();
+
+                        // امسح الداتا
+                        form[0].reset();
+                    }
+                },
+                // error: function (xhr) {
+                //     console.error(xhr.responseText);
+                //     alert("❌ Something went wrong while adding the room type.");
+                // }
+            });
+        });
+    </script>
+}

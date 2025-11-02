@@ -1,0 +1,115 @@
+﻿@model Estra7a.Services.DTO.AddBookingDto
+
+@{
+    ViewData["Title"] = "View";
+}
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+<link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+
+<div class="container py-5">
+    @if(TempData["Success"] != null)
+    {
+        <div class="alert alert-success w-50">
+            @TempData["Success"]
+        </div>
+    }
+
+    <div class="row">
+        <!-- room Images -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="/RoomImages/@Model.RoomImageUrl" class="card-img-top" alt="Product Image">
+            </div>
+        </div>
+
+        <!-- booking Details -->
+        <div class="col-md-6">
+            <h1 class="h2 mb-3">@ViewBag.room.Name</h1>
+            <div class="mb-3">
+                <span class="h4 me-2">$ @ViewBag.room.PricePerNight</span> <span>Price Per Night</span>
+                <p><b>Total Price</b> : $@Model.TotalPrice</p>
+                <span>@Model.room_count Rooms</span>
+            </div>
+
+            <div class="mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="text-warning me-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-muted">(127 reviews)</span>
+                </div>
+            </div>
+
+            <p class="mb-4">
+                @ViewBag.room.Description
+            </p>
+
+            <!-- Color Selection -->
+            <ul class="pricing-text mb-5">
+                <li><b>CheckIn :</b>@Model.CheckInDate.ToShortDateString()</li>
+                <li><b>CheckOut :</b>@Model.CheckOutDate.ToShortDateString()</li>
+                <li><b>Booking Date : </b>@Model.BookingDate</li>
+            </ul>
+         
+            <!-- Additional Info -->
+            <hr/>
+            <div class="mt-4">
+                <div class="d-flex align-items-center mb-2">  
+                    <i class='bxr  bx-user'></i>
+                    <span>@user.UserName</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">   
+                    <i class='bxr  bx-phone'></i>
+                    <span>@Model.phoneNumber</span>
+                </div>
+               
+            </div>
+            <!-- Actions -->
+            <div class="d-grid gap-2">
+               
+                <form asp-action="CancelBooking" asp-controller="Booking" asp-area="Guest" method="post">
+                    <input type="hidden" name="BookingId" value="@Model.BookingId" />
+                    <button type="submit" class="btn btn-danger d-block px-2 py-3">
+                        Cancel
+                    </button>
+                </form>
+                <a asp-action="MyBookings" asp-controller="Booking" class="d-block px-2 py-3">View Bookings</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .block-7 .pricing-text,
+    .block-7 .pricing-text li {
+        padding: 0;
+        margin: 0;
+    }
+
+        .block-7 .pricing-text li {
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #000000;
+        }
+
+            .block-7 .pricing-text li:nth-child(odd) {
+                background: rgba(0, 0, 0, 0.05);
+            }
+
+            .block-7 .pricing-text li span.fa {
+                color: #207dff;
+            }
+</style>

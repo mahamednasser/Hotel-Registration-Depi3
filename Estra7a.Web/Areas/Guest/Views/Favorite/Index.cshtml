@@ -1,0 +1,24 @@
+﻿@model List<RoomViewModel>
+
+
+@if (!Model.Any())
+{
+        <partial name="EmptyFavoritList"></partial>
+}
+else
+{
+
+    <h2 class="text-center my-4 fw-bold" style="font-size: 2rem; color: #333;">Your Favorite Rooms</h2>
+    <section id="rooms-2" class="rooms-2 section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="rooms-grid" data-aos="fade-up" data-aos-delay="300">
+                <div class="row g-4">
+                    @foreach (var item in Model)
+                    {
+                            <partial name="~/Areas/Guest/Views/Room/_RoomCard.cshtml" model="item"></partial>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+}

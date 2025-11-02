@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<Estra7a.Services.DTO.BookingDto>
+
+<section class="ftco-section bg-light">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success w-50">
+            @TempData["Success"]
+        </div>
+    }
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated">
+                <h2>My Bookings</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var book in Model)
+            {
+                if(book.IsActive){
+    @Html.Partial("_BookingPartial", book);
+            }
+            }
+            </div>
+    </div>  
+    </section>
+
+
+
