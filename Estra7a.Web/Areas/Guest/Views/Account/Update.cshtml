@@ -1,0 +1,75 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<section class="bg-light p-3 p-md-4 p-xl-5" style="padding-bottom:60px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xxl-11">
+
+                <div class="card border-light-subtle shadow-sm">
+
+                    <!-- Top full-width banner image -->
+                    <div class="w-100">
+                        <img class="img-fluid w-100" style="height:270px; object-fit:cover;"
+                             src="https://i.pinimg.com/1200x/23/24/eb/2324eb244dc5c54ea22d597a89f873f2.jpg" alt="Banner">
+                    </div>
+
+                    <!-- Profile + Form Section -->
+                    <div class="p-4 p-md-5">
+
+                        <div class="text-center mb-4 position-relative" style="margin-top:-100px;">
+                            <img src="https://i.pinimg.com/736x/f5/47/d8/f547d800625af9056d62efe8969aeea0.jpg"
+                                 width="130" height="130"
+                                 class="rounded-circle border shadow-sm mb-3 bg-white"
+                                 style="position:relative; z-index:5;">
+                            <h4 class="fw-bold">@Model.name</h4>
+                            <p class="text-muted">@Model.Email</p>
+                        </div>
+
+                        <form asp-action="Update" method="post">
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" value="@Model.name" name="Name" placeholder="@Localizer["ProfileFullName"]">
+                                <label>@Localizer["ProfileFullName"]</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" value="@Model.PhoneNumber" name="PhoneNumber" placeholder="@Localizer["ProfileMobileNumber"]">
+                                <label>@Localizer["ProfileMobileNumber"]</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" value="@Model.StreetAddress" name="StreetAddress" placeholder="@Localizer["ProfileStreetAddress"]">
+                                <label>@Localizer["ProfileStreetAddress"]</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" value="@Model.City" name="City" placeholder="@Localizer["ProfileCity"]">
+                                <label>@Localizer["ProfileCity"]</label>
+                            </div>
+
+                            <div class="mt-4 text-center">
+                                <button class="btn btn-dark px-4 py-2">@Localizer["ProfileSaveButton"]</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .card {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #000;
+    }
+</style>

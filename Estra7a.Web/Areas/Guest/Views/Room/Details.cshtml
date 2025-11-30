@@ -1,0 +1,476 @@
+﻿@model RoomViewModel
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+<div class="container my-5">
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-lg-8">
+            <div id="roomCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/RoomImages/@Model.BaseImageUrl" class="d-block w-100" alt="@Model.Name">
+                    </div>
+                    @if (Model.RoomImages != null)
+                    {
+                        foreach (var img in Model.RoomImages)
+                        {
+                            <div class="carousel-item">
+                                <img src="~/RoomImages/@img" class="d-block w-100" alt="Gallery">
+                            </div>
+                        }
+                    }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="row g-2">
+                <div class="col-3 col-md-2">
+                    <img src="~/RoomImages/@Model.BaseImageUrl" class="thumb-img" onclick="goToSlide(0)" alt="Thumb">
+                </div>
+                @if (Model.RoomImages != null)
+                {
+                    for (int i = 0; i < Model.RoomImages.Count; i++)
+                    {
+                        var slideIndex = i + 1;
+                        <div class="col-3 col-md-2">
+                            <img src="~/RoomImages/@Model.RoomImages[i]" class="thumb-img" onclick="goToSlide(@slideIndex)" alt="Thumb">
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="booking-sidebar">
+                <div class="text-center mb-4 border-bottom pb-4">
+                    <div class="mb-2">
+                        <img src="/assets/img/logo/hotel-svgrepo-com.svg"
+                             alt="Hotel Logo"
+                             style="width:75px; height:75px; object-fit:contain;">
+                    </div>
+
+                    <div class="small text-uppercase fw-bold text-muted mb-1">Starting Room From</div>
+                    <div>
+                        <span class="price-tag">LE @Model.PricePerNight</span>
+                        <span class="text-muted fs-5">/Per Night</span>
+                    </div>
+                </div>
+                @if (Model.NumberOfAvailableRooms <= 0)
+                {
+                    <div class="d-grid">
+                        <a class="btn btn-book disabled">Book Now</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="d-grid">
+                        <a class="btn btn-book" asp-area="Guest" asp-action="CreateBooking" asp-controller="Booking" asp-route-roomid="@Model.Id">Book Now</a>
+                    </div>
+
+                    <div id="cart-controls-container" class="d-grid mt-2">
+                        <a id="cart-btn"
+                           class="btn btn-cart d-flex align-items-center justify-content-center gap-2"
+                           data-room-id="@Model.Id">
+                            <i class="bi bi-cart-fill"></i>
+                            <span id="cart-text">Add to Cart</span>
+                        </a>
+                    </div>
+
+                    <div class="d-grid mt-2">
+                        <button class="btn btn-save d-flex align-items-center justify-content-center gap-2"
+                                id="fav-btn" data-roomid="@Model.Id">
+                            <i id="fav-icon" class="bi bi-heart"></i>
+                            <span id="fav-text">Save For Later</span>
+                        </button>
+                    </div>
+
+                    @* CRITICAL FIX: Include availableRooms and Anti-Forgery Token here for JS use *@
+                    <input type="hidden" id="availableRooms" value="@Model.NumberOfAvailableRooms" />
+                    @Html.AntiForgeryToken()
+                }
+
+                <div class="mt-4 text-center small text-muted">
+                    <i class="bi bi-patch-check-fill text-success fs-4 d-block mb-1"></i>
+                    <strong class="text-dark">Safe & Secure Booking</strong>
+                    <p class="mb-0">Your payment and personal data are fully protected.</p>
+                </div>
+
+                <div class="mt-4 p-3 border rounded text-center" style="background:#f8f9fa;">
+                    <i class="bi bi-headset fs-4 text-primary d-block mb-2"></i>
+                    <strong>Have any questions?</strong>
+                    <p class="mb-2 text-muted small">Our support team is here to help.</p>
+
+                    <div class="d-flex justify-content-center">
+                        <a asp-area="Guest" asp-action="User" asp-controller="Chat" class="btn btn-contact d-flex align-items-center justify-content-center gap-2">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+
+            <div class="mb-4">
+                <h1 class="fw-bold mb-1">@Model.Name</h1>
+                <div class="text-warning small mb-3">
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        if (i < Model.Rate)
+                        {
+                            <i class="fas fa-star"></i>
+                        }
+                        else
+                        {
+
+                            <i class="far fa-star"></i>
+                        }
+                    }
+                    <span class="text-muted ms-2 text-decoration-underline">(@Model.Rate / 5 Rating)</span>
+                </div>
+
+                <div class="d-flex flex-wrap gap-4 text-muted fw-medium border-bottom pb-4">
+                    <div><i class="fas fa-ruler-combined me-1"></i> @Model.Area m²</div>
+                    <div><i class="bi bi-house-door-fill me-1"></i> @Model.RoomTypeName</div>
+                    <div><i class="fas fa-user-friends me-1"></i> Up to @Model.Capacity Guests</div>
+                    <div><i class="fas fa-bath me-1"></i> Luxury Bath</div>
+                </div>
+            </div>
+
+            <div class="mb-5 border-bottom pb-4">
+                <h4 class="fw-bold mb-3">Room Description</h4>
+                <p class="text-muted lh-lg">@Model.RoomTypeDescription</p>
+
+                <p class="text-muted lh-lg">@Model.Description</p>
+            </div>
+
+            <div class="mb-5 border-bottom pb-4">
+                <h4 class="fw-bold mb-3">Room Amenities</h4>
+                <div class="d-flex flex-wrap">
+                    @foreach (var feature in Model.RoomFeatures)
+                    {
+                        <div class="feature-box">
+                            <img src="~/RoomFeatures/@feature.IconPath" alt="@feature.Name" class="feature-icon" />
+                            <span class="feature-text">@feature.Name</span>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="content-card shadow-sm mb-5 p-4">
+                <ul class="nav nav-tabs mb-4" id="room-detailsRoomTabs" role="tablist">
+                    <li class="nav-item"><button class="nav-link active" id="c-tab" data-bs-toggle="tab" data-bs-target="#policies" type="button">Policies</button></li>
+                    <li class="nav-item"><button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button">Location</button></li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <div class="tab-pane fade show active" id="policies">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <strong>Check-in / Check-out</strong>
+                                <p class="text-muted">Check-in from 3:00 PM, check-out by 11:00 AM</p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>Cancellation Policy</strong>
+                                <p class="text-muted">Free cancellation up to 24 hours before arrival. After that, one night's charge applies.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>Pets</strong>
+                                <p class="text-muted">Pets allowed with prior notice (additional fees may apply).</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <strong>Children & Extra Beds</strong>
+                                <p class="text-muted">Children under 12 stay free with existing bedding. Extra beds available on request.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>Payment Methods</strong>
+                                <p class="text-muted">We accept credit cards, debit cards, and cash payments at check-in.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>Smoking Policy</strong>
+                                <p class="text-muted">Rooms are non-smoking. Designated smoking areas available on premises.</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <strong>Quiet Hours</strong>
+                                <p class="text-muted">Please respect other guests between 10:00 PM and 7:00 AM.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>Parking</strong>
+                                <p class="text-muted">Free parking available for hotel guests.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>Accessibility</strong>
+                                <p class="text-muted">Wheelchair accessible rooms and facilities available upon request.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="location">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.8868647669083!2d31.63623432057514!3d31.085619911518705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f9d60ebdba5779%3A0x40a64e5bbbf187bc!2sAshmun%20AR%20Ruman%2C%20Ashmoun%20AR%20Romman%2C%20Dekernes%2C%20Dakahlia%20Governorate%207821131!5e0!3m2!1sen!2seg!4v1764009231622!5m2!1sen!2seg"
+                                    width="600"
+                                    height="450"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="fw-bold mb-4">Enhance Your Stay</h3>
+            <div class="row mb-5">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="addon-card shadow-sm">
+                        <div class="addon-icon"><i class="fas fa-mug-hot"></i></div>
+                        <h5 class="fw-bold">Breakfast Package</h5>
+                        <div class="addon-price">+$35 / person</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="addon-card shadow-sm">
+                        <div class="addon-icon"><i class="fas fa-spa"></i></div>
+                        <h5 class="fw-bold">Spa Access</h5>
+                        <div class="addon-price">+$75 / day</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="addon-card shadow-sm">
+                        <div class="addon-icon"><i class="fas fa-plane"></i></div>
+                        <h5 class="fw-bold">Airport Transfer</h5>
+                        <div class="addon-price">+$95 round trip</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @if (Model.RelatedRooms != null && Model.RelatedRooms.Any())
+    {
+        <div class="mt-5 pt-4 border-top">
+            <h3 class="fw-bold mb-4">Related Rooms</h3>
+            <section id="rooms-2" class="rooms-2 section">
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="rooms-grid" data-aos="fade-up" data-aos-delay="300">
+                        <div class="row g-4">
+                            @foreach (var room in Model.RelatedRooms)
+                            {
+                                <partial name="_RoomCard" model="room" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    }
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/room-details-style.css" />
+}
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Script to link Thumbnails to Main Carousel
+        function goToSlide(index) {
+            var myCarousel = document.getElementById('roomCarousel');
+            var carousel = new bootstrap.Carousel(myCarousel);
+            carousel.to(index);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const cartBtn = document.getElementById("cart-btn");
+            // If the room is not available, cartBtn won't exist, so we exit.
+            if (!cartBtn) return;
+
+            const cartContainer = document.getElementById("cart-controls-container");
+            const availableRooms = parseInt(document.getElementById("availableRooms").value || 0);
+            const roomId = cartBtn.dataset.roomId;
+            const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+            let quantity = 1; // Default to 1 if not in cart
+
+            // --- Initial Cart Check ---
+            fetch(`/Guest/Cart/GetItemQuantity?roomId=${roomId}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.exists) {
+                        quantity = data.quantity;
+                        renderQuantityControls(); // Show controls if already in cart
+                    }
+                })
+                .catch(error => { console.error('Initial Cart Check Failed:', error); });
+
+            // --- Event Listener for Initial Click (Add to Cart) ---
+            // Listener is attached to the initial 'Add to Cart' button
+            cartBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                // Check if it is still the 'Add to Cart' button (before it changes to controls)
+                if (cartContainer.contains(cartBtn)) {
+                    quantity = 1; // Start with quantity 1
+                    renderQuantityControls();
+                    updateCart(quantity);
+                }
+            });
+
+            // --- Function to Display +/- Controls ---
+            function renderQuantityControls() {
+                cartContainer.innerHTML = `
+                    <div id="quantityControls" class="qty-control-wrapper btn btn-cart d-flex align-items-center justify-content-center">
+                        <button id="decreaseBtn" class="qty-btn btn btn-sm btn-outline-light text-white border-0 p-0 fs-5 fw-bold" style="width: 30px; height: 30px;">−</button>
+                        <span id="quantityValue" class="text-white fw-bold fs-5 mx-3">${quantity}</span>
+                        <button id="increaseBtn" class="qty-btn btn btn-sm btn-outline-light text-white border-0 p-0 fs-5 fw-bold" style="width: 30px; height: 30px;">+</button>
+                    </div>
+                `;
+                attachHandlers();
+            }
+
+            // --- Function to Attach +/- Click Handlers ---
+            function attachHandlers() {
+                const decreaseBtn = document.getElementById("decreaseBtn");
+                const increaseBtn = document.getElementById("increaseBtn");
+                const quantityValue = document.getElementById("quantityValue");
+
+                if (increaseBtn) {
+                    increaseBtn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        if (quantity < availableRooms) {
+                            quantity++;
+                            quantityValue.textContent = quantity;
+                            updateCart(quantity);
+                        } else {
+                            // Optional: Alert user they have reached the maximum available rooms
+                        }
+                    });
+                }
+
+                if (decreaseBtn) {
+                    decreaseBtn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        if (quantity > 1) {
+                            quantity--;
+                            quantityValue.textContent = quantity;
+                            updateCart(quantity);
+                        } else {
+                            // Quantity hits 0, trigger removal
+                            removeFromCart();
+                        }
+                    });
+                }
+            }
+
+            // --- API: Update Quantity ---
+            function updateCart(qty) {
+                fetch('/Guest/Cart/UpdateQuantity', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': token
+                    },
+                    body: JSON.stringify({ roomId: roomId, quantity: qty })
+                }).catch(error => { console.error('Update Cart Failed:', error); });
+            }
+
+            // --- API: Remove from Cart ---
+            function removeFromCart() {
+                fetch('/Guest/Cart/RemoveItem', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': token
+                    },
+                    // FIX: Must send JSON object { roomId: value } to match a typical server-side model binding
+                    body: JSON.stringify({ roomId: roomId })
+                }).then(() => {
+                    // Revert UI back to the initial 'Add to Cart' button structure
+                    cartContainer.innerHTML = `
+                        <a id="cart-btn"
+                           class="btn btn-cart d-flex align-items-center justify-content-center gap-2"
+                           data-room-id="${roomId}">
+                            <i class="bi bi-cart-fill"></i>
+                            <span id="cart-text">Add to Cart</span>
+                        </a>
+                    `;
+                    // Re-attach the initial click listener to the new button
+                    document.getElementById("cart-btn").addEventListener("click", function(e) {
+                        e.preventDefault();
+                        quantity = 1;
+                        renderQuantityControls();
+                        updateCart(quantity);
+                    });
+                }).catch(error => { console.error('Remove Cart Failed:', error); });
+            }
+        });
+
+
+        // JQUERY Logic for Favorite Button (Kept as jQuery since it was functional)
+        $(document).ready(function () {
+            const favBtn = $("#fav-btn");
+            if (favBtn.length === 0) return; // Exit if button doesn't exist (e.g., room is unavailable)
+
+            const roomId = favBtn.data("roomid");
+            const favIcon = $("#fav-icon");
+            const favText = $("#fav-text");
+
+            // 1. Initial Check on Page Load
+            $.get("/Guest/Favorite/IsFavorite?roomId=" + roomId, function (data) {
+                if (data.isFavorite) {
+                    favIcon.removeClass("bi-heart").addClass("bi-heart-fill text-danger");
+                    favText.text("Saved");
+                } else {
+                    favIcon.removeClass("bi-heart-fill text-danger").addClass("bi-heart");
+                    favText.text("Save For Later");
+                }
+            }).fail(function() {
+                console.log("Could not retrieve favorite status.");
+            });
+
+            // 2. Toggle on Click
+            favBtn.click(function (e) {
+                e.preventDefault();
+
+                // Ensure the anti-forgery token is included in the POST request
+                // We use jQuery to grab the token generated by @Html.AntiForgeryToken()
+                const token = $('input[name="__RequestVerificationToken"]').val();
+
+                $.post({
+                    url: "/Guest/Favorite/ToggleFavorite",
+                    data: { roomId: roomId, "__RequestVerificationToken": token },
+                    success: function (data) {
+                        if (data.isFavorite) {
+                            favIcon.removeClass("bi-heart").addClass("bi-heart-fill text-danger");
+                            favText.text("Saved");
+                        } else {
+                            favIcon.removeClass("bi-heart-fill text-danger").addClass("bi-heart");
+                            favText.text("Save For Later");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert("Failed to toggle favorite status. Please try again.");
+                        console.error("Toggle Favorite Error:", status, error);
+                    }
+                });
+            });
+        });
+    </script>
+}

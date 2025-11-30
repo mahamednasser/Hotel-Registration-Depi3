@@ -1,0 +1,217 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@model Cart
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "My Cart";
+}
+
+<div class="container-fluid my-5">
+    <div class="row">
+        <aside class="col-lg-9">
+            <div class="card">
+                <div class="table-responsive">
+
+                    <form method="post">
+                        @Html.AntiForgeryToken()
+                    </form>
+
+                    <table class="table table-borderless table-shopping-cart">
+                        <thead class="text-muted">
+                            <tr class="small text-uppercase">
+                                <th scope="col">@Localizer["Rooms"]</th>
+                                <th scope="col" width="120">@Localizer["Price"]</th>
+                                <th scope="col" width="120">@Localizer["Quantity"]</th>
+                                <th scope="col" width="120">@Localizer["Total Price"]</th>
+                                <th scope="col" width="200"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CartItems)
+                            {
+                            <tr>
+                                <td>
+                                    <figure class="itemside align-items-center">
+                                        <div class="aside">
+                                            <img src="~/RoomImages/@item.RoomImage" class="img-sm" />
+                                        </div>
+                                        <figcaption class="info">
+                                            <a asp-action="Details" asp-controller="Room" asp-area="Guest" asp-route-id="@item.RoomId" class="title text-dark">@item.RoomName</a>
+                                            <p class="text-muted small">Area: @item.Area </p>
+                                        </figcaption>
+                                    </figure>
+                                </td>
+                                <td>@item.Price</td>
+                                <td>
+                                    <div class="input-group" style="width: 120px;">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-secondary btn-sm decrease-qty" type="button" data-roomid="@item.RoomId">-</button>
+                                        </div>
+                                        <input type="text"
+                                               class="form-control text-center quantity-input border-0 shadow-none"
+                                               value="@item.Quantity"
+                                               readonly
+                                               data-roomid="@item.RoomId"
+                                               data-max="@item.Room.NumberOfAvailableRooms" />
+
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary btn-sm increase-qty" type="button" data-roomid="@item.RoomId">+</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="total-cell">@(item.Price * item.Quantity)</td>
+                                <td class="text-right">
+                                    <button class="btn btn-light btn-sm remove-item" data-roomid="@item.RoomId" type="button">
+                                        @Localizer["Remove"]
+                                    </button>
+                                </td>
+
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </aside>
+
+        <aside class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <dl class="d-flex align-items-center justify-content-between p-3 rounded shadow-sm bg-light" style="max-width: 400px;">
+                        <dt class="mb-0 text-secondary" style="font-weight: 600; font-size: 18px;">
+                            @Localizer["Total"]:
+                        </dt>
+                        <dd class="mb-0 text-success total-price" style="font-size: 20px; font-weight: bold;">
+                            @Model.CartItems.Sum(i => i.Price * i.Quantity) @Localizer["LE"]
+                        </dd>
+                    </dl>
+
+                    <hr />
+                    <a href="#" class="btn btn-primary btn-main w-100 mb-2">@Localizer["Go to Payment"]</a>
+                    <a asp-area="Guest" asp-action="Index" asp-controller="Room" class="btn btn-success btn-main w-100">@Localizer["Continue Shopping"]</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $(".increase-qty").click(function () {
+                var roomId = $(this).data("roomid");
+                var input = $(".quantity-input[data-roomid='" + roomId + "']");
+                var currentQty = parseInt(input.val());
+                var maxQty = parseInt(input.data("max"));
+                if (currentQty < maxQty) {
+                    var newQty = currentQty + 1;
+                    input.val(newQty);
+                    updateQuantity(roomId, newQty, input);
+                } else {
+                    showToast("No more available rooms of this type");
+                }
+            });
+
+            $(".decrease-qty").click(function () {
+                var roomId = $(this).data("roomid");
+                var input = $(".quantity-input[data-roomid='" + roomId + "']");
+                var currentQty = parseInt(input.val());
+                if (currentQty > 1) {
+                    var newQty = currentQty - 1;
+                    input.val(newQty);
+                    updateQuantity(roomId, newQty, input);
+                }
+            });
+
+            function updateQuantity(roomId, quantity, input) {
+                fetch('/Guest/Cart/UpdateQuantity', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    body: JSON.stringify({
+                        RoomId: roomId,
+                        Quantity: quantity
+                    })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            var price = parseFloat(input.closest("tr").find("td:nth-child(2)").text());
+                            var totalCell = input.closest("tr").find(".total-cell");
+                            totalCell.text((price * quantity).toFixed(2));
+                            $(".total-price").text("$" + data.totalPrice.toFixed(2));
+                        }
+                    });
+            }
+
+            function showToast(message) {
+                var toast = $('<div class="toast-message">' + message + '</div>');
+                $("body").append(toast);
+                toast.fadeIn(300).delay(2000).fadeOut(400, function () {
+                    $(this).remove();
+                });
+            }
+
+            $("<style>")
+                .prop("type", "text/css")
+                .html(`
+                        .toast-message {
+                            position: fixed;
+                            bottom: 20px;
+                            right: 20px;
+                            background: #333;
+                            color: #fff;
+                            padding: 10px 15px;
+                            border-radius: 8px;
+                            z-index: 9999;
+                            font-size: 14px;
+                            display: none;
+                        }
+                    `)
+                .appendTo("head");
+        }); $(".remove-item").click(function (e) {
+            e.preventDefault();
+
+            const roomId = $(this).data("roomid");
+
+            fetch('/Guest/Cart/RemoveItem', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                body: JSON.stringify(roomId)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+
+                        $("button[data-roomid='" + roomId + "']").closest("tr").remove();
+
+
+                        $(".total-price").text("$" + data.totalPrice.toFixed(2));
+
+
+                        if ($("tbody tr").length === 0) {
+                            window.location.href = '/Guest/Cart/EmptyCart';
+                        }
+                    }
+                });
+        });
+
+
+    </script>
+    <style>
+        
+        .table-shopping-cart td:nth-child(4),
+        .table-shopping-cart th:nth-child(4) {
+            padding-left: 30px;
+            width: 150px;
+        }
+
+
+    </style>
+}

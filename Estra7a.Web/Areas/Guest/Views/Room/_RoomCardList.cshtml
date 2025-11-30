@@ -1,0 +1,95 @@
+﻿@model IEnumerable<RoomViewModel>
+
+@if (Model == null || !Model.Any())
+{
+    <div class="text-center py-5">
+        <h5 class="text-muted">No rooms match your filter.</h5>
+    </div>
+}
+else
+{
+    <div class="row g-4">
+
+        @foreach (var room in Model)
+        {
+            <div class="col-xl-4 col-lg-6">
+                <div class="room-card position-relative" data-id="@room.Id">
+
+                    <!-- Room Image -->
+                    <div class="room-image">
+                        <img src="~/RoomImages/@room.BaseImageUrl" alt="@room.Name" class="img-fluid">
+                        <div class="room-features">
+                            <span class="feature-badge business">@room.RoomTypeName</span>
+                        </div>
+                    </div>
+
+                    <!-- 3 dots menu -->
+                    <div class="dropdown" style="position: absolute; top: 10px; right: 10px;">
+                        <button class="btn btn-sm btn-light" type="button" id="roomOptions@room.Id"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="roomOptions@room.Id">
+                            <li>
+                                <a class="dropdown-item"
+                                   asp-controller="Room"
+                                   asp-action="Edit"
+                                   asp-route-id="@room.Id">
+                                    <i class="bi bi-pencil me-1"></i> Edit
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="dropdown-item delete-room-btn"
+                                   data-id="@room.Id"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#deleteRoomModal">
+                                    <i class="bi bi-trash me-1"></i> Delete
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="room-content">
+                        <div class="room-header">
+                            <h3>@room.Name</h3>
+                            <div class="room-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+
+                        <div class="room-amenities">
+                            <span><i class="bi bi-people"></i> Up to @room.Capacity guests</span>
+
+                            <span class="spec-item">
+                                <i class="bi bi-rulers"></i>
+                                <span>@room.Area m²</span>
+                            </span>
+
+                            <span><i class="bi bi-house"></i>@room.RoomTypeName</span>
+                        </div>
+
+                        <div class="room-footer">
+                            <div class="room-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">$@room.PricePerNight</span>
+                                <span class="price-period">/ night</span>
+                            </div>
+
+                            <a asp-action="Details"
+                               asp-controller="Room"
+                               asp-route-id="@room.Id"
+                               class="btn-room-details">View Details</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+
+    </div>
+}

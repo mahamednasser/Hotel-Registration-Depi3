@@ -1,0 +1,160 @@
+﻿@model List<RoomViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@* <!-- Page Title -->
+<div class="page-title light-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Rooms</h1>
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li class="current">Rooms</li>
+            </ol>
+        </nav>
+    </div>
+</div> *@
+
+
+
+<section id="rooms-2" class="rooms-2 section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+        <div class="room-filters" data-aos="fade-up" data-aos-delay="200">
+            <div class="row g-3 align-items-center justify-content-center">
+
+                <div class="col-lg-3 col-md-6 mx-5">
+                    <label class="form-label">Price Range</label>
+                    <select class="form-select" id="price_filter">
+                        <option value="">All Prices</option>
+                        <option value="1000-3500">1,000 - 3,500 EGP</option>
+                        <option value="4000-7500">4,000 - 7,500 EGP</option>
+                        <option value="8000+">8,000+ EGP</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mx-5">
+                    <label class="form-label">Guest Capacity</label>
+                    <select class="form-select" id="capacity_filter">
+                        <option value="">Any Capacity</option>
+                        <option value="1-2">1-2 Guests</option>
+                        <option value="3-4">3-4 Guests</option>
+                        <option value="5+">5+ Guests</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mx-5">
+                    <label class="form-label">Room Type</label>
+                    <select class="form-select" id="room_type_filter">
+                        <option value="">Any Type</option>
+                        <option value="Family">Family</option>
+                        <option value="Single">Single</option>
+                        <option value="Double">Double</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="rooms-grid" data-aos="fade-up" id="rooms_container" data-aos-delay="300">
+            <div class="row g-4">
+                @foreach (var room in Model)
+                {
+                    <partial name="_RoomCard" model="room" />
+                }
+            </div>
+        </div>
+        <partial name="_DeleteModal"/>
+        <div class="load-more-section" data-aos="fade-up" data-aos-delay="400">
+            <div class="text-center">
+                <button class="btn-load-more" id="LoodMoreRoomsBtn">
+                    <i class="bi bi-arrow-down-circle"></i>
+                    Load More Rooms
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+
+    <script src="~/js/room-filters-handler.js"></script>
+    <script>
+        // Variable to temporarily hold the ID of the room to be deleted
+        let deleteRoomId = 0;
+
+        // --- SignalR Connection Setup (Enabled) ---
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/roomHub")
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
+
+        // Handle real-time Room Creation notification (forces page reload)
+        connection.on("ReceiveRoomCreated", function(room) {
+            location.reload();
+        });
+
+        // Handle real-time Room Deletion notification (removes card from DOM)
+        connection.on("ReceiveRoomDeleted", function(roomId) {
+            document.querySelector(`.room-card[data-id="${roomId}"]`)?.remove();
+        });
+
+        connection.start()
+            .then(() => console.log("SignalR Connected"))
+            .catch(err => console.error("SignalR Error:", err));
+
+
+        // --- Delete Logic (Using Direct Binding) ---
+
+        // 1. Bind click handlers to all currently existing delete buttons
+        document.querySelectorAll(".delete-room-btn").forEach(btn => {
+            btn.addEventListener("click", function(){
+                deleteRoomId = this.getAttribute("data-id");
+                // store room id in deleteRoomId
+            });
+        });
+
+        // 2. Bind click handler to the confirm delete button in the modal
+        document.getElementById("confirmDeleteRoomBtn").addEventListener("click", function(){
+            if (!deleteRoomId) {
+                alert("No room selected!");
+                return;
+            }
+
+            fetch(`/Guest/Room/DeleteConfirmed?roomId=${deleteRoomId}`, {
+                method: 'POST'
+                // headers: { 'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val() }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Delete failed");
+                return response.json();
+            })
+            .then(data => {
+                if(data.success){
+                    // hide modal
+                    var modalEl = document.getElementById('deleteRoomModal');
+                    // Ensure the Bootstrap JS bundle is loaded for 'bootstrap.Modal' to work
+                    var modal = bootstrap.Modal.getInstance(modalEl);
+                    if (modal) modal.hide();
+
+                    // delete room from index
+                    const roomCard = document.querySelector(`.room-card[data-id="${deleteRoomId}"]`);
+                    if (roomCard) {
+                        roomCard.remove();
+                    }
+
+                    deleteRoomId = 0; // Reset
+                } else {
+                    alert("Delete failed!");
+                }
+            })
+            .catch(error => console.error(error));
+        });
+    </script>
+}
+
+
