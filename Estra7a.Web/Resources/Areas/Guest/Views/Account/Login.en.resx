@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Welcome" xml:space="preserve">
+    <value>Welcome back you've been missed!</value>
+  </data>
+	<data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+	<data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+	<data name="Keep" xml:space="preserve">
+    <value>Keep me logged in</value>
+  </data>
+	<data name="Log" xml:space="preserve">
+    <value>Log in now</value>
+  </data>
+	<data name="Newacc" xml:space="preserve">
+    <value>Create new account</value>
+  </data>
+	<data name="Forgot" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+	
+  
+</root> 

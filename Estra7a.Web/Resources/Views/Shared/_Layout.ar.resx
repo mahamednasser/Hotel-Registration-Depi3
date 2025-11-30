@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+	<data name="Room" xml:space="preserve">
+    <value>الغرف</value>
+  </data>
+	
+</root> 

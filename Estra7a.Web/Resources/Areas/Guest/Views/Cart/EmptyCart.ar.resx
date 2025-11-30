@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Empty" xml:space="preserve">
+    <value>عربة الحجز الخاصة بك فارغة</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>ابدأ رحلتك وابحث عن الغرفة المثالية لك</value>
+  </data>
+	<data name="Explore" xml:space="preserve">
+  <value>تصفّح الغرف</value>
+</data>
+</root> 

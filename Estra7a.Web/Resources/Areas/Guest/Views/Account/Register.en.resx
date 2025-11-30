@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="CreateAccount" xml:space="preserve">
+    <value>Create your new account</value>
+  </data>
+	<data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+	<data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+	<data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+	<data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+	<data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+	<data name="Terms" xml:space="preserve">
+    <value>I agree to all statements in <u>Terms of Service</u></value>
+  </data>
+	<data name="Register" xml:space="preserve">
+    <value>Register now</value>
+  </data>
+	<data name="AlreadyHaveAccount" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+	<data name="LoginHere" xml:space="preserve">
+    <value>Login here</value>
+  </data>
+</root>

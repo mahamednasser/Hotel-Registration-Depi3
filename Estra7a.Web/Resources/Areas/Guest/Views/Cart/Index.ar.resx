@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<data name="Rooms" xml:space="preserve">
+    <value> الغرف</value>
+  </data>
+	<data name="Price" xml:space="preserve">
+  <value>السعر</value>
+</data>
+	<data name="Quantity" xml:space="preserve">
+  <value> العدد الكلي</value>
+</data>
+	<data name="Total Price" xml:space="preserve">
+  <value>السعر الكلي</value>
+</data>
+	<data name="Remove" xml:space="preserve">
+  <value>حذف</value>
+</data>
+	<data name="LE" xml:space="preserve">
+  <value>ج.م</value>
+</data>
+	<data name="Total" xml:space="preserve">
+  <value>إجمالي الفاتورة</value>
+</data>
+	<data name="Go to Payment" xml:space="preserve">
+  <value>اذهب للدفع</value>
+</data>
+	<data name="Continue Shopping" xml:space="preserve">
+  <value>متابعة التسوّق</value>
+</data>
+</root> 

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="ProfileFullName" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+	<data name="ProfileMobileNumber" xml:space="preserve">
+    <value>رقم الموبايل</value>
+  </data>
+	<data name="ProfileStreetAddress" xml:space="preserve">
+    <value>عنوان الشارع</value>
+  </data>
+	<data name="ProfileCity" xml:space="preserve">
+    <value>المدينة</value>
+  </data>
+	<data name="ProfileSaveButton" xml:space="preserve">
+    <value>حفظ الملف الشخصي</value>
+  </data>
+</root>

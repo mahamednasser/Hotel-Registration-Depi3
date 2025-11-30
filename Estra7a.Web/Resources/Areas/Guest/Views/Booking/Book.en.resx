@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<data name="Booking" xml:space="preserve">
+    <value>Booking</value>
+  </data>
+
+	<data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+
+	<data name="guests" xml:space="preserve">
+    <value>Guests</value>
+  </data>
+
+	<data name="Reviews" xml:space="preserve">
+    <value>Reviews</value>
+  </data>
+
+	<data name="UpTo" xml:space="preserve">
+    <value>Up To</value>
+  </data>
+
+	<data name="m" xml:space="preserve">
+    <value>m</value>
+  </data>
+
+	<data name="LE" xml:space="preserve">
+    <value>LE</value>
+  </data>
+
+	<data name="perNight" xml:space="preserve">
+    <value>Per Night</value>
+  </data>
+
+	<data name="ReserveYourStay" xml:space="preserve">
+    <value>Reserve Your Stay</value>
+  </data>
+
+	<data name="Exp" xml:space="preserve">
+    <value>Experience unmatched hospitality with our streamlined booking process</value>
+  </data>
+
+	<data name="BookingDetails" xml:space="preserve">
+    <value>Booking Details</value>
+  </data>
+
+	<data name="CheckInDate" xml:space="preserve">
+    <value>CheckIn Date</value>
+  </data>
+
+	<data name="CheckOutDate" xml:space="preserve">
+    <value>CheckOut Date</value>
+  </data>
+
+	<data name="TotalRooms" xml:space="preserve">
+    <value>Total Rooms</value>
+  </data>
+
+	<data name="Guestss" xml:space="preserve">
+    <value>Guest</value>
+  </data>
+
+	<data name="ChooseRooms" xml:space="preserve">
+    <value>Choose Rooms</value>
+  </data>
+
+	<data name="rooms" xml:space="preserve">
+    <value>Rooms</value>
+  </data>
+
+	<data name="room" xml:space="preserve">
+    <value>Room</value>
+  </data>
+
+	<data name="GuestInfo" xml:space="preserve">
+    <value>Guest Information</value>
+  </data>
+
+	<data name="ConfirmBooking" xml:space="preserve">
+    <value>Confirm Booking</value>
+  </data>
+	<data name="WhyChoose" xml:space="preserve">
+    <value>Why Choose Our Hotel</value>
+  </data>
+
+	<data name="PremiumConnectivity" xml:space="preserve">
+    <value>Premium Connectivity</value>
+  </data>
+
+	<data name="Internet" xml:space="preserve">
+    <value>High-speed internet access in all areas</value>
+  </data>
+
+	<data name="24Service" xml:space="preserve">
+    <value>24/7 Service</value>
+  </data>
+
+	<data name="round" xml:space="preserve">
+    <value>Round-the-clock assistance and support</value>
+  </data>
+
+	<data name="valet" xml:space="preserve">
+    <value>Valet Parking</value>
+  </data>
+
+	<data name="comp" xml:space="preserve">
+    <value>Complimentary parking with valet service</value>
+  </data>
+
+	<data name="well" xml:space="preserve">
+    <value>Wellness Center</value>
+  </data>
+
+	<data name="spa" xml:space="preserve">
+    <value>Full-service spa and fitness facilities</value>
+  </data>
+
+	<data name="secure" xml:space="preserve">
+    <value>Secure Booking</value>
+  </data>
+
+	<data name="local" xml:space="preserve">
+    <value>Flexible Cancellation</value>
+  </data>
+
+	<data name="24Support" xml:space="preserve">
+    <value>24 Support</value>
+  </data>
+
+	<data name="NationalID" xml:space="preserve">
+    <value>Upload Your National ID</value>
+  </data>
+	
+</root> 

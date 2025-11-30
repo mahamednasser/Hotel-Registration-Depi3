@@ -1,0 +1,390 @@
+﻿@* <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Estra7a.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Estra7a.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Estra7a.Web</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Estra7a.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html> *@
+
+
+
+
+
+
+
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Estra7a - Hotel</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+   
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- Main CSS File -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/cart.css" />
+
+  
+
+    <!-- =======================================================
+    * Template Name: Grandoria
+    * Template URL: https://bootstrapmade.com/grandoria-bootstrap-hotel-template/
+    * Updated: Jul 29 2025 with Bootstrap v5.3.7
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+    <link href="https://codeshack.io/web/demos/MultiSelect.css" rel="stylesheet" type="text/css">
+    @RenderSection("Styles", required: false)
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header sticky-top">
+
+        
+
+        <div class="branding d-flex align-items-cente">
+
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.webp" alt=""> -->
+                    <h1 class="sitename">Estra7a</h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                       
+
+                        <li><a asp-action="Index" asp-controller="Home" asp-area="" class="active">@Localizer["Home"]</a></li>
+                        <li><a asp-action="Index" asp-area="Guest" asp-controller="Room">@Localizer["Room"]</a></li>
+                        @if ( @User.Identity.IsAuthenticated )
+                        {
+                            <li><a asp-action="MyBookings" asp-area="Guest" asp-controller="Booking">My Booking</a></li>
+                            <li><a asp-action="Index" asp-area="Guest" asp-controller="Favorite">FavList</a></li>
+                            
+                        }
+                        
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" href="#" id="modeToggle" onclick="toggleMode(event)">
+                                <i class="bx bx-sun bx-sm" id="modeIcon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown ms-2">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="langDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bx bx-globe bx-sm"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3" aria-labelledby="langDropdown">
+
+                                <!-- Arabic -->
+                                <li>
+                                    <form asp-controller="Culture" asp-action="SetLanguage" asp-area="" method="post" class="d-inline w-100">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="culture" value="ar" />
+                                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+
+                                        <button type="submit"
+                                                class="dropdown-item py-2 d-flex align-items-center
+                        @(System.Threading.Thread.CurrentThread.CurrentUICulture.Name.StartsWith("ar") ? "active" : "")">
+
+                                            <i class="fi fi-sa fis rounded-circle fs-4 me-2"></i>
+                                            <span>العربية</span>
+                                        </button>
+                                    </form>
+                                </li>
+
+
+                                <!-- English -->
+                                <li>
+                                    <form asp-controller="Culture" asp-action="SetLanguage" asp-area="" method="post" class="d-inline w-100">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="culture" value="en" />
+                                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+
+                                        <button type="submit"
+                                                class="dropdown-item py-2 d-flex align-items-center
+                        @(System.Threading.Thread.CurrentThread.CurrentUICulture.Name.StartsWith("en") ? "active" : "")">
+
+                                            <i class="fi fi-us fis rounded-circle fs-4 me-2"></i>
+                                            <span>English</span>
+                                        </button>
+                                    </form>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        @if (@User.Identity.IsAuthenticated)
+                        {
+                            <li><a href="/Guest/Account/Signout">SignOut</a></li>
+                            <li><a href="/Guest/Account/Update">Welcome  @User.Identity.Name </a></li>
+                            <a asp-area="Guest" asp-action="Index" asp-controller="Cart" class="big-cart-icon">
+                                <i class="bi bi-cart-check-fill" style="font-size: 1.5rem;"></i>
+                            </a>
+
+                            <a asp-area="Guest" asp-action="Index" asp-controller="ChatBot" class="big-chat-icon">
+                                <i class="bi bi-robot" style="font-size: 1.5rem;"></i>
+                            </a>
+
+                            <a href="/Guest/Chat/User" class="big-support-icon">
+                                <i class="bi bi-headset" style="font-size: 1.5rem;"></i>
+                            </a>
+
+                        }
+
+                        else
+                        {
+                            <li><a href="/Guest/Account/Login">Login</a></li>
+                            <li><a href="/Guest/Account/Register">Register</a></li>
+                        }
+                       
+
+                        
+                        
+
+
+                      
+
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="main">
+
+
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+
+
+      </main>
+    <footer id="footer" class="footer position-relative dark-background">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6 footer-about">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <span class="sitename">Estra7a</span>
+                        </a>
+                        <div class="footer-contact pt-3">
+                            <p>A108 Adam Street</p>
+                            <p>New York, NY 535022</p>
+                            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+                            <p><strong>Email:</strong> <span>info@example.com</span></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Product Management</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Hic solutasetp</h4>
+                        <ul>
+                            <li><a href="#">Molestiae accusamus iure</a></li>
+                            <li><a href="#">Excepturi dignissimos</a></li>
+                            <li><a href="#">Suscipit distinctio</a></li>
+                            <li><a href="#">Dilecta</a></li>
+                            <li><a href="#">Sit quas consectetur</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Nobis illum</h4>
+                        <ul>
+                            <li><a href="#">Ipsam</a></li>
+                            <li><a href="#">Laudantium dolorum</a></li>
+                            <li><a href="#">Dinera</a></li>
+                            <li><a href="#">Trodelas</a></li>
+                            <li><a href="#">Flexo</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright text-center">
+            <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+                <div class="d-flex flex-column align-items-center align-items-lg-start">
+                    <div>
+                        © Copyright <strong><span>MyWebsite</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">
+                        <!-- All the links in the footer should remain intact. -->
+                        <!-- You can delete the links only if you purchased the pro version. -->
+                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    </div>
+                </div>
+
+                <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.0/signalr.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var modeIcon = document.getElementById('modeIcon');
+            var body = document.body;
+            var saved = localStorage.getItem('darkMode');
+
+            // Apply saved mode
+            if (saved === 'true') {
+                body.classList.add('dark-mode');
+                modeIcon.classList.remove('bx-sun');
+                modeIcon.classList.add('bx-moon');
+            }
+
+            document.getElementById('modeToggle').addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (body.classList.contains('dark-mode')) {
+                    // Switch to light
+                    body.classList.remove('dark-mode');
+                    modeIcon.classList.remove('bx-moon');
+                    modeIcon.classList.add('bx-sun');
+                    localStorage.setItem('darkMode', 'false');
+                } else {
+                    // Switch to dark
+                    body.classList.add('dark-mode');
+                    modeIcon.classList.remove('bx-sun');
+                    modeIcon.classList.add('bx-moon');
+                    localStorage.setItem('darkMode', 'true');
+                }
+            });
+        });
+    </script>
+
+
+    <!-- Main JS File -->
+    <script src="/assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+
+</html>

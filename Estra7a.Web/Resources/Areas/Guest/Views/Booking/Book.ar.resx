@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<data name="Home" xml:space="preserve">
+    <value>الرئيسيه</value>
+  </data>
+
+	<data name="Booking" xml:space="preserve">
+    <value>حجز</value>
+  </data>
+
+	<data name="Reviews" xml:space="preserve">
+    <value>تقييمات</value>
+  </data>
+
+	<data name="UpTo" xml:space="preserve">
+    <value>حتي</value>
+  </data>
+
+	<data name="guests" xml:space="preserve">
+    <value>ضيفا</value>
+  </data>
+
+	<data name="m" xml:space="preserve">
+    <value>م</value>
+  </data>
+
+	<data name="LE" xml:space="preserve">
+    <value>ج.م</value>
+  </data>
+
+	<data name="perNight" xml:space="preserve">
+    <value>لكل ليله</value>
+  </data>
+
+	<data name="ReserveYourStay" xml:space="preserve">
+    <value>احجز اقامتك</value>
+  </data>
+
+	<data name="Exp" xml:space="preserve">
+    <value>استمتع بضيافة لا مثيل لها من خلال عملية الحجز المبسطة لدينا</value>
+  </data>
+
+	<data name="BookingDetails" xml:space="preserve">
+    <value>تفاصيل الحجز</value>
+  </data>
+
+	<data name="CheckInDate" xml:space="preserve">
+    <value>تاريخ تسجيل الدخول</value>
+  </data>
+
+	<data name="CheckOutDate" xml:space="preserve">
+    <value>تاريخ تسجيل الخروج</value>
+  </data>
+
+	<data name="TotalRooms" xml:space="preserve">
+    <value>اجمالي الغرف</value>
+  </data>
+
+	<data name="Guestss" xml:space="preserve">
+    <value>ضيف</value>
+  </data>
+
+	<data name="ChooseRooms" xml:space="preserve">
+    <value>اختر عدد الغرف</value>
+  </data>
+
+	<data name="rooms" xml:space="preserve">
+    <value>غرف</value>
+  </data>
+
+	<data name="room" xml:space="preserve">
+    <value>غرفه</value>
+  </data>
+
+	<data name="GuestInfo" xml:space="preserve">
+    <value>معلومات الضيف</value>
+  </data>
+
+	<data name="ConfirmBooking" xml:space="preserve">
+    <value>تأكيد الحجز</value>
+  </data>
+
+
+	<data name="WhyChoose" xml:space="preserve">
+    <value>لماذا تختار فندقنا</value>
+  </data>
+
+	<data name="PremiumConnectivity" xml:space="preserve">
+    <value>اتصال متميز</value>
+  </data>
+
+	<data name="Internet" xml:space="preserve">
+    <value>الوصول إلى الإنترنت عالي السرعة في جميع المناطق</value>
+  </data>
+
+	<data name="24Service" xml:space="preserve">
+    <value>خدمه 24 ساعه </value>
+  </data>
+
+	<data name="round" xml:space="preserve">
+    <value>المساعدة والدعم على مدار الساعة</value>
+  </data>
+
+	<data name="valet" xml:space="preserve">
+    <value>خدمة صف السيارات</value>
+  </data>
+
+	<data name="comp" xml:space="preserve">
+    <value>موقف سيارات مجاني مع خدمة صف السيارات</value>
+  </data>
+
+	<data name="well" xml:space="preserve">
+    <value>مركز صحي</value>
+  </data>
+
+	<data name="spa" xml:space="preserve">
+    <value>مرافق سبا ولياقة بدنية متكاملة الخدمات </value>
+  </data>
+
+	<data name="secure" xml:space="preserve">
+    <value>الحجز الآمن</value>
+  </data>
+
+	<data name="local" xml:space="preserve">
+    <value>الإلغاء المرن</value>
+  </data>
+
+	<data name="24Support" xml:space="preserve">
+    <value>دعم 24 ساعه </value>
+  </data>
+
+	<data name="NationalID" xml:space="preserve">
+    <value>ارفع صورة بطاقتك  </value>
+  </data>
+
+</root> 

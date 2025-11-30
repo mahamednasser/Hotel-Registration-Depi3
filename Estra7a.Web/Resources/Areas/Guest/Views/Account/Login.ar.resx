@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Welcome" xml:space="preserve">
+    <value>!أهلاً بعودتك</value>
+  </data>
+	<data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+	<data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+	<data name="Keep" xml:space="preserve">
+    <value>ابقني مسجّل الدخول</value>
+  </data>
+	<data name="Log" xml:space="preserve">
+    <value>تسجيل الدخول الآن</value>
+  </data>
+	<data name="Newacc" xml:space="preserve">
+    <value>إنشاء حساب جديد</value>
+  </data>
+	<data name="Forgot" xml:space="preserve">
+    <value>نسيت كلمة المرور؟</value>
+  </data>
+</root>

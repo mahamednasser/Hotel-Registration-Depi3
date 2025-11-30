@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Rooms" xml:space="preserve">
+    <value> Rooms</value>
+  </data>
+	<data name="Price" xml:space="preserve">
+  <value>Price</value>
+</data>
+	<data name="Quantity" xml:space="preserve">
+  <value>Quantity</value>
+</data>
+	<data name="Total Price" xml:space="preserve">
+  <value>Total Price</value>
+</data>
+	<data name="Remove" xml:space="preserve">
+  <value>Remove</value>
+</data>
+	<data name="LE" xml:space="preserve">
+  <value>LE</value>
+</data>
+
+	<data name="Total" xml:space="preserve">
+  <value>Total Price</value>
+</data>
+	<data name="Go to Payment" xml:space="preserve">
+  <value>Go to Payment</value>
+</data>
+	<data name="Continue Shopping" xml:space="preserve">
+  <value>Continue Shopping</value>
+</data>
+</root> 

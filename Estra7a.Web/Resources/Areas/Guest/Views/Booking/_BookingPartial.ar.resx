@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<data name="MyBookings" xml:space="preserve">
+    <value>الحجوزات</value>
+  </data>
+
+	<data name="Total" xml:space="preserve">
+    <value>الاجمالي</value>
+  </data>
+
+	<data name="Rooms" xml:space="preserve">
+    <value>عدد الغرف</value>
+  </data>
+
+	<data name="CheckIn" xml:space="preserve">
+    <value>تسجيل الوصول</value>
+  </data>
+
+	<data name="CheckOut" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+
+	<data name="BookingDate" xml:space="preserve">
+    <value>تاريخ الحجز</value>
+  </data>
+
+	<data name="Cancel" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+
+</root> 

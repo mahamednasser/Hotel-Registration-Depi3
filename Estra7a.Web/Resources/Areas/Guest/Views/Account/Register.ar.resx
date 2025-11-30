@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="CreateAccount" xml:space="preserve">
+    <value>أنشئ حسابك الجديد</value>
+  </data>
+	<data name="Username" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+	<data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+	<data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+	<data name="ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+	<data name="Address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+	<data name="Terms" xml:space="preserve">
+    <value>أوافق على جميع  <u>شروط الخدمة</u></value>
+  </data>
+	<data name="Register" xml:space="preserve">
+    <value>سجل الآن</value>
+  </data>
+	<data name="AlreadyHaveAccount" xml:space="preserve">
+    <value>هل لديك حساب بالفعل؟</value>
+  </data>
+	<data name="LoginHere" xml:space="preserve">
+    <value>تسجيل الدخول هنا</value>
+  </data>
+</root>
