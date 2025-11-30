@@ -9,6 +9,7 @@ namespace Estra7a.DataAccess.Repositories.IRepository
 {
     public interface IRoomRepository : IRepository<Room>
     {
-
+        void Update(Room room);
+      
     }
 }

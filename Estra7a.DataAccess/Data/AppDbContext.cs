@@ -25,7 +25,7 @@ namespace Estra7a.DataAccess.Data
             //builder.ApplyConfigurationsFromAssembly(typeof(RoomConfigurations).Assembly);
             builder.ApplyConfiguration(new RoomConfigurations());
             builder.ApplyConfiguration(new RoomTypeConfigurations());
-
+            builder.ApplyConfiguration(new RoomFeatureConfigurations());
         }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
@@ -37,5 +37,7 @@ namespace Estra7a.DataAccess.Data
         public DbSet<CartItem> CartItems { get; set; }
 
         public DbSet<Favorite> Favorites { get; set; }
+
+        public DbSet<ChatMessage> ChatMessages { get; set; }
     }
 }

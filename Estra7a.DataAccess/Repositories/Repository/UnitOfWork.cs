@@ -15,9 +15,10 @@ namespace Estra7a.DataAccess.Repositories.Repository
         
         public IApplicationUserRepository ApplicationUser { get;private set; }
 
-        public IRoomRepository Room {  get; private set; }
-
+        public IRoomRepository Room { get; private set; }
+        public IRoomImagesRepository RoomImages { get; private set; }
         public IRoomTypeRepository RoomType { get; private set; }
+        public IRoomFeatureRepository RoomFeature { get; private set; }
 
         public IBookingRepository Booking { get; private set; }
 
@@ -33,6 +34,8 @@ namespace Estra7a.DataAccess.Repositories.Repository
             ApplicationUser = new ApplicationUserRepository(_db);
             Room = new RoomRepository(_db);
             RoomType = new RoomTypeRepository(_db);
+            RoomFeature = new RoomFeatureRepository(_db);
+            RoomImages = new RoomImagesRepository(_db);
             Booking = new BookingRepository(_db);
             cart = new CartRepository(_db);
             cartItems = new CartItemsRepository(_db);

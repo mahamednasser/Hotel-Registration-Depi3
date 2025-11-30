@@ -16,6 +16,9 @@ namespace Estra7a.DataAccess.Repositories.Repository
         {
             _context = context;
         }
-
+        public void Update(Room room)
+        {
+            _context.Rooms.Update(room);
+        }
     }
 }

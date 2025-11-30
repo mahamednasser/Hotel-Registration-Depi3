@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Estra7a.Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,6 +10,6 @@ namespace Estra7a.DataAccess.Repositories.IRepository
 {
     public interface IBookingRepository : IRepository<Booking>
     {
-        
+        void Update( Booking obj );
     }
 }

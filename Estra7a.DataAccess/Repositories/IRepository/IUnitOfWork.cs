@@ -11,11 +11,12 @@ namespace Estra7a.DataAccess.Repositories.IRepository
         
         IApplicationUserRepository ApplicationUser { get; }
         IRoomRepository Room { get; }
-
+        IRoomImagesRepository RoomImages { get; }
+        IRoomFeatureRepository RoomFeature { get; }
         IRoomTypeRepository RoomType { get; }
-        IBookingRepository Booking { get; }
         ICartRepository cart { get; }
         ICartItemsRepository cartItems { get; }
+         IBookingRepository Booking { get; }
 
         IFavoriteRepository Favorite { get; }
         void save();

@@ -111,7 +111,7 @@ namespace Estra7a.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -134,6 +134,34 @@ namespace Estra7a.DataAccess.Migrations
                     b.HasIndex("RoomId");
 
                     b.ToTable("CartItems");
+                });
+
+            modelBuilder.Entity("Estra7a.Models.Models.ChatMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FromUser")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SentAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ToUser")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ChatMessages");
                 });
 
             modelBuilder.Entity("Estra7a.Models.Models.Favorite", b =>
@@ -175,6 +203,9 @@ namespace Estra7a.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("BedCount")
+                        .HasColumnType("int");
+
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
@@ -206,6 +237,155 @@ namespace Estra7a.DataAccess.Migrations
                     b.HasIndex("RoomTypeId");
 
                     b.ToTable("Rooms");
+                });
+
+            modelBuilder.Entity("Estra7a.Models.Models.RoomFeature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("IconPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RoomFeature");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 2,
+                            IconPath = "wifi-svgrepo-com.svg",
+                            Name = "Free WiFi"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IconPath = "sea-and-sun-svgrepo-com.svg",
+                            Name = "Sea view"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            IconPath = "pool-svgrepo-com.svg",
+                            Name = "Pool view"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            IconPath = "smart-tv-svgrepo-com.svg",
+                            Name = "Smart TV"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            IconPath = "air-conditioning-svgrepo-com.svg",
+                            Name = "Air Conditioning"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            IconPath = "minibar-svgrepo-com.svg",
+                            Name = "Minibar"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            IconPath = "electric-kettle-svgrepo-com.svg",
+                            Name = "Electric Kettle"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            IconPath = "microwave-svgrepo-com.svg",
+                            Name = "Microwave"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            IconPath = "coffee-maker-svgrepo-com.svg",
+                            Name = "Coffee Maker"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            IconPath = "balcony-window-svgrepo-com.svg",
+                            Name = "Balcony"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            IconPath = "safety-box-svgrepo-com.svg",
+                            Name = "Safety Deposit Box"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            IconPath = "hairdryer-on-2-svgrepo-com.svg",
+                            Name = "Hairdryer"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            IconPath = "sound-proof-svgrepo-com.svg",
+                            Name = "Soundproofing"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            IconPath = "disability-svgrepo-com.svg",
+                            Name = "Disability-Friendly"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            IconPath = "heating-furnace-svgrepo-com.svg",
+                            Name = "Heating"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            IconPath = "dog-pet-allowed-hotel-signal-svgrepo-com.svg",
+                            Name = "Pets Allowed"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            IconPath = "bathrobe-male-svgrepo-com.svg",
+                            Name = "Bathrobe & Slippers"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            IconPath = "toiletries-svgrepo-com.svg",
+                            Name = "Complimentary Toiletries"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            IconPath = "games-2-svgrepo-com.svg",
+                            Name = "In-room games"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            IconPath = "parking-svgrepo-com.svg",
+                            Name = "Free parking"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            IconPath = "gym-workout-svgrepo-com.svg",
+                            Name = "Fitness Center"
+                        });
                 });
 
             modelBuilder.Entity("Estra7a.Models.Models.RoomImage", b =>
@@ -460,6 +640,21 @@ namespace Estra7a.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("RoomRoomFeature", b =>
+                {
+                    b.Property<int>("RoomFeaturesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RoomFeaturesId", "RoomId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("RoomRoomFeatures", (string)null);
+                });
+
             modelBuilder.Entity("Estra7a.Models.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
@@ -605,6 +800,21 @@ namespace Estra7a.DataAccess.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("RoomRoomFeature", b =>
+                {
+                    b.HasOne("Estra7a.Models.Models.RoomFeature", null)
+                        .WithMany()
+                        .HasForeignKey("RoomFeaturesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Estra7a.Models.Models.Room", null)
+                        .WithMany()
+                        .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
