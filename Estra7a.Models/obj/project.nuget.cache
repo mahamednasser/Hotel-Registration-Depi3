@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NkBVE7ockWE=",
+  "dgSpecHash": "64hVZ1bbJ+o=",
   "success": true,
-  "projectFilePath": "E:\\DepiProject\\Estra7aV9\\Estra7a\\Estra7a\\Estra7a.Web\\Estra7a.Models\\Estra7a.Models.csproj",
+  "projectFilePath": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nasser\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.20\\microsoft.aspnetcore.cryptography.internal.8.0.20.nupkg.sha512",
     "C:\\Users\\Nasser\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.20\\microsoft.aspnetcore.cryptography.keyderivation.8.0.20.nupkg.sha512",

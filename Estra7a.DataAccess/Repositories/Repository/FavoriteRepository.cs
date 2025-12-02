@@ -1,5 +1,5 @@
 ﻿using Estra7a.DataAccess.Data;
-using Estra7a.DataAccess.Migrations;
+//using Estra7a.DataAccess.Migrations;
 using Estra7a.DataAccess.Repositories.IRepository;
 using Estra7a.Models.Models;
 using Microsoft.EntityFrameworkCore;

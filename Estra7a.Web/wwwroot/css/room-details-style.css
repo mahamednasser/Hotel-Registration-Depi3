@@ -1,0 +1,214 @@
+﻿/* --- THEME COLORS --- */
+:root {
+    --brand-color: #3A6B58; /* Sage Green */
+    --brand-color-hover: #2c5243;
+    --gold-accent: #8B6F4E; /* Match the gold button in your image */
+}
+
+
+
+/* --- GALLERY STYLES --- */
+.carousel-item img {
+    object-fit: cover;
+    height: 500px; /* Main image height */
+    width: 100%;
+    border-radius: 4px;
+}
+
+.thumb-img {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+    height: 80px;
+    width: 100%;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+    .thumb-img:hover, .thumb-img.active-thumb {
+        opacity: 1;
+        border: 2px solid var(--gold-accent);
+    }
+
+/* --- SIDEBAR STYLES (MATCHING IMAGE) --- */
+.booking-sidebar {
+    background-color: white; /* Light gray background */
+    padding: 30px;
+    border-radius: 5px;
+    border: 2px solid #d1d5db;
+    height: 100%;
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #333;
+    line-height: 1;
+}
+
+.booking-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+.form-control, .form-select {
+    border-radius: 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+.btn-cart {
+    background-color: #f3f4f6;
+    color: #19202f;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+    .btn-cart:hover {
+        background-color: #e5e7eb;
+        border-radius: 5px;
+    }
+
+.btn-book {
+    background-color: #2563eb;
+    color: #f4f7fd;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+    .btn-book:hover {
+        background-color: #1d4ed8;
+        border-radius: 5px;
+        color: #f4f7fd;
+    }
+
+
+
+
+
+.btn-save {
+    /* background-color: #f9fafb; */
+    color: #19202f;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #d1d5db;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+    .btn-save:hover {
+        background-color: #f9fafb;
+        border: 2px solid #d1d5db;
+        border-radius: 5px;
+    }
+
+
+.btn-contact {
+    background-color: #ffffff;
+    color: #19202f;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #d1d5db;
+    border-radius: 5px;
+    width: 60%;
+    transition: 0.3s;
+}
+
+    .btn-contact:hover {
+        background-color: #EAEFEF;
+        border: 2px solid #d1d5db;
+        border-radius: 5px;
+    }
+
+/* --- AMENITY PILLS (YOUR STYLE) --- */
+.feature-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px;
+    /* background: #f8f9fa; */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: auto;
+    white-space: nowrap;
+    margin: 8px;
+    transition: all 0.2s;
+    color: #333;
+}
+
+.feature-icon {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
+}
+
+.feature-text {
+    font-size: 18px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.feature-box:hover {
+    border-color: var(--brand-color);
+    background: #f7fdfb;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* --- GENERAL UI --- */
+.text-primary {
+    color: var(--brand-color) !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--brand-color);
+    border-bottom: 2px solid var(--brand-color);
+}
+
+.nav-tabs .nav-link {
+    color: #6c757d;
+}
+
+.addon-card {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #fff;
+    transition: 0.2s;
+}
+
+    .addon-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        border-color: var(--brand-color);
+    }
+
+.addon-icon {
+    font-size: 2rem;
+    color: var(--brand-color);
+    margin-bottom: 1rem;
+}
+
+.addon-price {
+    font-weight: bold;
+    color: var(--brand-color);
+    margin-top: 1rem;
+}
+

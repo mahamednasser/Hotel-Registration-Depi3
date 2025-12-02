@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vyZ6j7Wv/oE=",
+  "dgSpecHash": "8PoBah9mFFw=",
   "success": true,
-  "projectFilePath": "E:\\DepiProject\\Estra7aV9\\Estra7a\\Estra7a\\Estra7a.Web\\Estra7a.Services\\Estra7a.Services.csproj",
+  "projectFilePath": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Services\\Estra7a.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nasser\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Nasser\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

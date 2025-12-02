@@ -128,3 +128,16 @@ D:\Estra7aV9\Estra7a\Estra7a\Estra7a.Web\Estra7a.Models\obj\Debug\net8.0\Estra7a
 D:\Estra7aV9\Estra7a\Estra7a\Estra7a.Web\Estra7a.Models\obj\Debug\net8.0\refint\Estra7a.Models.dll
 D:\Estra7aV9\Estra7a\Estra7a\Estra7a.Web\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.pdb
 D:\Estra7aV9\Estra7a\Estra7a\Estra7a.Web\Estra7a.Models\obj\Debug\net8.0\ref\Estra7a.Models.dll
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\bin\Debug\net8.0\Estra7a.Models.deps.json
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\bin\Debug\net8.0\Estra7a.Models.dll
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\bin\Debug\net8.0\Estra7a.Models.pdb
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.csproj.AssemblyReference.cache
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.AssemblyInfoInputs.cache
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.AssemblyInfo.cs
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.csproj.CoreCompileInputs.cache
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.sourcelink.json
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.dll
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\refint\Estra7a.Models.dll
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.pdb
+C:\Users\Nasser\source\repos\mahamednasser\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\ref\Estra7a.Models.dll

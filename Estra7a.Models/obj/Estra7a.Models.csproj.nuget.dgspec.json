@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DepiProject\\Estra7aV9\\Estra7a\\Estra7a\\Estra7a.Web\\Estra7a.Models\\Estra7a.Models.csproj": {}
+    "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj": {}
   },
   "projects": {
-    "E:\\DepiProject\\Estra7aV9\\Estra7a\\Estra7a\\Estra7a.Web\\Estra7a.Models\\Estra7a.Models.csproj": {
+    "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DepiProject\\Estra7aV9\\Estra7a\\Estra7a\\Estra7a.Web\\Estra7a.Models\\Estra7a.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj",
         "projectName": "Estra7a.Models",
-        "projectPath": "E:\\DepiProject\\Estra7aV9\\Estra7a\\Estra7a\\Estra7a.Web\\Estra7a.Models\\Estra7a.Models.csproj",
+        "projectPath": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj",
         "packagesPath": "C:\\Users\\Nasser\\.nuget\\packages\\",
-        "outputPath": "E:\\DepiProject\\Estra7aV9\\Estra7a\\Estra7a\\Estra7a.Web\\Estra7a.Models\\obj\\",
+        "outputPath": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

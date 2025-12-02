@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Estra7a.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2d04c95f29d96bab2d7a8c9cbae12f5adaa6b90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3942b1eed1d33d3cbf00d8f1199eacbffc7eb8da")]
 [assembly: System.Reflection.AssemblyProductAttribute("Estra7a.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Estra7a.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
