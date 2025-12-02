@@ -39,7 +39,7 @@ namespace Estra7a.Services.Services
 
             room.NumberOfAvailableRooms-=dto.room_count;
             _unitOfWork.Booking.Add(booking);
-            _unitOfWork.SaveAsync();
+            _unitOfWork.save();
             return booking.BookingId;
 
 
