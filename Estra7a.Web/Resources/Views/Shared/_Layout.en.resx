@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  
-  <data name="Home" xml:space="preserve">
+
+	<data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
 	<data name="Room" xml:space="preserve">
     <value>Rooms</value>
   </data>
-</root> 
+	<data name="FavList" xml:space="preserve">
+    <value>FavList</value>
+  </data>
+	<data name="SignOut" xml:space="preserve">
+    <value>SignOut</value>
+  </data>
+	<data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+	<data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+	<data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+</root>

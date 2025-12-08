@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Empty" xml:space="preserve">
+   <value>Your Favorite List is Empty</value>
+ </data>
+	<data name="Start" xml:space="preserve">
+   <value>Start your journey and find the perfect room for you</value>
+ </data>
+	<data name="Explore" xml:space="preserve">
+   <value>Explore Rooms</value>
+ </data>
+
+</root> 

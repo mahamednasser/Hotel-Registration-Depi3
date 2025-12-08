@@ -1,6 +1,7 @@
 ﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    For more information on enabling MVC for empty projects, visit [https://go.microsoft.com/fwlink/?LinkID=397860](https://go.microsoft.com/fwlink/?LinkID=397860)
 *@
+
 @{
 }
 @model RoomViewModel
@@ -12,8 +13,7 @@
 @using Estra7a.Web
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
-
-<!-- Page Title -->
+@* <!-- Page Title -->
 <div class="page-title light-background">
     <div class="container d-lg-flex justify-content-between align-items-center">
         <h1 class="mb-2 mb-lg-0">@Localizer["Booking"]</h1>
@@ -24,11 +24,10 @@
             </ol>
         </nav>
     </div>
-</div><!-- End Page Title -->
-<section id="room-details" class="room-details section">
+</div><!-- End Page Title --> *@
 
+@* <section id="room-details" class="room-details section">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <!-- Room Header with Image and Basic Info -->
         <div class="row align-items-center mb-5">
             <div class="col-lg-7" data-aos="fade-right" data-aos-delay="200">
@@ -53,7 +52,6 @@
                         <span class="reviews-count">(127 @Localizer["Reviews"])</span>
                     </div>
                     <h1 class="room-title">@Model.Name</h1>
-                    @* <p class="room-tagline">Room Type : @Model.RoomTypeDescription</p>  *@
                     <div class="room-capacity mb-4">
                         <div class="capacity-item">
                             <i class="bi bi-people"></i>
@@ -75,207 +73,221 @@
                 </div>
             </div>
         </div>
-        </section>
-         <main class="main">
+    </div>
+</section> *@
 
-
-
+<main class="main">
     <!-- Booking Section -->
     <section id="booking" class="booking section">
-
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="reservation-wrapper">
-
-                <div class="reservation-header text-center" data-aos="fade-up" data-aos-delay="200">
-                    <h2>@Localizer["ReserveYourStay"]</h2>
-                    <p class="lead">@Localizer["Exp"]</p>
+            <div class="reservation-wrapper" style="max-width: 1200px; margin: 0 auto;">
+                <div class="reservation-header text-center" data-aos="fade-up" data-aos-delay="200" style="margin-bottom: 40px;">
+                    <h2 style="font-size: 36px; font-weight: 800; color: #1e293b; margin-bottom: 15px;">@Localizer["ReserveYourStay"]</h2>
+                    <p class="lead" style="font-size: 18px; color: #64748b; max-width: 600px; margin: 0 auto;">@Localizer["Exp"]</p>
                 </div>
 
-                <div class="booking-grid">
+                <div class="booking-grid" style="display: flex; gap: 30px; align-items: start; flex-wrap: wrap;">
 
-                    <div class="booking-form-section" data-aos="fade-right" data-aos-delay="300">
+                    <!-- Left: Booking Form -->
+                    <div class="booking-form-section" data-aos="fade-right" data-aos-delay="300" style="flex: 1; min-width: 400px;">
                         <div class="form-container">
-            <div class="form-section">
-                                <form asp-action="Create" asp-controller="Booking" asp-area="Guest" method="post" class="reservation-form" enctype="multipart/form-data">
+                            <form asp-action="Create" asp-controller="Booking" asp-area="Guest" method="post" class="reservation-form" enctype="multipart/form-data" style="padding: 30px 0;">
 
-                <input type="hidden" name="roomId" value="@Model.Id" />
+                                <input type="hidden" name="roomId" value="@Model.Id" />
+                                <div class="text-danger" asp-validation-summary="All" style="margin-bottom: 20px;"></div>
 
-                <div class="text-danger" asp-validation-summary="All"></div>
-                <div class="form-section">
-                    <h4> @Localizer["BookingDetails"]</h4>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="checkIn">@Localizer["CheckInDate"]</label>
-                            <input type="text" id="checkIn" name="checkIn" class="form-control" required />
+                                <!-- Booking Details (no inner box) -->
+                                <h4 style="color: #1e293b; font-size: 20px; margin-bottom: 20px; font-weight: 700;">@Localizer["BookingDetails"]</h4>
+
+                                <div class="form-grid" style="display: grid; gap: 15px; margin-bottom: 25px;">
+                                    <div class="form-group">
+                                        <label for="checkIn" style="display: block; color: #374151; font-weight: 600; margin-bottom: 8px; font-size: 14px;">@Localizer["CheckInDate"]</label>
+                                        <input type="text" id="checkIn" name="checkIn" class="form-control" required style="border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; font-size: 16px; background: white; min-height: 48px;" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="checkOut" style="display: block; color: #374151; font-weight: 600; margin-bottom: 8px; font-size: 14px;">@Localizer["CheckOutDate"]</label>
+                                        <input type="text" id="checkOut" name="checkOut" class="form-control" required style="border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; font-size: 16px; background: white; min-height: 48px;" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="guests" style="display: block; color: #374151; font-weight: 600; margin-bottom: 8px; font-size: 14px;">@Localizer["guests"]</label>
+                                        <select id="guests" name="guests" class="form-select" required style="border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; font-size: 16px; background: white; min-height: 48px;">
+                                            <option value="">@Localizer["SelectGuests"]</option>
+                                            <option value="1">1 @Localizer["Guestss"]</option>
+                                            <option value="2">2 @Localizer["guests"]</option>
+                                            <option value="3">3 @Localizer["guests"]</option>
+                                            <option value="4">4 @Localizer["guests"]</option>
+                                            <option value="5">5+ @Localizer["guests"]</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="room_count" style="display: block; color: #374151; font-weight: 600; margin-bottom: 8px; font-size: 14px;">@Localizer["TotalRooms"]</label>
+                                        <select class="form-select" id="room_count" name="room_count" required style="border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; font-size: 16px; background: white; min-height: 48px;">
+                                            <option value="">@Localizer["ChooseRooms"]</option>
+                                            <option value="1">1 @Localizer["room"]</option>
+                                            <option value="2">2 @Localizer["rooms"]</option>
+                                            <option value="3">3 @Localizer["rooms"]</option>
+                                            <option value="4">4 @Localizer["rooms"]</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Guest Info (still inside same big box, no inner box) -->
+                                <h4 style="color: #1e293b; font-size: 16px; margin-bottom: 15px; font-weight: 700;">@Localizer["GuestInfo"]</h4>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                                    <div class="form-group">
+                                        <label style="font-size: 13px; color: #6b7280; margin-bottom: 5px; display: block; font-weight: 600;">UserName</label>
+                                        <input type="text" value="@user?.UserName" readonly class="form-control" style="border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 12px; font-size: 14px; background: #f3f4f6; min-height: 40px;" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="font-size: 13px; color: #6b7280; margin-bottom: 5px; display: block; font-weight: 600;">Phone Number</label>
+                                        <input type="text" name="phoneNumber" id="phoneNumber" required class="form-control" placeholder="01012345678" style="border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 12px; font-size: 14px; min-height: 40px;" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="nationalId" style="font-size: 13px; color: #6b7280; margin-bottom: 8px; display: block; font-weight: 600;">@Localizer["NationalID"]</label>
+                                    <input type="file" name="NationalIdImage" id="NationalIdImage" class="form-control" required style="border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; font-size: 14px;" />
+                                    <span id="NationalIdError" class="text-danger" style="font-size: 12px; display: block; margin-top: 5px;"></span>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="form-actions" style="text-align: center;">
+                                    <button type="submit" class="btn btn-primary" style="width: 100%; border: none; border-radius: 10px; padding: 14px 30px; font-size: 16px; font-weight: 600; background: #436e62; color: white; box-shadow: 0 4px 15px rgba(59,130,246,0.3); min-height: 50px;">
+                                        <i class="bi bi-calendar-check me-2"></i>@Localizer["ConfirmBooking"]
+                                    </button>
+                                </div>
+
+                            </form>
                         </div>
-
-                        <div class="form-group">
-                            <label for="checkOut">@Localizer["CheckOutDate"]</label>
-                            <input type="text" id="checkOut" name="checkOut" class="form-control" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="guests">@Localizer["guests"]</label>
-                            <select id="guests" name="guests" class="form-select" required>
-                                <option value="">Select Guests</option>
-                                <option value="1">1 @Localizer["Guestss"]</option>
-                                <option value="2">2 @Localizer["guests"]</option>
-                                <option value="3">3 @Localizer["guests"]</option>
-                                <option value="4">4 @Localizer["guests"]</option>
-                                <option value="5">5 @Localizer["guests"]</option>
-                              
-                            </select>
-                        </div>
-                            <div class="form-group">
-                                <label for="room-count" class="form-label">@Localizer["TotalRooms"]</label>
-                                <select class="form-select" id="room_count" name="room_count" required="">
-                                    <option value="">@Localizer["ChooseRooms"]</option>
-                                    <option value="1">1 @Localizer["room"]</option>
-                                    <option value="2">2 @Localizer["rooms"]</option>
-                                    <option value="3">3 @Localizer["rooms"]</option>
-                                    <option value="4">4 @Localizer["rooms"]</option>
-                                </select>
-                            </div>
-                                            <div class="form-section">
-                                                <h4>@Localizer["GuestInfo"]</h4>
-                                                <div class="form-grid">
-                                                    <div class="form-group full-width">
-                                                        
-                                                        <label>UserName</label>
-                                                        <input type="text" value="@user?.UserName" readonly class="form-control" />
-                                                    </div>
-                                                    <div class="form-group full-width ">
-                                                        <label>Phone Number</label>
-                                                        <input type="text" name="phoneNumber" id="phoneNumber" required class="form-control" placeholder="01012345678" />
-                                                        
-                                                    </div>
-                                                    <div class="form-group full-width mt-3">
-                                                        <label for="nationalId">@Localizer["NationalID"]</label>
-                                                        <input type="file" name="NationalIdImage" id="NationalIdImage" class="form-control" required />
-                                                        <span id="NationalIdError" class="text-danger"></span>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <script>
-                                                document.getElementById("NationalIdImage").addEventListener("change", function () {
-                                                    var fileInput = this;
-                                                    var formData = new FormData();
-                                                    formData.append("NationalIdImage", fileInput.files[0]);
-
-                                                    fetch('@Url.Action("ValidateNationalId", "Booking", new { area = "Guest" })', {
-                                                        method: "POST",
-                                                        body: formData
-                                                    })
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        var errorSpan = document.getElementById("NationalIdError");
-                                                        if (!data.isValid) {
-                                                            errorSpan.textContent = data.message;
-                                                            fileInput.value = "";
-                                                        } else {
-                                                            errorSpan.textContent = "";
-                                                        }
-                                                    })
-                                                    .catch(err => console.error(err));
-                                                });
-                                            </script>
-
                     </div>
-                </div>
 
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="bi bi-calendar-plus me-2"></i>
-                         @Localizer["ConfirmBooking"]
-                    </button>
+                    <!-- Right: Connected Room Info -->
+                    <div class="hotel-showcase" data-aos="fade-left" data-aos-delay="400" style="flex: 1; min-width: 400px;">
+                        <div style="background: white; border-radius: 15px; border: 1px solid #e5e7eb; overflow: hidden;">
+
+                            <!-- Room Image & Details - Connected -->
+                            <div style="padding: 25px; text-align: center; border-bottom: 1px solid #e5e7eb;">
+                                <h3 style="color: #1e293b; margin: 0 0 20px 0; font-size: 20px; font-weight: 700;">Room Details</h3>
+                                <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); margin-bottom: 15px;">
+                                    <img src="~/RoomImages/@Model.BaseImageUrl" alt="@Model.Name" class="img-fluid" style="width: 100%; height: 280px; object-fit: cover;" />
+                                    @* <div style="position: absolute; top: 15px; left: 15px; background: white; padding: 8px 16px; border-radius: 20px; font-weight: 600; color: #1e293b; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-size: 14px;">
+                                        @Model.Name
+                                    </div> *@
+
+                                    <div style="position: absolute; bottom: 15px; right: 15px; background: #10b981; color: white; padding: 10px 20px; border-radius: 25px; font-weight: 600; box-shadow: 0 6px 20px rgba(16,185,129,0.3); font-size: 16px;">
+                                        @Localizer["LE"] @Model.PricePerNight / @Localizer["perNight"]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Room Information - simple list style -->
+                            <div style="padding: 30px; background: white;">
+                                <h3 style="color: #1e293b; margin-bottom: 25px; font-size: 22px; font-weight: 700; text-align: center;">Room Information</h3>
+
+                                <!-- Name & Price row (no grey box) -->
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 5px 20px 5px; margin-bottom: 10px; border-bottom: 1px solid #e5e7eb;">
+                                    <div>
+                                        <div style="font-size: 13px; color: #6b7280; margin-bottom: 3px;">Room Name</div>
+                                        <div style="font-size: 15px; color: #111827; font-weight: 600;">@Model.Name</div>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="font-size: 13px; color: #6b7280; margin-bottom: 3px;">Price</div>
+                                        <div style="font-size: 15px; color: #111827; font-weight: 600;">
+                                            @Localizer["LE"] @Model.PricePerNight / @Localizer["perNight"]
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Info rows – white background, فقط خطوط فاصلة -->
+                                <div>
+
+                                    <div style="display: flex; justify-content: space-between; padding: 12px 5px;">
+                                        <div style="font-size: 13px; color: #6b7280;">Capacity</div>
+                                        <div style="font-size: 14px; color: #111827;">@Localizer["UpTo"] @Model.Capacity @Localizer["guests"]</div>
+                                    </div>
+                                    <hr style="margin: 0; border-color: #e5e7eb;" />
+
+                                    <div style="display: flex; justify-content: space-between; padding: 12px 5px;">
+                                        <div style="font-size: 13px; color: #6b7280;">Area</div>
+                                        <div style="font-size: 14px; color: #111827;">@Model.Area @Localizer["m"]²</div>
+                                    </div>
+                                    <hr style="margin: 0; border-color: #e5e7eb;" />
+
+                                    @* <div style="display: flex; justify-content: space-between; padding: 12px 5px;">
+                                        <div style="font-size: 13px; color: #6b7280;">Room Type</div>
+                                        <div style="font-size: 14px; color: #111827;">@Model.RoomTypeName</div>
+                                    </div> *@
+                                    <hr style="margin: 0; border-color: #e5e7eb;" />
+
+                                    <div style="display: flex; justify-content: space-between; padding: 12px 5px;">
+                                        <div style="font-size: 13px; color: #6b7280;">Rating</div>
+                                        <div style="font-size: 14px; color: #111827;">@Model.Rate / 5 (127 @Localizer["Reviews"])</div>
+                                    </div>
+                                </div>
+
+                                <!-- Guarantees تحتها زي ما هي -->
+                                <div class="booking-guarantees" style="display: flex; justify-content: center; gap: 25px; padding-top: 20px; border-top: 1px solid #e5e7eb; margin-top: 20px;">
+                                    <div class="guarantee-item" style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px;">
+                                        <i class="bi bi-shield-check" style="font-size: 18px;"></i>
+                                        <span style="color: #212529;">@Localizer["secure"]</span>
+                                    </div>
+                                    <div class="guarantee-item" style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px;">
+                                        <i class="bi bi-arrow-clockwise" style="font-size: 18px;"></i>
+                                        <span style="color: #212529;">@Localizer["local"]</span>
+                                    </div>
+                                    <div class="guarantee-item" style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px;">
+                                        <i class="bi bi-telephone" style="font-size: 18px;"></i>
+                                        <span style="color: #212529;">@Localizer["24Support"]</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-            </form>
             </div>
-          </div>
-
         </div>
-                    <div class="hotel-showcase" data-aos="fade-left" data-aos-delay="400">
-                        <div class="showcase-image">
-                            <img src="~/assets/img/hotel/showcase-1.webp" alt="Hotel luxury showcase" class="img-fluid">
-                        </div>
-
-                        <div class="hotel-highlights">
-                            <h3>@Localizer["WhyChoose"]</h3>
-                            <div class="highlights-grid">
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="bi bi-wifi"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h5>@Localizer["PremiumConnectivity"]</h5>
-                                        <p>@Localizer["Internet"]</p>
-                                    </div>
-                                </div>
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="bi bi-clock"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h5>@Localizer["24Service"]</h5>
-                                        <p>@Localizer["round"]</p>
-                                    </div>
-                                </div>
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="bi bi-car-front"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h5>@Localizer["valet"]</h5>
-                                        <p>@Localizer["comp"]</p>
-                                    </div>
-                                </div>
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="bi bi-heart-pulse"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h5>@Localizer["well"]</h5>
-                                        <p>@Localizer["spa"]</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="booking-guarantees">
-                            <div class="guarantee-item">
-                                <i class="bi bi-shield-check"></i>
-                                <span>@Localizer["secure"]</span>
-                            </div>
-                            <div class="guarantee-item">
-                                <i class="bi bi-arrow-clockwise"></i>
-                                <span>@Localizer["local"]</span>
-                            </div>
-                            <div class="guarantee-item">
-                                <i class="bi bi-telephone"></i>
-                                <span>@Localizer["24Support"]</span>
-                            </div>
-                        </div>
-                    </div>
-
-      </div>
-      </div>
-      </div>
-
     </section><!-- /Booking Section -->
+</main>
 
 
-  </main>
+
+
+<script>
+    document.getElementById("NationalIdImage").addEventListener("change", function () {
+        var fileInput = this;
+        var formData = new FormData();
+        formData.append("NationalIdImage", fileInput.files[0]);
+
+        fetch('@Url.Action("ValidateNationalId" , "Booking" , new { area = "Guest" })', {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            var errorSpan = document.getElementById("NationalIdError");
+            if (!data.isValid) {
+                errorSpan.textContent = data.message;
+                fileInput.value = "";
+            } else {
+                errorSpan.textContent = "";
+            }
+        })
+        .catch(err => console.error(err));
+    });
+</script>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script>
-
-
         $(function () {
-
             $("#checkIn").datepicker({
-                minDate: 0,              // يمنع الأيام قبل النهاردة
+                minDate: 0,
                 dateFormat: "yy-mm-dd",
                 onSelect: function (selectedDate) {
                     $("#checkOut").datepicker("option", "minDate", selectedDate);
@@ -285,8 +297,6 @@
             $("#checkOut").datepicker({
                 dateFormat: "yy-mm-dd"
             });
-
         });
-
     </script>
 }

@@ -1,4 +1,5 @@
-﻿@*
+﻿
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -6,10 +7,11 @@
 
 @model IEnumerable<Estra7a.Services.DTO.BookingDto>
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
-<section class="ftco-section bg-light">
-    @if (TempData["Success"] != null)
+
+<section class="ftco-section" style="background-color: white;">
+    @if ( TempData["Success"] != null )
     {
-        <div class="alert alert-success w-50">
+        <div class="alert alert-success w-50 mx-auto mb-4">
             @TempData["Success"]
         </div>
     }
@@ -20,15 +22,15 @@
             </div>
         </div>
         <div class="row">
-            @foreach (var book in Model)
-            {
-                if(book.IsActive){
-    @Html.Partial("_BookingPartial", book);
-            }
-            }
+            <div class="col-12">
+                @foreach ( var book in Model )
+                {
+                    if ( book.IsActive )
+                    {
+                        @Html.Partial("_BookingPartial" , book)
+                    }
+                }
             </div>
-    </div>  
-    </section>
-
-
-
+        </div>
+    </div>
+</section>

@@ -1,4 +1,5 @@
-﻿<style>
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+<style>
     @@import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
 
     body {
@@ -53,9 +54,9 @@
                 <div class="card-body cart">
                     <div class="col-sm-12 empty-cart-cls text-center">
                         <div style="font-size:70px; line-height:70px;">❤️</div>
-                        <h3><strong><br />Your Favorite List is Empty</strong></h3>
-                        <h4> Start your journey and find the perfect room for you</h4>
-                        <a asp-area="Guest" asp-action="Index" asp-controller="Room" class="btn btn-primary cart-btn-transform m-3" data-abc="true">Explore Rooms</a>
+                        <h3><strong><br />@Localizer["Empty"]</strong></h3>
+                        <h4>@Localizer["Start"]</h4>
+                        <a asp-area="Guest" asp-action="Index" asp-controller="Room" class="btn btn-primary cart-btn-transform m-3" data-abc="true">@Localizer["Explore"]</a>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  
-  <data name="Home" xml:space="preserve">
+
+	<data name="Home" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
 	<data name="Room" xml:space="preserve">
     <value>الغرف</value>
   </data>
-	
-</root> 
+	<data name="My Booking" xml:space="preserve">
+    <value>حجزي</value>
+  </data>
+	<data name="FavList" xml:space="preserve">
+    <value>قائمة المفضلة</value>
+  </data>
+	<data name="SignOut" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+	<data name="Welcome" xml:space="preserve">
+    <value>مرحبا</value>
+  </data>
+	<data name="Login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+	<data name="Register" xml:space="preserve">
+    <value>إنشاء حساب جديد</value>
+  </data>
+
+
+</root>

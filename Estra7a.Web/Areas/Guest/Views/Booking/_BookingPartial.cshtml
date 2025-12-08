@@ -1,4 +1,5 @@
-﻿@*
+﻿
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -7,44 +8,35 @@
 @using Estra7a.Web
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
-<div class="col-md-4 ftco-animate fadeInUp ftco-animated">
-    <div class="block-7">
-        <img src="/RoomImages/@Model.RoomImageUrl" style="width:100%; height:250px; object-fit:cover;" />
+<div class="booking-list-item">
+    <div class="booking-content">
+        <img src="/RoomImages/@Model.RoomImageUrl" alt="@Model.RoomName" class="booking-image">
 
-       
+        <div class="booking-details">
+            <h3 class="booking-name">@Model.RoomName</h3>
+            <p class="booking-price"><sup>$</sup>@Model.TotalPrice</p>
 
-        <div class="text-center p-4">
-            <span class="excerpt d-block">@Model.RoomName</span>
-            <span class="price"><sup>$</sup> <span class="number text-">@Model.TotalPrice</span> </span>
-            <span>@Model.room_count : @Localizer["Rooms"]</span>
-            <ul class="pricing-text mb-5">
-                <li><b>@Localizer["CheckIn"]:</b>@Model.CheckIn.ToShortDateString()</li>
-                <li><b>@Localizer["CheckOut"] :</b>@Model.CheckOut.ToShortDateString()</li>
-                <li><b>@Localizer["BookingDate"] : </b>@Model.BookingDate</li>
-            </ul>
-            @if(!(Model.CheckIn<DateTime.Now))
-            {
-                <form asp-action="CancelBooking" asp-controller="Booking" asp-area="Guest" method="post">
-                    <input type="hidden" name="bookingId" value="@Model.Id" />
-                    <button type="submit" class="btn btn-danger px-2 py-3">
-                        @Localizer["Cancel"]
-                    </button>
-                </form>
-            }           
+            <div class="booking-info">
+                <div class="info-item"><strong>@Localizer["Rooms"]:</strong> @Model.room_count</div>
+                <div class="info-item"><strong>@Localizer["CheckIn"]:</strong> @Model.CheckIn.ToShortDateString()</div>
+                <div class="info-item"><strong>@Localizer["CheckOut"]:</strong> @Model.CheckOut.ToShortDateString()</div>
+                <div class="info-item"><strong>@Localizer["BookingDate"]:</strong> @Model.BookingDate</div>
+            </div>
         </div>
     </div>
 </div>
+
 <style>
     body {
-        margin-top: 20px;
+        background-color: white;
     }
 
-    .block-7 {
-        border-radius: 4px;
-        margin-bottom: 30px;
-        padding: 0;
-        overflow: hidden;
+    .booking-list-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 25px;
         background: #fff;
+        margin-bottom: 20px;
         -webkit-box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.05);
         -moz-box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.05);
         box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.05);
@@ -55,88 +47,82 @@
         transition: all 0.3s ease;
     }
 
-    .block-7 .img {
-        height: 250px;
+        .booking-list-item:hover {
+            -webkit-box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.11);
+            -moz-box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.11);
+            box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.11);
+        }
+
+    .booking-content {
+        display: flex;
+        align-items: center;
+        gap: 25px;
     }
 
-    .block-7 .heading-2 {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+    .booking-image {
+        width: 200px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    .booking-details {
+        flex: 1;
+    }
+
+    .booking-name {
+        color: #00bd56;
+        margin: 0 0 10px 0;
+        font-size: 18px;
         font-weight: 600;
+        text-transform: uppercase;
     }
 
-    .block-7 .price {
-        margin: 0;
-        padding: 0;
-        display: block;
+    .booking-price {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+        color: #000000;
     }
 
-        .block-7 .price sup {
-            font-size: 24px;
-            top: -1em;
+        .booking-price sup {
+            font-size: 18px;
             color: #b3b3b3;
         }
 
-        .block-7 .price .number {
-            font-size: 25px;
-            font-weight: 600;
+    .booking-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .info-item {
+        color: #000000;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.03);
+        border-radius: 4px;
+    }
+
+        .info-item strong {
             color: #000000;
+            margin-right: 5px;
         }
 
-    .block-7 .excerpt {
-        margin-bottom: 0px;
-        color: #00bd56;
-        font-size: 16px;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-
-    .block-7 .label2 {
-        text-transform: uppercase;
-    }
-
-    .block-7 .pricing-text,
-    .block-7 .pricing-text li {
-        padding: 0;
-        margin: 0;
-    }
-
-        .block-7 .pricing-text li {
-            list-style: none;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            color: #000000;
+    @@media (max-width: 768px) {
+        .booking-content {
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-            .block-7 .pricing-text li:nth-child(odd) {
-                background: rgba(0, 0, 0, 0.05);
-            }
-
-            .block-7 .pricing-text li span.fa {
-                color: #207dff;
-            }
-
-    .block-7 .btn-danger {
-        color: #fff;
-        text-transform: uppercase;
-        font-style: 13px;
-        font-weight: 400px;
-        letter-spacing: 1px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-            .block-7 .btn-danger:hover,
-            .block-7 .btn-danger:focus {
-            background: #00bd56 !important;
-            color: #fff;
+        .booking-image {
+            width: 100%;
+            height: 200px;
         }
 
-    .block-7:hover,
-    .block-7:focus {
-        -webkit-box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.11);
-        -moz-box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.11);
-        box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.11);
+        .booking-info {
+            grid-template-columns: 1fr;
+        }
     }
 </style>

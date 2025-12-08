@@ -76,12 +76,20 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label asp-for="Capacity" class="form-label"></label>
-                        <input asp-for="Capacity" type="number" class="form-control" required />
+                        @* <input asp-for="Capacity" type="number" class="form-control" required /> *@
+                        <select asp-for="Capacity" class="form-select" required>
+                            <option value="0">Select Room Capacity</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="5">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5+ Guests</option>
+                        </select>
                         <span asp-validation-for="Capacity" class="text-danger d-block"></span>
                     </div>
                     <div class="col-md-6">
                         <label asp-for="NumberOfRooms" class="form-label"></label>
-                        <input asp-for="NumberOfRooms" type="number" class="form-control" required />
+                        <input asp-for="NumberOfRooms" type="select" class="form-control" required />
                         <span asp-validation-for="NumberOfRooms" class="text-danger d-block"></span>
                     </div>
                 </div>
