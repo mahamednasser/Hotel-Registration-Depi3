@@ -110,7 +110,7 @@
         <div class="branding d-flex align-items-cente">
 
             <div class="container position-relative d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-items-center">
+                <a  asp-action="Index" asp-controller="Home" asp-area="" class="logo d-flex align-items-center">
                     <!-- Uncomment the line below if you also wish to use an image logo -->
                     <!-- <img src="assets/img/logo.webp" alt=""> -->
                     <h1 class="sitename">Estra7a</h1>
@@ -120,12 +120,12 @@
                     <ul>
                        
 
-                        <li><a asp-action="Index" asp-controller="Home" asp-area="" class="active">@Localizer["Home"]</a></li>
-                        <li><a asp-action="Index" asp-area="Guest" asp-controller="Room">@Localizer["Room"]</a></li>
+                        <li><a asp-action="Index" asp-controller="Home" asp-area="" class="active fs-5">@Localizer["Home"]</a></li>
+                        <li><a asp-action="Index" asp-area="Guest" asp-controller="Room" class="fs-5">@Localizer["Room"]</a></li>
                         @if ( @User.Identity.IsAuthenticated )
                         {
-                            <li><a asp-action="MyBookings" asp-area="Guest" asp-controller="Booking">@Localizer["My Booking"]</a></li>
-                            <li><a asp-action="Index" asp-area="Guest" asp-controller="Favorite">@Localizer["FavList"]</a></li>
+                            <li><a asp-action="MyBookings" asp-area="Guest" asp-controller="Booking" class="fs-5">@Localizer["My Booking"]</a></li>
+                            <li><a asp-action="Index" asp-area="Guest" asp-controller="Favorite" class="fs-5">@Localizer["FavList"]</a></li>
                             
                         }
                         

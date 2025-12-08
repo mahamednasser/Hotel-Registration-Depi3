@@ -7,6 +7,7 @@ using Estra7a.Web.ViewModels;
 using Estra7a_Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Stripe.Checkout;
 using System.Threading.Tasks;
 
@@ -165,12 +166,12 @@ namespace Estra7a.Web.Areas.Guest.Controllers
 
 
 
+           
+            HttpContext.Session.SetString("PendingBooking" , JsonConvert.SerializeObject(dto));
 
-            var Bookingid = await _bookingService.CreateBookingAsync(dto);
-            if (Bookingid<=0)
-                return BadRequest("Room not available");
+
             ViewBag.room= roomViewModel;
-            dto.BookingId= Bookingid;
+            
            
 
 
@@ -178,7 +179,7 @@ namespace Estra7a.Web.Areas.Guest.Controllers
             var options = new Stripe.Checkout.SessionCreateOptions
             {
 
-                SuccessUrl = domain + $"Guest/Booking/confirm?id={dto.BookingId} " ,
+                SuccessUrl = domain + $"Guest/Booking/confirm" ,
                 CancelUrl = domain + $"Guest/Booking/MyBookings" ,
                 LineItems = new List<Stripe.Checkout.SessionLineItemOptions>() ,
 
@@ -254,8 +255,23 @@ namespace Estra7a.Web.Areas.Guest.Controllers
             return Json(new { isValid = true, message = "Valid ID" });
         }
 
-        public async Task<IActionResult> confirm(int id)
+        public async Task<IActionResult> confirm()
         {
+
+            var dtoJson = HttpContext.Session.GetString("PendingBooking");
+            if ( dtoJson == null )
+                return BadRequest("Booking info missing");
+
+            var dtoo = JsonConvert.DeserializeObject<AddBookingDto>(dtoJson);
+
+            // بعد إنشاء الحجز:
+            HttpContext.Session.Remove("PendingBooking");
+
+
+            var Bookingid = await _bookingService.CreateBookingAsync(dtoo);
+            if ( Bookingid <= 0 )
+                return BadRequest("Room not available"); 
+            var id = Bookingid;
             var bookingDetails = _unitOfWork.Booking.GetById(x => x.BookingId == id);
             if (bookingDetails == null)
             {
