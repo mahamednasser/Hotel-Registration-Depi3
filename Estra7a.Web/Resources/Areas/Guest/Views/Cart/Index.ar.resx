@@ -28,4 +28,58 @@
 	<data name="Continue Shopping" xml:space="preserve">
   <value>متابعة التسوّق</value>
 </data>
+	<data name="Book Now" xml:space="preserve">
+  <value>احجز الآن</value>
+</data>
+	<data name="CheckInDate" xml:space="preserve">
+  <value>تاريخ تسجيل الوصول </value>
+</data>
+	<data name="CheckOutDate" xml:space="preserve">
+  <value>تاريخ تسجيل المغادرة </value>
+</data>
+	<data name="guests" xml:space="preserve">
+  <value>عدد النزلاء </value>
+</data>
+	<data name="Select Guests" xml:space="preserve">
+  <value>اختر عدد النزلاء </value>
+</data>
+	<data name="guest" xml:space="preserve">
+  <value>نزيل </value>
+</data>
+	<data name="TotalRooms" xml:space="preserve">
+  <value>إجمالي الغرف </value>
+</data>
+	<data name="Choose Rooms" xml:space="preserve">
+  <value>اختر الغرف </value>
+</data>
+	<data name="Room" xml:space="preserve">
+  <value>غرفة </value>
+</data>
+	<data name="Rooms" xml:space="preserve">
+  <value>غرف </value>
+</data>
+	<data name="GuestInfo" xml:space="preserve">
+  <value>بيانات النزيل </value>
+</data>
+	<data name="NationalID" xml:space="preserve">
+  <value>الرقم القومي / بطاقة الهوية </value>
+</data>
+	<data name="ConfirmBooking" xml:space="preserve">
+  <value>تأكيد الحجز </value>
+</data>
+	<data name="Total" xml:space="preserve">
+  <value>المجموع الكلي </value>
+</data>
+	<data name="UserName" xml:space="preserve">
+  <value>اسم المستخدم </value>
+</data>
+	<data name="Phone Number" xml:space="preserve">
+  <value>رقم الهاتف </value>
+</data>
+	<data name="Only This" xml:space="preserve">
+  <value>هذا فقط</value>
+</data>
+	<data name="Hide" xml:space="preserve">
+  <value>إخفاء</value>
+</data>
 </root> 

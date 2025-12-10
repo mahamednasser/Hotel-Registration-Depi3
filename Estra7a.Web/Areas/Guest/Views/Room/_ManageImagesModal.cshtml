@@ -1,9 +1,11 @@
-﻿  <!-- مودال إدارة الصور -->
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<!-- مودال إدارة الصور -->
 <div class="modal fade" id="manageImagesModal" tabindex="-1" aria-labelledby="manageImagesLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="manageImagesLabel">Manage Room Images</h5>
+                <h5 class="modal-title" id="manageImagesLabel">@Localizer["Manage Room Images"]</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -16,7 +18,7 @@
                         <div class="card" style="width: 150px;" data-id="@img">
                             <img src="~/RoomImages/@img" class="card-img-top" style="height: 100px; object-fit: cover;" />
                             <div class="card-body p-2 text-center">
-                                <button class="btn btn-danger btn-sm delete-image-btn" data-id="@img">Delete</button>
+                                <button class="btn btn-danger btn-sm delete-image-btn" data-id="@img">@Localizer["Delete"]</button>
                             </div>
                         </div>
                     }
@@ -28,12 +30,12 @@
                 <div class="mt-3">
                     <label class="form-label">Add New Images</label>
                     <input type="file" id="newImages" multiple class="form-control" accept="image/*" />
-                    <button class="btn btn-primary mt-2" id="uploadImagesBtn">Upload</button>
+                    <button class="btn btn-primary mt-2" id="uploadImagesBtn">@Localizer["Upload"]</button>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["Close"]</button>
             </div>
         </div>
     </div>

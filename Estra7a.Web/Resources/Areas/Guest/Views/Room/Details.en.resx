@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Starting" xml:space="preserve">
+  <value>Starting Room From</value>
+</data>
+	<data name="LE" xml:space="preserve">
+  <value>LE </value>
+</data>
+	<data name="/Per Night" xml:space="preserve">
+  <value>/Per Night </value>
+</data>
+	<data name="Book" xml:space="preserve">
+  <value>Book Now </value>
+</data>
+	<data name="Cart" xml:space="preserve">
+  <value>Add to Cart </value>
+</data>
+	<data name="Save For Later" xml:space="preserve">
+  <value>Save For Later </value>
+</data>
+	<data name="Safe" xml:space="preserve">
+  <value> Safe and Secure Booking</value>
+</data>
+	<data name="payment" xml:space="preserve">
+  <value> Your payment and personal data are fully protected.</value>
+</data>
+	<data name="Have any questions?" xml:space="preserve">
+  <value>Have any questions? </value>
+</data>
+	<data name="support" xml:space="preserve">
+  <value>Our support team is here to help. </value>
+</data>
+	<data name="Contact Us" xml:space="preserve">
+  <value>Contact Us </value>
+</data>
+	<data name="m²" xml:space="preserve">
+  <value>m² </value>
+</data>
+	<data name="Guests" xml:space="preserve">
+  <value> Guests</value>
+</data>
+	<data name="Luxury Bath" xml:space="preserve">
+  <value>Luxury Bath </value>
+</data>
+	<data name="Room Description" xml:space="preserve">
+  <value> Room Description</value>
+</data>
+	<data name="Room Amenities" xml:space="preserve">
+  <value> Room Amenities</value>
+</data>
+	<data name="Policies" xml:space="preserve">
+  <value> Policies</value>
+</data>
+	<data name="Location" xml:space="preserve">
+  <value> Location</value>
+</data>
+	<data name="Check" xml:space="preserve">
+  <value> Check-in / Check-out</value>
+</data>
+	<data name="Check2" xml:space="preserve">
+  <value> Check-in from 3:00 PM, check-out by 11:00 AM</value>
+</data>
+	<data name="Cancellation Policy" xml:space="preserve">
+  <value> Cancellation Policy</value>
+</data>
+	<data name="cancellation" xml:space="preserve">
+  <value> Free cancellation up to 24 hours before arrival. After that, one night's charge applies.</value>
+</data>
+	<data name="Pets" xml:space="preserve">
+  <value> Pets</value>
+</data>
+	<data name="Pets2" xml:space="preserve">
+  <value> Pets allowed with prior notice (additional fees may apply).</value>
+</data>
+	<data name="Children and Extra Beds" xml:space="preserve">
+  <value> Children and Extra Beds</value>
+</data>
+	<data name="Children" xml:space="preserve">
+  <value>Children  under 12 stay free with existing bedding. Extra beds available on request.</value>
+</data>
+	<data name="Payment Methods" xml:space="preserve">
+  <value> Payment Methods</value>
+</data>
+	<data name="credit" xml:space="preserve">
+  <value> We accept credit cards, debit cards, and cash payments at check-in.</value>
+</data>
+	<data name="Smoking Policy" xml:space="preserve">
+  <value> Smoking Policy</value>
+</data>
+	<data name="smoking" xml:space="preserve">
+  <value> Rooms are non-smoking. Designated smoking areas available on premises.</value>
+</data>
+	<data name="Quiet Hours" xml:space="preserve">
+  <value> Quiet Hours</value>
+</data>
+	<data name="Hours" xml:space="preserve">
+  <value> Please respect other guests between 10:00 PM and 7:00 AM.</value>
+</data>
+	<data name="Parking" xml:space="preserve">
+  <value> Parking</value>
+</data>
+	<data name="Parking2" xml:space="preserve">
+  <value> Free parking available for hotel guests.</value>
+</data>
+	<data name="Accessibility" xml:space="preserve">
+  <value> Accessibility</value>
+</data>
+	<data name="Wheelchair" xml:space="preserve">
+  <value> Wheelchair accessible rooms and facilities available upon request.</value>
+</data>
+	<data name="Breakfast Package" xml:space="preserve">
+  <value> Breakfast Package</value>
+</data>
+	<data name="+$35 / person" xml:space="preserve">
+  <value> +$35 / person</value>
+</data>
+	<data name="Spa Access" xml:space="preserve">
+  <value> Spa Access</value>
+</data>
+	<data name="+$75 / day" xml:space="preserve">
+  <value> +$75 / day</value>
+</data>
+	<data name="Airport Transfer" xml:space="preserve">
+  <value> Airport Transfer</value>
+</data>
+	<data name="+$95 round trip" xml:space="preserve">
+  <value> +$95 round trip</value>
+</data>
+	
+	<data name="Enhance Your Stay" xml:space="preserve">
+  <value> Enhance Your Stay</value>
+</data>
+	<data name="Save For Later" xml:space="preserve">
+  <value>Save For Later</value>
+</data>
+	<data name="Book Now" xml:space="preserve">
+  <value>Book Now</value>
+</data>
+	<data name="Save For Later" xml:space="preserve">
+  <value>Save For Later</value>
+</data>
+
+		
+</root> 

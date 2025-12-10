@@ -1,4 +1,5 @@
-﻿@model List<RoomViewModel>
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@model List<RoomViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -17,6 +18,14 @@
     </div>
 </div> *@
 
+<style>
+    [dir="rtl"] .room-filters .form-select {
+        text-align: right !important;
+        background-position: left 0.75rem center !important;
+        padding-left: 2.25rem !important;
+        padding-right: 1rem !important;
+    }
+</style>
 
 
 <section id="rooms-2" class="rooms-2 section">
@@ -27,32 +36,32 @@
             <div class="row g-3 align-items-center justify-content-center">
 
                 <div class="col-lg-3 col-md-6 mx-5">
-                    <label class="form-label">Price Range</label>
+                    <label class="form-label">@Localizer["Price Range"]</label>
                     <select class="form-select" id="price_filter">
-                        <option value="">All Prices</option>
-                        <option value="1000-3500">1,000 - 3,500 EGP</option>
-                        <option value="4000-7500">4,000 - 7,500 EGP</option>
-                        <option value="8000+">8,000+ EGP</option>
+                        <option value="">@Localizer["All Prices"]</option>
+                        <option value="1000-3500">1,000 - 3,500 @Localizer["EGP"]</option>
+                        <option value="4000-7500">4,000 - 7,500 @Localizer["EGP"]</option>
+                        <option value="8000+">8,000+ @Localizer["EGP"]</option>
                     </select>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mx-5">
-                    <label class="form-label">Guest Capacity</label>
+                    <label class="form-label">@Localizer["Guest Capacity"]</label>
                     <select class="form-select" id="capacity_filter">
-                        <option value="">Any Capacity</option>
-                        <option value="1-2">1-2 Guests</option>
-                        <option value="3-4">3-4 Guests</option>
-                        <option value="5+">5+ Guests</option>
+                        <option value="">@Localizer["Any Capacity"]</option>
+                        <option value="1-2">1-2 @Localizer["Guests"]</option>
+                        <option value="3-4">3-4 @Localizer["Guests"]</option>
+                        <option value="5+">5+ @Localizer["Guests"]</option>
                     </select>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mx-5">
-                    <label class="form-label">Room Type</label>
+                    <label class="form-label">@Localizer["Room Type"]</label>
                     <select class="form-select" id="room_type_filter">
-                        <option value="">Any Type</option>
-                        <option value="Family">Family</option>
-                        <option value="Single">Single</option>
-                        <option value="Double">Double</option>
+                        <option value="">@Localizer["Any Type"]</option>
+                        <option value="Family">@Localizer["Family"]</option>
+                        <option value="Single">@Localizer["Single"]</option>
+                        <option value="Double">@Localizer["Double"]</option>
                     </select>
                 </div>
             </div>
@@ -72,7 +81,7 @@
             <div class="text-center">
                 <button class="btn-load-more" id="LoodMoreRoomsBtn">
                     <i class="bi bi-arrow-down-circle"></i>
-                    Load More Rooms
+                    @Localizer["Load"]
                 </button>
             </div>
         </div>

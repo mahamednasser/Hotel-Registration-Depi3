@@ -139,11 +139,11 @@
 
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                                     <div class="form-group">
-                                        <label style="font-size: 13px; color: #6b7280; margin-bottom: 5px; display: block; font-weight: 600;">UserName</label>
+                                        <label style="font-size: 13px; color: #6b7280; margin-bottom: 5px; display: block; font-weight: 600;">@Localizer["UserName"]</label>
                                         <input type="text" value="@user?.UserName" readonly class="form-control" style="border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 12px; font-size: 14px; background: #f3f4f6; min-height: 40px;" />
                                     </div>
                                     <div class="form-group">
-                                        <label style="font-size: 13px; color: #6b7280; margin-bottom: 5px; display: block; font-weight: 600;">Phone Number</label>
+                                        <label style="font-size: 13px; color: #6b7280; margin-bottom: 5px; display: block; font-weight: 600;">@Localizer["Phone Number"]</label>
                                         <input type="text" name="phoneNumber" id="phoneNumber" required class="form-control" placeholder="01012345678" style="border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 12px; font-size: 14px; min-height: 40px;" />
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@
 
                             <!-- Room Image & Details - Connected -->
                             <div style="padding: 25px; text-align: center; border-bottom: 1px solid #e5e7eb;">
-                                <h3 style="color: #1e293b; margin: 0 0 20px 0; font-size: 20px; font-weight: 700;">Room Details</h3>
+                                <h3 style="color: #1e293b; margin: 0 0 20px 0; font-size: 20px; font-weight: 700;">@Localizer["Room Details"]</h3>
                                 <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); margin-bottom: 15px;">
                                     <img src="~/RoomImages/@Model.BaseImageUrl" alt="@Model.Name" class="img-fluid" style="width: 100%; height: 280px; object-fit: cover;" />
                                     @* <div style="position: absolute; top: 15px; left: 15px; background: white; padding: 8px 16px; border-radius: 20px; font-weight: 600; color: #1e293b; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-size: 14px;">
@@ -186,16 +186,16 @@
 
                             <!-- Room Information - simple list style -->
                             <div style="padding: 30px; background: white;">
-                                <h3 style="color: #1e293b; margin-bottom: 25px; font-size: 22px; font-weight: 700; text-align: center;">Room Information</h3>
+                                <h3 style="color: #1e293b; margin-bottom: 25px; font-size: 22px; font-weight: 700; text-align: center;">@Localizer["Room Information"]</h3>
 
                                 <!-- Name & Price row (no grey box) -->
                                 <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 5px 20px 5px; margin-bottom: 10px; border-bottom: 1px solid #e5e7eb;">
                                     <div>
-                                        <div style="font-size: 13px; color: #6b7280; margin-bottom: 3px;">Room Name</div>
+                                        <div style="font-size: 13px; color: #6b7280; margin-bottom: 3px;">@Localizer["Room Name"]</div>
                                         <div style="font-size: 15px; color: #111827; font-weight: 600;">@Model.Name</div>
                                     </div>
                                     <div style="text-align: right;">
-                                        <div style="font-size: 13px; color: #6b7280; margin-bottom: 3px;">Price</div>
+                                        <div style="font-size: 13px; color: #6b7280; margin-bottom: 3px;">@Localizer["Price"]</div>
                                         <div style="font-size: 15px; color: #111827; font-weight: 600;">
                                             @Localizer["LE"] @Model.PricePerNight / @Localizer["perNight"]
                                         </div>
@@ -206,13 +206,13 @@
                                 <div>
 
                                     <div style="display: flex; justify-content: space-between; padding: 12px 5px;">
-                                        <div style="font-size: 13px; color: #6b7280;">Capacity</div>
+                                        <div style="font-size: 13px; color: #6b7280;">@Localizer["Capacity"]</div>
                                         <div style="font-size: 14px; color: #111827;">@Localizer["UpTo"] @Model.Capacity @Localizer["guests"]</div>
                                     </div>
                                     <hr style="margin: 0; border-color: #e5e7eb;" />
 
                                     <div style="display: flex; justify-content: space-between; padding: 12px 5px;">
-                                        <div style="font-size: 13px; color: #6b7280;">Area</div>
+                                        <div style="font-size: 13px; color: #6b7280;">@Localizer["Area"]</div>
                                         <div style="font-size: 14px; color: #111827;">@Model.Area @Localizer["m"]²</div>
                                     </div>
                                     <hr style="margin: 0; border-color: #e5e7eb;" />
@@ -224,7 +224,7 @@
                                     <hr style="margin: 0; border-color: #e5e7eb;" />
 
                                     <div style="display: flex; justify-content: space-between; padding: 12px 5px;">
-                                        <div style="font-size: 13px; color: #6b7280;">Rating</div>
+                                        <div style="font-size: 13px; color: #6b7280;">@Localizer["Rating"]</div>
                                         <div style="font-size: 14px; color: #111827;">@Model.Rate / 5 (127 @Localizer["Reviews"])</div>
                                     </div>
                                 </div>

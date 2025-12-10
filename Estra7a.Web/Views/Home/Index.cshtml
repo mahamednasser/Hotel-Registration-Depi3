@@ -13,24 +13,24 @@
 
                 <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
                     <div class="hero-content">
-                        <h1>Luxury Redefined in Every Stay</h1>
-                        <p class="lead">Experience unparalleled comfort and sophistication at our premium hotel. From elegant suites to world-class amenities, every moment of your stay is crafted to perfection.</p>
+                    <h1>@Localizer["Luxury"]</h1>
+                    <p class="lead">@Localizer["Experience"]</p>
                         <div class="hero-features">
                             <div class="feature-item">
                                 <i class="bi bi-wifi"></i>
-                                <span>Complimentary WiFi</span>
+                            <span>@Localizer["WiFi"]</span>
                             </div>
                             <div class="feature-item">
                                 <i class="bi bi-car-front"></i>
-                                <span>Valet Parking</span>
+                            <span>@Localizer["Parking"]</span>
                             </div>
                             <div class="feature-item">
                                 <i class="bi bi-cup-hot"></i>
-                                <span>24/7 Room Service</span>
+                            <span>@Localizer["Service"]</span>
                             </div>
                         </div>
                         <div class="hero-buttons">
-                        <a href="rooms.html" class="btn btn-outline">@Localizer["ViewRooms"]</a>
+                        <a class="btn btn-outline" asp-action="Index" asp-controller="Room" asp-area="Guest">@Localizer["ViewRooms"]</a>
                         </div>
                     </div>
                 </div>
@@ -48,11 +48,11 @@
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
                                 </div>
-                                <h6>Exceptional Experience</h6>
-                                <p>"Absolutely stunning hotel! The service was impeccable and the views breathtaking."</p>
+                            @* <h6>@Localizer["Experience"]</h6> *@
+                            <p>@Localizer["Absolutely"]</p>
                                 <div class="guest-info">
                                     <img src="assets/img/person/person-f-3.webp" alt="Guest" class="guest-avatar">
-                                    <span>Sarah Johnson</span>
+                                    <span>@Localizer["Sarah Johnson"]</span>
                                 </div>
                             </div>
                         </div>
@@ -70,18 +70,18 @@
    
 <form asp-action="GetAvailable" asp-controller="Room" asp-area="Guest" class="row g-3 align-items-end">
     <div class="col-md-3">
-        <label for="checkIn" class="form-label fw-bold">Check In</label>
+        <label for="checkIn" class="form-label fw-bold">@Localizer["Check In"]</label>
         <input type="text" id="checkIn" name="checkIn" class="form-control" required style="border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; font-size: 16px; background: white; min-height: 48px;" />
 
         
     </div>
     <div class="col-md-3">
-        <label for="checkOut" class="form-label fw-bold">Check Out</label>
+        <label for="checkOut" class="form-label fw-bold">@Localizer["Check Out"]</label>
         <input type="text" id="checkOut" name="checkOut" class="form-control" required style="border: 1px solid #d1d5db; border-radius: 8px; padding: 12px 16px; font-size: 16px; background: white; min-height: 48px;" />
     </div>
 
     <div class="col-md-2">
-        <label for="Capacity" class="form-label fw-bold">Guests</label>
+        <label for="Capacity" class="form-label fw-bold">@Localizer["Guests"]</label>
         <select class="form-select" id="Capacity" name="Capacity">
             <option value="1" selected>1</option>
             <option value="2">2</option>
@@ -91,7 +91,7 @@
         </select>
     </div>
     <div class="col-md-2">
-        <button type="submit" class="btn btn-success">Check Availability</button>
+        <button type="submit" class="btn btn-success">@Localizer["Check Availability"]</button>
     </div>
 </form>
     <!-- Rooms Showcase Section -->
@@ -99,9 +99,9 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <span class="description-title">Rooms</span>
-            <h2>Rooms</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <span class="description-title">@Localizer["Rooms"]</span>
+        <h2>@Localizer["Rooms"]</h2>
+        <p>@Localizer["Rooms subtittle"]</p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -250,7 +250,7 @@
 
             <div class="text-center" data-aos="fade-up" data-aos-delay="600">
                 <a asp-action="Index" asp-controller="Room" asp-area="Guest" class="explore-all-link">
-                    <span>Explore All Accommodations</span>
+                    <span>@Localizer["Explore All Accommodations"]</span>
                     <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
@@ -263,9 +263,9 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <span class="description-title">Amenities</span>
-            <h2>Amenities</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <span class="description-title">@Localizer["Amenities"]</span>
+        <h2>@Localizer["Amenities"]</h2>
+        <p>@Localizer["Amenities subtitle"]</p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -281,11 +281,11 @@
                             </div>
                         </div>
                         <div class="facility-info">
-                            <h4>High-Speed Internet</h4>
-                            <p>Complimentary wireless internet access throughout the hotel premises with enterprise-grade security and unlimited bandwidth for all your connectivity needs.</p>
+                            <h4>@Localizer["High-Speed Internet"]</h4>
+                        <p>@Localizer["High-Speed Internet2"]</p>
                             <div class="facility-features">
-                                <span><i class="bi bi-check-circle"></i> 24/7 Available</span>
-                                <span><i class="bi bi-check-circle"></i> High Speed</span>
+                                <span><i class="bi bi-check-circle"></i> @Localizer["24/7 Available"]</span>
+                            <span><i class="bi bi-check-circle"></i> @Localizer["High Speed"]</span>
                             </div>
                         </div>
                     </div>
@@ -300,11 +300,11 @@
                             </div>
                         </div>
                         <div class="facility-info">
-                            <h4>Rooftop Pool</h4>
-                            <p>Luxurious rooftop swimming pool with breathtaking city skyline views. Features heated water, poolside service, and premium lounging areas for ultimate relaxation.</p>
+                            <h4>@Localizer["Rooftop Pool"]</h4>
+                            <p>@Localizer["Rooftop Pool2"]</p>
                             <div class="facility-features">
-                                <span><i class="bi bi-check-circle"></i> Heated Pool</span>
-                                <span><i class="bi bi-check-circle"></i> City Views</span>
+                                <span><i class="bi bi-check-circle"></i> @Localizer["Heated Pool"]</span>
+                                <span><i class="bi bi-check-circle"></i> @Localizer["City Views"]</span>
                             </div>
                         </div>
                     </div>
@@ -319,11 +319,11 @@
                             </div>
                         </div>
                         <div class="facility-info">
-                            <h4>Valet Parking</h4>
-                            <p>Premium valet parking service with secure underground facility. Professional attendants ensure your vehicle is safely parked and readily available upon request.</p>
+                        <h4>@Localizer["Valet Parking"]</h4>
+                        <p>@Localizer["Valet Parking2"]</p>
                             <div class="facility-features">
-                                <span><i class="bi bi-check-circle"></i> Secure</span>
-                                <span><i class="bi bi-check-circle"></i> Valet Service</span>
+                            <span><i class="bi bi-check-circle"></i> @Localizer["Secure"]</span>
+                            <span><i class="bi bi-check-circle"></i> @Localizer["Valet Service"]</span>
                             </div>
                         </div>
                     </div>
@@ -338,11 +338,11 @@
                             </div>
                         </div>
                         <div class="facility-info">
-                            <h4>Modern Fitness Center</h4>
-                            <p>Cutting-edge fitness facility featuring premium equipment, personal training services, and wellness programs designed to maintain your health routine while traveling.</p>
+                        <h4>@Localizer["Modern Fitness Center"]</h4>
+                        <p>@Localizer["Modern Fitness Center2"]</p>
                             <div class="facility-features">
-                                <span><i class="bi bi-check-circle"></i> 24/7 Access</span>
-                                <span><i class="bi bi-check-circle"></i> Personal Training</span>
+                            <span><i class="bi bi-check-circle"></i> @Localizer["24/7 Access"]</span>
+                                <span><i class="bi bi-check-circle"></i> @Localizer["Personal Training"]</span>
                             </div>
                         </div>
                     </div>
@@ -357,11 +357,11 @@
                             </div>
                         </div>
                         <div class="facility-info">
-                            <h4>Signature Restaurant</h4>
-                            <p>Award-winning culinary experience featuring international cuisine crafted by renowned chefs. Elegant atmosphere with extensive wine selection and impeccable service.</p>
+                            <h4>@Localizer["Signature Restaurant"]</h4>
+                        <p>@Localizer["Signature Restaurant2"]</p>
                             <div class="facility-features">
-                                <span><i class="bi bi-check-circle"></i> Fine Dining</span>
-                                <span><i class="bi bi-check-circle"></i> Wine Selection</span>
+                                <span><i class="bi bi-check-circle"></i> @Localizer["Fine Dining"]</span>
+                                <span><i class="bi bi-check-circle"></i> @Localizer["Wine Selection"]</span>
                             </div>
                         </div>
                     </div>
@@ -376,11 +376,11 @@
                             </div>
                         </div>
                         <div class="facility-info">
-                            <h4>Luxury Spa</h4>
-                            <p>Tranquil sanctuary offering therapeutic treatments, rejuvenating massages, and holistic wellness experiences. Escape the everyday stress in our serene environment.</p>
+                            <h4>@Localizer["Luxury Spa"]</h4>
+                        <p>@Localizer["Luxury Spa2"]</p>
                             <div class="facility-features">
-                                <span><i class="bi bi-check-circle"></i> Full Service</span>
-                                <span><i class="bi bi-check-circle"></i> Wellness Programs</span>
+                            <span><i class="bi bi-check-circle"></i> @Localizer["Full Service"]</span>
+                                <span><i class="bi bi-check-circle"></i> @Localizer["Wellness Programs"]</span>
                             </div>
                         </div>
                     </div>
@@ -396,9 +396,9 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <span class="description-title">Testimonials</span>
-            <h2>Testimonials</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <span class="description-title">@Localizer["Testimonials"]</span>
+        <h2>@Localizer["Testimonials"]</h2>
+        <p>@Localizer["Testimonials2"]</p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -414,13 +414,13 @@
                                 <i class="bi bi-quote"></i>
                             </div>
                             <div class="testimonial-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Sed non mauris vitae erat consequat auctor eu in elit.</p>
+                            <p>@Localizer["Test content 1"]</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="assets/img/person/person-m-5.webp" alt="Client" class="img-fluid rounded-circle" loading="lazy">
                                 <div class="author-info">
-                                    <h4>Robert Johnson</h4>
-                                    <span>Chief Executive Officer</span>
+                                    <h4>@Localizer["Robert Johnson"]</h4>
+                                    <span>@Localizer["Chief Executive Office"]</span>
                                 </div>
                             </div>
                         </div>
@@ -432,13 +432,13 @@
                                 <i class="bi bi-quote"></i>
                             </div>
                             <div class="testimonial-content">
-                                <p>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</p>
+                            <p>@Localizer["Test content 2"]</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="assets/img/person/person-f-7.webp" alt="Client" class="img-fluid rounded-circle" loading="lazy">
                                 <div class="author-info">
-                                    <h4>Sarah Williams</h4>
-                                    <span>Marketing Director</span>
+                                    <h4>@Localizer["Sarah Williams"]</h4>
+                                    <span>@Localizer["Marketing Director"]</span>
                                 </div>
                             </div>
                         </div>
@@ -450,13 +450,13 @@
                                 <i class="bi bi-quote"></i>
                             </div>
                             <div class="testimonial-content">
-                                <p>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</p>
+                            <p>@Localizer["Test content 3"]</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="assets/img/person/person-m-9.webp" alt="Client" class="img-fluid rounded-circle" loading="lazy">
                                 <div class="author-info">
-                                    <h4>Michael Davis</h4>
-                                    <span>Product Manager</span>
+                                    <h4>@Localizer["Michael Davis"]</h4>
+                                    <span>@Localizer["Product Manager"]</span>
                                 </div>
                             </div>
                         </div>
@@ -468,13 +468,13 @@
                                 <i class="bi bi-quote"></i>
                             </div>
                             <div class="testimonial-content">
-                                <p>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore.</p>
+                            <p>@Localizer["Test content 4"]</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="assets/img/person/person-f-3.webp" alt="Client" class="img-fluid rounded-circle" loading="lazy">
                                 <div class="author-info">
-                                    <h4>Emily Thompson</h4>
-                                    <span>Design Lead</span>
+                                    <h4>@Localizer["Emily Thompson"]</h4>
+                                    <span>@Localizer["Design Lead"]</span>
                                 </div>
                             </div>
                         </div>

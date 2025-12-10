@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Manage Room Images" xml:space="preserve">
+  <value>إدارة صور الغرف</value>
+</data>
+	<data name="Delete" xml:space="preserve">
+  <value>حذف</value>
+</data>
+	<data name="Upload" xml:space="preserve">
+  <value>تحميل</value>
+</data>
+	<data name="Close" xml:space="preserve">
+  <value>إغلاق</value>
+</data>
+</root>

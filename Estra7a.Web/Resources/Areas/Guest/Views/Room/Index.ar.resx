@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Price Range" xml:space="preserve">
+  <value>نطاق السعر</value>
+</data>
+	<data name="All Prices" xml:space="preserve">
+  <value>جميع الأسعار</value>
+</data>
+	<data name="Guest Capacity" xml:space="preserve">
+  <value>سعة الضيوف</value>
+</data>
+	<data name="Any Capacity" xml:space="preserve">
+  <value>أي سعة</value>
+</data>
+	<data name="Guests" xml:space="preserve">
+  <value>ضيوف</value>
+</data>
+	<data name="EGP" xml:space="preserve">
+  <value>ج.م.</value>
+</data>
+	<data name="Room Type" xml:space="preserve">
+  <value>نوع الغرفة</value>
+</data>
+	<data name="Any Type" xml:space="preserve">
+  <value>أي نوع</value>
+</data>
+
+	<data name="Family" xml:space="preserve">
+  <value>عائلية</value>
+</data>
+
+	<data name="Single" xml:space="preserve">
+  <value>فردية</value>
+</data>
+
+	<data name="Double" xml:space="preserve">
+  <value>مزدوجة</value>
+</data>
+
+	<data name="Load" xml:space="preserve">
+  <value>تحميل المزيد من الغرف</value>
+</data>
+</root> 

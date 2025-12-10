@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<data name="Room Information" xml:space="preserve">
+  <value>Room Information</value>
+</data>
+	<data name="Enter Price" xml:space="preserve">
+  <value>Enter Price</value>
+</data>
+	<data name="Enter Area " xml:space="preserve">
+  <value>Enter Area </value>
+</data>
+	
+	<data name="m²" xml:space="preserve">
+  <value>m² </value>
+</data>
+	
+	<data name="Select Room Capacity " xml:space="preserve">
+  <value>Select Room Capacity </value>
+</data>
+	
+	<data name="Guest " xml:space="preserve">
+  <value>Guest </value>
+</data>
+	<data name="Guests " xml:space="preserve">
+  <value>Guests </value>
+</data>
+	<data name="Room Type" xml:space="preserve">
+  <value>Room Type </value>
+</data>
+	<data name="Select Room Type" xml:space="preserve">
+  <value>Select Room Type </value>
+</data>
+	<data name="Add Type" xml:space="preserve">
+  <value>Add Type </value>
+</data>
+	<data name="Hold" xml:space="preserve">
+  <value>Hold </value>
+</data>
+	<data name="Ctrl " xml:space="preserve">
+  <value>Ctrl </value>
+</data>
+	<data name="(Windows) or " xml:space="preserve">
+  <value>(Windows) or </value>
+</data>
+	<data name="Command" xml:space="preserve">
+  <value>Command </value>
+</data>
+	<data name="(Mac) to select multiple features." xml:space="preserve">
+  <value>(Mac) to select multiple features. </value>
+</data>
+	<data name="Upload Images" xml:space="preserve">
+  <value>Upload Images </value>
+</data>
+	<data name="Base Image (Cover)" xml:space="preserve">
+  <value>Base Image (Cover)</value>
+</data>
+	<data name="Additional Images" xml:space="preserve">
+  <value>Additional Images </value>
+</data>
+	<data name="Select Images to Delete" xml:space="preserve">
+  <value>Select Images to Delete</value>
+</data>
+	<data name="room-image" xml:space="preserve">
+  <value>room-image </value>
+</data>
+	<data name="Base Image" xml:space="preserve">
+  <value>Base Image</value>
+</data>
+	<data name="Cover" xml:space="preserve">
+  <value>Cover </value>
+</data>
+	<data name="Additional" xml:space="preserve">
+  <value>Additional</value>
+</data>
+	<data name="Img" xml:space="preserve">
+  <value>Img </value>
+</data>
+	<data name="Save Changes" xml:space="preserve">
+  <value>Save Changes </value>
+</data>
+	<data name="LE" xml:space="preserve">
+  <value>LE </value>
+</data>
+	<data name="Hold multiple" xml:space="preserve">
+  <value>Hold Ctrl/Cmd to select multiple. </value>
+</data>
+	<data name="details" xml:space="preserve">
+  <value>Room details... </value>
+</data>
+	<data name="Create Room" xml:space="preserve">
+  <value>Create Room</value>
+</data>
+	
+
+</root> 

@@ -6381,23 +6381,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nasser\\.nuget\\packages\\": {},
+    "C:\\Users\\AmaZon\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Services\\Estra7a.Services.csproj",
+      "projectUniqueName": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.Services\\Estra7a.Services.csproj",
       "projectName": "Estra7a.Services",
-      "projectPath": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Services\\Estra7a.Services.csproj",
-      "packagesPath": "C:\\Users\\Nasser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Services\\obj\\",
+      "projectPath": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.Services\\Estra7a.Services.csproj",
+      "packagesPath": "C:\\Users\\AmaZon\\.nuget\\packages\\",
+      "outputPath": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nasser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AmaZon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6406,18 +6406,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.DataAccess\\Estra7a.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.DataAccess\\Estra7a.DataAccess.csproj"
+            "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.DataAccess\\Estra7a.DataAccess.csproj": {
+              "projectPath": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.DataAccess\\Estra7a.DataAccess.csproj"
             },
-            "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj": {
-              "projectPath": "C:\\Users\\Nasser\\source\\repos\\mahamednasser\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj"
+            "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj": {
+              "projectPath": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj"
             }
           }
         }
@@ -6459,7 +6458,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

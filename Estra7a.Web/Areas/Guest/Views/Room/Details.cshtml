@@ -1,4 +1,5 @@
 ﻿@model RoomViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -58,22 +59,22 @@
                              style="width:75px; height:75px; object-fit:contain;">
                     </div>
 
-                    <div class="small text-uppercase fw-bold text-muted mb-1">Starting Room From</div>
+                    <div class="small text-uppercase fw-bold text-muted mb-1">@Localizer["Starting"]</div>
                     <div>
-                        <span class="price-tag">LE @Model.PricePerNight</span>
-                        <span class="text-muted fs-5">/Per Night</span>
+                        <span class="price-tag">@Localizer["LE"] @Model.PricePerNight</span>
+                        <span class="text-muted fs-5">@Localizer["/Per Night"]</span>
                     </div>
                 </div>
                 @if (Model.NumberOfAvailableRooms <= 0)
                 {
                     <div class="d-grid">
-                        <a class="btn btn-book disabled">Book Now</a>
+                        <a class="btn btn-book disabled">@Localizer["Book Now"]</a>
                     </div>
                 }
                 else
                 {
                     <div class="d-grid">
-                        <a class="btn btn-book" asp-area="Guest" asp-action="CreateBooking" asp-controller="Booking" asp-route-roomid="@Model.Id">Book Now</a>
+                        <a class="btn btn-book" asp-area="Guest" asp-action="CreateBooking" asp-controller="Booking" asp-route-roomid="@Model.Id">@Localizer["Book Now"]</a>
                     </div>
 
                     <div id="cart-controls-container" class="d-grid mt-2">
@@ -81,7 +82,7 @@
                            class="btn btn-cart d-flex align-items-center justify-content-center gap-2"
                            data-room-id="@Model.Id">
                             <i class="bi bi-cart-fill"></i>
-                            <span id="cart-text">Add to Cart</span>
+                            <span id="cart-text">@Localizer["Cart"]</span>
                         </a>
                     </div>
 
@@ -89,7 +90,7 @@
                         <button class="btn btn-save d-flex align-items-center justify-content-center gap-2"
                                 id="fav-btn" data-roomid="@Model.Id">
                             <i id="fav-icon" class="bi bi-heart"></i>
-                            <span id="fav-text">Save For Later</span>
+                            <span id="fav-text">@Localizer["Save For Later"]</span>
                         </button>
                     </div>
 
@@ -100,18 +101,18 @@
 
                 <div class="mt-4 text-center small text-muted">
                     <i class="bi bi-patch-check-fill text-success fs-4 d-block mb-1"></i>
-                    <strong class="text-dark">Safe & Secure Booking</strong>
-                    <p class="mb-0">Your payment and personal data are fully protected.</p>
+                    <strong class="text-dark">@Localizer["Safe"]</strong>
+                    <p class="mb-0">@Localizer["payment"]</p>
                 </div>
 
                 <div class="mt-4 p-3 border rounded text-center" style="background:#f8f9fa;">
                     <i class="bi bi-headset fs-4 text-primary d-block mb-2"></i>
-                    <strong>Have any questions?</strong>
-                    <p class="mb-2 text-muted small">Our support team is here to help.</p>
+                    <strong>@Localizer["Have any questions?"]</strong>
+                    <p class="mb-2 text-muted small">@Localizer["support"]</p>
 
                     <div class="d-flex justify-content-center">
                         <a asp-area="Guest" asp-action="User" asp-controller="Chat" class="btn btn-contact d-flex align-items-center justify-content-center gap-2">
-                            Contact Us
+                            @Localizer["Contact Us"]
                         </a>
                     </div>
                 </div>
@@ -138,26 +139,26 @@
                             <i class="far fa-star"></i>
                         }
                     }
-                    <span class="text-muted ms-2 text-decoration-underline">(@Model.Rate / 5 Rating)</span>
+                    <span class="text-muted ms-2 text-decoration-underline">(@Model.Rate @Localizer["/ 5 Rating"])</span>
                 </div>
 
                 <div class="d-flex flex-wrap gap-4 text-muted fw-medium border-bottom pb-4">
-                    <div><i class="fas fa-ruler-combined me-1"></i> @Model.Area m²</div>
+                    <div><i class="fas fa-ruler-combined me-1"></i> @Model.Area @Localizer["m²"]</div>
                     <div><i class="bi bi-house-door-fill me-1"></i> @Model.RoomTypeName</div>
-                    <div><i class="fas fa-user-friends me-1"></i> Up to @Model.Capacity Guests</div>
-                    <div><i class="fas fa-bath me-1"></i> Luxury Bath</div>
+                    <div><i class="fas fa-user-friends me-1"></i> Up to @Model.Capacity @Localizer["Guests"]</div>
+                    <div><i class="fas fa-bath me-1"></i> @Localizer["Luxury Bath"]</div>
                 </div>
             </div>
 
             <div class="mb-5 border-bottom pb-4">
-                <h4 class="fw-bold mb-3">Room Description</h4>
+                <h4 class="fw-bold mb-3">@Localizer["Room Description"]</h4>
                 <p class="text-muted lh-lg">@Model.RoomTypeDescription</p>
 
                 <p class="text-muted lh-lg">@Model.Description</p>
             </div>
 
             <div class="mb-5 border-bottom pb-4">
-                <h4 class="fw-bold mb-3">Room Amenities</h4>
+                <h4 class="fw-bold mb-3">@Localizer["Room Amenities"]</h4>
                 <div class="d-flex flex-wrap">
                     @foreach (var feature in Model.RoomFeatures)
                     {
@@ -171,8 +172,8 @@
 
             <div class="content-card shadow-sm mb-5 p-4">
                 <ul class="nav nav-tabs mb-4" id="room-detailsRoomTabs" role="tablist">
-                    <li class="nav-item"><button class="nav-link active" id="c-tab" data-bs-toggle="tab" data-bs-target="#policies" type="button">Policies</button></li>
-                    <li class="nav-item"><button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button">Location</button></li>
+                    <li class="nav-item"><button class="nav-link active" id="c-tab" data-bs-toggle="tab" data-bs-target="#policies" type="button">@Localizer["Policies"]</button></li>
+                    <li class="nav-item"><button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button">@Localizer["Location"]</button></li>
                 </ul>
 
                 <div class="tab-content">
@@ -180,42 +181,42 @@
                     <div class="tab-pane fade show active" id="policies">
                         <div class="row g-4">
                             <div class="col-md-4">
-                                <strong>Check-in / Check-out</strong>
-                                <p class="text-muted">Check-in from 3:00 PM, check-out by 11:00 AM</p>
+                                <strong>@Localizer["Check"]</strong>
+                                <p class="text-muted">@Localizer["Check2"]</p>
                             </div>
                             <div class="col-md-4">
-                                <strong>Cancellation Policy</strong>
-                                <p class="text-muted">Free cancellation up to 24 hours before arrival. After that, one night's charge applies.</p>
+                                <strong>@Localizer["Cancellation Policy"]</strong>
+                                <p class="text-muted">@Localizer["cancellation"]</p>
                             </div>
                             <div class="col-md-4">
-                                <strong>Pets</strong>
-                                <p class="text-muted">Pets allowed with prior notice (additional fees may apply).</p>
-                            </div>
-
-                            <div class="col-md-4">
-                                <strong>Children & Extra Beds</strong>
-                                <p class="text-muted">Children under 12 stay free with existing bedding. Extra beds available on request.</p>
-                            </div>
-                            <div class="col-md-4">
-                                <strong>Payment Methods</strong>
-                                <p class="text-muted">We accept credit cards, debit cards, and cash payments at check-in.</p>
-                            </div>
-                            <div class="col-md-4">
-                                <strong>Smoking Policy</strong>
-                                <p class="text-muted">Rooms are non-smoking. Designated smoking areas available on premises.</p>
+                                <strong>@Localizer["Pets"]</strong>
+                                <p class="text-muted">@Localizer["Pets2"]</p>
                             </div>
 
                             <div class="col-md-4">
-                                <strong>Quiet Hours</strong>
-                                <p class="text-muted">Please respect other guests between 10:00 PM and 7:00 AM.</p>
+                                <strong>@Localizer["Children and Extra Beds"]</strong>
+                                <p class="text-muted">@Localizer["Children"]</p>
                             </div>
                             <div class="col-md-4">
-                                <strong>Parking</strong>
-                                <p class="text-muted">Free parking available for hotel guests.</p>
+                                <strong>@Localizer["Payment Methods"]</strong>
+                                <p class="text-muted">@Localizer["credit"]</p>
                             </div>
                             <div class="col-md-4">
-                                <strong>Accessibility</strong>
-                                <p class="text-muted">Wheelchair accessible rooms and facilities available upon request.</p>
+                                <strong>@Localizer["Smoking Policy"]</strong>
+                                <p class="text-muted">@Localizer["smoking"]</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <strong>@Localizer["Quiet Hours"]</strong>
+                                <p class="text-muted">@Localizer["Hours"]</p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>@Localizer["Parking"]</strong>
+                                <p class="text-muted">@Localizer["Parking2"]</p>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>@Localizer["Accessibility"]</strong>
+                                <p class="text-muted">@Localizer["Wheelchair"]</p>
                             </div>
                         </div>
                     </div>
@@ -235,27 +236,27 @@
                 </div>
             </div>
 
-            <h3 class="fw-bold mb-4">Enhance Your Stay</h3>
+            <h3 class="fw-bold mb-4">@Localizer["Enhance Your Stay"]</h3>
             <div class="row mb-5">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="addon-card shadow-sm">
                         <div class="addon-icon"><i class="fas fa-mug-hot"></i></div>
-                        <h5 class="fw-bold">Breakfast Package</h5>
-                        <div class="addon-price">+$35 / person</div>
+                        <h5 class="fw-bold">@Localizer["Breakfast Package"]</h5>
+                        <div class="addon-price">@Localizer["+$35 / person"]</div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="addon-card shadow-sm">
                         <div class="addon-icon"><i class="fas fa-spa"></i></div>
-                        <h5 class="fw-bold">Spa Access</h5>
-                        <div class="addon-price">+$75 / day</div>
+                        <h5 class="fw-bold">@Localizer["Spa Access"]</h5>
+                        <div class="addon-price">@Localizer["+$75 / day"]</div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="addon-card shadow-sm">
                         <div class="addon-icon"><i class="fas fa-plane"></i></div>
-                        <h5 class="fw-bold">Airport Transfer</h5>
-                        <div class="addon-price">+$95 round trip</div>
+                        <h5 class="fw-bold">@Localizer["Airport Transfer"]</h5>
+                        <div class="addon-price">@Localizer["+$95 round trip"]</div>
                     </div>
                 </div>
             </div>
@@ -439,7 +440,7 @@
                     favText.text("Saved");
                 } else {
                     favIcon.removeClass("bi-heart-fill text-danger").addClass("bi-heart");
-                    favText.text("Save For Later");
+                    favText.text("@Localizer["Save For Later"]");
                 }
             }).fail(function() {
                 console.log("Could not retrieve favorite status.");
@@ -462,7 +463,7 @@
                             favText.text("Saved");
                         } else {
                             favIcon.removeClass("bi-heart-fill text-danger").addClass("bi-heart");
-                            favText.text("Save For Later");
+                            favText.text("@Localizer["Save For Later"]");
                         }
                     },
                     error: function(xhr, status, error) {

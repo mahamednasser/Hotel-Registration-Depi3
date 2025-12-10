@@ -476,27 +476,29 @@
     }
 </style>
 
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
 <div class="page-wrapper">
     <div class="chat-container">
         <div class="chat-header">
             <div class="bot-avatar">🤖</div>
             <div class="header-info">
-                <h2>AI Assistant</h2>
-                <p><span class="status-indicator"></span> Online • Ready to help</p>
+                <h2>@Localizer["AI Assistant"]</h2>
+                <p><span class="status-indicator"></span> @Localizer["Online"]</p>
             </div>
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="message bot">
                 <div class="message-avatar">🤖</div>
                 <div class="message-content">
-                    Hello! I'm your AI assistant. How can I help you today?
-                    <span class="timestamp">Just now</span>
+                    @Localizer["Hello"]
+                    <span class="timestamp">@Localizer["Just now"]</span>
                 </div>
             </div>
         </div>
         <div class="chat-input">
-            <input type="text" id="messageInput" placeholder="Type your message..." />
-            <button id="sendButton">Send</button>
+            <input type="text" id="messageInput" placeholder="@Localizer["message"]" />
+            <button id="sendButton">@Localizer["Send"]</button>
         </div>
     </div>
 </div>

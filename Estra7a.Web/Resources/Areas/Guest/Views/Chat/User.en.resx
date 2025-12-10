@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Customer Service" xml:space="preserve">
+    <value>Customer Service</value>
+  </data>
+	<data name="Help" xml:space="preserve">
+    <value>We are here to help you</value>
+  </data>
+	<data name="message" xml:space="preserve">
+    <value>Enter message...</value>
+  </data>
+	<data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+	
+</root> 

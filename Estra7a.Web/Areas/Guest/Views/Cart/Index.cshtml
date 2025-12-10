@@ -86,8 +86,9 @@
         </td>
         <td>
             <button type="button" class="btn btn-info btn-sm toggle-form" data-roomid="@item.RoomId">
-    <i class="bi bi-chevron-down"></i> Book Now
-</button>
+                <i class="bi bi-chevron-down"></i> 
+                @Localizer["Book Now"]
+            </button>
         </td>
     </tr>
 
@@ -118,32 +119,32 @@
                     <div class="col-md-6">
                         <label>@Localizer["guests"]</label>
                         <select name="guests" class="form-select" required>
-                            <option value="">Select Guests</option>
-                            <option value="1">1 Guest</option>
-                            <option value="2">2 Guests</option>
-                            <option value="3">3 Guests</option>
+                            <option value="">@Localizer["Select Guests"]</option>
+                            <option value="1">1 @Localizer["guest"]</option>
+                            <option value="2">2 @Localizer["guests"]</option>
+                            <option value="3">3 @Localizer["guests"]</option>
                         </select>
                     </div>
 
                     <div class="col-md-6">
                         <label>@Localizer["TotalRooms"]</label>
                         <select class="form-select" name="room_count" required>
-                            <option value="">Choose Rooms</option>
-                            <option value="1">1 Room</option>
-                            <option value="2">2 Rooms</option>
-                            <option value="3">3 Rooms</option>
+                            <option value="">@Localizer["Choose Rooms"]</option>
+                            <option value="1">1 @Localizer["Room"]</option>
+                            <option value="2">2 @Localizer["Rooms"]</option>
+                            <option value="3">3 @Localizer["Rooms"]</option>
                         </select>
                     </div>
 
                     <h5 class="mt-3">@Localizer["GuestInfo"]</h5>
 
                     <div class="col-md-12">
-                        <label>UserName</label>
+                        <label>@Localizer["UserName"]</label>
                         <input type="text" value="@user?.UserName" readonly class="form-control" />
                     </div>
 
                     <div class="col-md-12">
-                        <label>Phone Number</label>
+                        <label>@Localizer["Phone Number"]</label>
                         <input type="text" name="phoneNumber" class="form-control" required placeholder="01012345678" />
                     </div>
 
@@ -166,35 +167,35 @@
                     <button type="submit" class="btn btn-primary w-100">
                         @Localizer["ConfirmBooking"]
                     </button>
-                </div>
+                       </div>
 
-                <script>
-                                                document.getElementById("NationalIdImage").addEventListener("change", function () {
-                                                    var fileInput = this;
-                                                    var formData = new FormData();
-                                                    formData.append("NationalIdImage", fileInput.files[0]);
+                           <script>
+                                document.getElementById("NationalIdImage").addEventListener("change", function () {
+                                    var fileInput = this;
+                                    var formData = new FormData();
+                                    formData.append("NationalIdImage", fileInput.files[0]);
 
-                                                    fetch('@Url.Action("ValidateNationalId", "Booking", new { area = "Guest" })', {
-                                                        method: "POST",
-                                                        body: formData
-                                                    })
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        var errorSpan = document.getElementById("NationalIdError");
-                                                        if (!data.isValid) {
-                                                            errorSpan.textContent = data.message;
-                                                            fileInput.value = "";
-                                                        } else {
-                                                            errorSpan.textContent = "";
-                                                        }
-                                                    })
-                                                    .catch(err => console.error(err));
-                                                });
-                                            </script>
-            </form>
+                                    fetch('@Url.Action("ValidateNationalId", "Booking", new { area = "Guest" })', {
+                                        method: "POST",
+                                        body: formData
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        var errorSpan = document.getElementById("NationalIdError");
+                                        if (!data.isValid) {
+                                            errorSpan.textContent = data.message;
+                                            fileInput.value = "";
+                                        } else {
+                                            errorSpan.textContent = "";
+                                        }
+                                    })
+                                    .catch(err => console.error(err));
+                                });
+                           </script>
+                     </form>
 
-        </td>
-    </tr>
+                            </td>
+                        </tr>
 
 }
                        </tbody>
@@ -223,6 +224,7 @@
         </aside>
     </div>
 </div>
+
 
 @section Scripts {
     <script>
@@ -335,19 +337,19 @@
 
     </script>
     <script>
-        $(document).on("click", ".toggle-form", function () {
-    var roomId = $(this).data("roomid");
-    var formRow = $("#form-" + roomId);
+                $(document).on("click", ".toggle-form", function () {
+            var roomId = $(this).data("roomid");
+            var formRow = $("#form-" + roomId);
 
-    formRow.toggle(); // show/hide
+            formRow.toggle(); // show/hide
 
-    
-    if (formRow.is(":visible")) {
-        $(this).html('<i class="bi bi-chevron-up"></i> Hide');
-    } else {
-        $(this).html('<i class="bi bi-chevron-down"></i> Only This');
-    }
-});
+
+            if (formRow.is(":visible")) {
+                $(this).html('<i class="bi bi-chevron-up"></i> @Localizer["Hide"]');
+            } else {
+                $(this).html('<i class="bi bi-chevron-down"></i> @Localizer["Only This"]');
+            }
+        });
 
     </script>
     <script>
@@ -371,116 +373,117 @@
 
     </script>
     <script>
-$(document).on("change", ".national-id-input", function () {
+        $(document).on("change", ".national-id-input", function () {
 
-    var fileInput = this;
-    var roomId = $(this).data("roomid");
-    var errorSpan = $("#NationalIdError-" + roomId);
+            var fileInput = this;
+            var roomId = $(this).data("roomid");
+            var errorSpan = $("#NationalIdError-" + roomId);
 
-    var formData = new FormData();
-    formData.append("NationalIdImage", fileInput.files[0]);
+            var formData = new FormData();
+            formData.append("NationalIdImage", fileInput.files[0]);
 
-    fetch('@Url.Action("ValidateNationalId", "Booking", new { area = "Guest" })', {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (!data.isValid) {
-            errorSpan.text(data.message);
-            fileInput.value = "";
-        } else {
-            errorSpan.text("");
-        }
-    })
-    .catch(err => console.error(err));
-});
-</script>
+            fetch('@Url.Action("ValidateNationalId", "Booking", new { area = "Guest" })', {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.isValid) {
+                    errorSpan.text(data.message);
+                    fileInput.value = "";
+                } else {
+                    errorSpan.text("");
+                }
+            })
+            .catch(err => console.error(err));
+        });
+    </script>
 
     <style>
-        
+
         .table-shopping-cart td:nth-child(4),
         .table-shopping-cart th:nth-child(4) {
             padding-left: 30px;
             width: 150px;
         }
 
-     
-
-    /* خلايا الجدول بشكل متناسق */
-    .table-shopping-cart td,
-    .table-shopping-cart th {
-        vertical-align: middle !important;
-        padding: 10px 8px !important; /* تقليل المسافات الداخلية */
-    }
-
-    /* عرض العمود الأول (الصورة + الاسم) */
-    .table-shopping-cart th:nth-child(1),
-    .table-shopping-cart td:nth-child(1) {
-        width: 230px;
-    }
-
-    /* السعر */
-    .table-shopping-cart th:nth-child(2),
-    .table-shopping-cart td:nth-child(2) {
-        width: 120px;
-        text-align: center;
-    }
-
-    /* الكمية */
-    .table-shopping-cart th:nth-child(3),
-    .table-shopping-cart td:nth-child(3) {
-        width: 140px;
-        text-align: center;
-    }
-
-    /* إجمالي السعر */
-    .table-shopping-cart th:nth-child(4),
-    .table-shopping-cart td:nth-child(4) {
-        width: 140px;
-        text-align: center;
-        font-weight: 600;
-    }
-
-    /* زر الحذف */
-    .table-shopping-cart th:nth-child(5),
-    .table-shopping-cart td:nth-child(5),
-    .table-shopping-cart th:nth-child(6),
-    .table-shopping-cart td:nth-child(6) {
-        width: 110px;
-        text-align: center;
-    }
-
-    /* الصورة داخل السطر */
-    .img-sm {
-        width: 90px;
-        height: 70px;
-        object-fit: cover;
-        border-radius: 6px;
-    }
-
-    /* الفورم */
-    .reservation-form {
-        background: #f8f9fa;
-        padding: 15px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-        margin-top: 10px;
-    }
-
-</style>
 
 
+        /* خلايا الجدول بشكل متناسق */
+        .table-shopping-cart td,
+        .table-shopping-cart th {
+            vertical-align: middle !important;
+            padding: 10px 8px !important; /* تقليل المسافات الداخلية */
+        }
 
-    
+            /* عرض العمود الأول (الصورة + الاسم) */
+            .table-shopping-cart th:nth-child(1),
+            .table-shopping-cart td:nth-child(1) {
+                width: 230px;
+            }
+
+            /* السعر */
+            .table-shopping-cart th:nth-child(2),
+            .table-shopping-cart td:nth-child(2) {
+                width: 120px;
+                text-align: center;
+            }
+
+            /* الكمية */
+            .table-shopping-cart th:nth-child(3),
+            .table-shopping-cart td:nth-child(3) {
+                width: 140px;
+                text-align: center;
+            }
+
+            /* إجمالي السعر */
+            .table-shopping-cart th:nth-child(4),
+            .table-shopping-cart td:nth-child(4) {
+                width: 140px;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            /* زر الحذف */
+            .table-shopping-cart th:nth-child(5),
+            .table-shopping-cart td:nth-child(5),
+            .table-shopping-cart th:nth-child(6),
+            .table-shopping-cart td:nth-child(6) {
+                width: 110px;
+                text-align: center;
+            }
+
+        /* الصورة داخل السطر */
+        .img-sm {
+            width: 90px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        /* الفورم */
+        .reservation-form {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+
+    </style>
+
+
+
+
 }
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
- <!-- jQuery UI -->
- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 
 
- <script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
+
 

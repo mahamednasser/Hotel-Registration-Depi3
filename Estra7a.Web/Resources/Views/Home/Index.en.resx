@@ -1,6 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
+	<data name="Luxury" xml:space="preserve">
+    <value>Luxury Redefined in Every Stay</value>
+  </data>
+	<data name="Experience" xml:space="preserve">
+    <value>Experience unparalleled comfort and sophistication at our premium hotel. From elegant suites to world-class amenities, every moment of your stay is crafted to perfection.</value>
+  </data>
 	<data name="ViewRooms" xml:space="preserve">
     <value>View Rooms</value>
   </data>
+	<data name="WiFi" xml:space="preserve">
+    <value>Complimentary WiFi</value>
+  </data>
+	<data name="Parking" xml:space="preserve">
+    <value>Valet Parking</value>
+  </data>
+	<data name="Service" xml:space="preserve">
+    <value>24/7 Room Service</value>
+  </data>
+	<data name="Experience" xml:space="preserve">
+    <value>Exceptional Experience</value>
+  </data>
+	<data name="Absolutely" xml:space="preserve">
+    <value>"Absolutely stunning hotel! The service was impeccable and the views breathtaking."</value>
+  </data>
+	<data name="Sarah Johnson" xml:space="preserve">
+    <value>Sarah Johnson</value>
+  </data>
+	<data name="Check In" xml:space="preserve">
+    <value>Check In </value>
+  </data>
+	<data name="Check Out" xml:space="preserve">
+    <value>Check Out </value>
+  </data>
+	<data name="Guests" xml:space="preserve">
+    <value>Guests </value>
+  </data>
+	<data name="Check Availability" xml:space="preserve">
+    <value>Check Availability </value>
+  </data>
+	<data name="Rooms" xml:space="preserve">
+    <value>Rooms </value>
+  </data>
+	<data name="Rooms subtittle" xml:space="preserve">
+    <value>Experience comfort and convenience in our modern, well-equipped rooms — designed to ensure a pleasant and relaxing stay for every guest. </value>
+  </data>
+	<data name="Amenities" xml:space="preserve">
+    <value>Amenities </value>
+  </data>
+	<data name="Amenities subtitle" xml:space="preserve">
+    <value>Enjoy a selection of modern amenities designed to make your stay more comfortable, convenient, and enjoyable. </value>
+  </data>
+	<data name="High-Speed Internet" xml:space="preserve">
+    <value>High-Speed Internet </value>
+  </data>
+	<data name="High-Speed Internet2" xml:space="preserve">
+    <value>Complimentary wireless internet access throughout the hotel premises with enterprise-grade security and unlimited bandwidth for all your connectivity needs. </value>
+  </data>
+	<data name="24/7 Available" xml:space="preserve">
+    <value>24/7 Available </value>
+  </data>
+	<data name="High Speed" xml:space="preserve">
+    <value>High Speed</value>
+  </data>
+	<data name="Rooftop Pool" xml:space="preserve">
+    <value>Rooftop Pool </value>
+  </data>
+	<data name="Rooftop Pool2" xml:space="preserve">
+    <value>Luxurious rooftop swimming pool with breathtaking city skyline views. Features heated water, poolside service, and premium lounging areas for ultimate relaxation. </value>
+  </data>
+	<data name="Heated Pool" xml:space="preserve">
+    <value>Heated Pool </value>
+  </data>
+	<data name="City Views" xml:space="preserve">
+    <value>City Views </value>
+  </data>
+	<data name="Valet Parking" xml:space="preserve">
+    <value>Valet Parking </value>
+  </data>
+	<data name="Valet Parking2" xml:space="preserve">
+    <value>Premium valet parking service with secure underground facility. Professional attendants ensure your vehicle is safely parked and readily available upon request. </value>
+  </data>
+	<data name="Secure" xml:space="preserve">
+    <value>Secure </value>
+  </data>
+	<data name="Valet Service" xml:space="preserve">
+    <value>Valet Service</value>
+  </data>
+	<data name="Modern Fitness Center" xml:space="preserve">
+    <value>Modern Fitness Center </value>
+  </data>
+	<data name="Modern Fitness Center2" xml:space="preserve">
+    <value>Cutting-edge fitness facility featuring premium equipment, personal training services, and wellness programs designed to maintain your health routine while traveling. </value>
+  </data>
+	<data name="24/7 Access" xml:space="preserve">
+    <value>24/7 Access </value>
+  </data>
+	<data name="Personal Training" xml:space="preserve">
+    <value>Personal Training </value>
+  </data>
+  <data name="Signature Restaurant" xml:space="preserve">
+    <value>Signature Restaurant </value>
+  </data>
+	<data name="Signature Restaurant2" xml:space="preserve">
+  <value>An authentic Egyptian dining experience featuring the finest traditional and modern Egyptian dishes prepared by skilled chefs. Enjoy a relaxed and elegant atmosphere with a variety of beverages and fresh juices, along with impeccable service for an unforgettable experience.</value>
+</data>
+	<data name="Fine Dining" xml:space="preserve">
+    <value>Fine Dining </value>
+  </data>
+  <data name="Wine Selection" xml:space="preserve">
+    <value>Wine Selection </value>
+  </data>
+  <data name="Luxury Spa" xml:space="preserve">
+    <value>Luxury Spa </value>
+  </data>
+  <data name="Luxury Spa2" xml:space="preserve">
+    <value>Tranquil sanctuary offering therapeutic treatments, rejuvenating massages, and holistic wellness experiences. Escape the everyday stress in our serene environment. </value>
+  </data>
+  <data name="Full Service" xml:space="preserve">
+    <value>Full Service </value>
+  </data>
+  <data name="Wellness Programs" xml:space="preserve">
+    <value>Wellness Programs </value>
+  </data>
+  <data name="Testimonials" xml:space="preserve">
+    <value>Testimonials </value>
+  </data>
+  <data name="Testimonials2" xml:space="preserve">
+    <value>Discover what our guests are saying about their stay and why they choose us for a comfortable and memorable experience. </value>
+  </data>
+  <data name="Test content 1" xml:space="preserve">
+    <value>My stay was exceptional. The room was comfortable, the staff were very helpful, and everything was well-organized. I highly recommend this place and will definitely visit again. </value>
+  </data>
+  <data name="Robert Johnson" xml:space="preserve">
+    <value>Robert Johnson </value>
+  </data>
+  <data name="Chief Executive Office" xml:space="preserve">
+    <value>Chief Executive Office </value>
+  </data>
+  <data name="Test content 2" xml:space="preserve">
+    <value>I had an amazing stay! The room was cozy, the staff were friendly, and everything was perfect. I felt very comfortable. </value>
+  </data>
+  <data name="Sarah Williams" xml:space="preserve">
+    <value>Sarah Williams </value>
+  </data>
+  <data name="Marketing Director" xml:space="preserve">
+    <value>Marketing Director </value>
+  </data>
+  <data name="Test content 3" xml:space="preserve">
+    <value>Everything was perfect — from the check-in process to the room quality. The staff were professional and always ready to help </value>
+  </data>
+  <data name="Michael Davis" xml:space="preserve">
+    <value>Michael Davis </value>
+  </data>
+  <data name="Product Manager" xml:space="preserve">
+    <value>Product Manager </value>
+  </data>
+  <data name="Test content 4" xml:space="preserve">
+    <value>Wonderful experience! The hotel was clean, quiet, and the service was excellent. I would definitely come back. </value>
+  </data>
+  <data name="Emily Thompson" xml:space="preserve">
+    <value>Emily Thompson </value>
+  </data>
+  <data name="Design Lead" xml:space="preserve">
+    <value>Design Lead </value>
+  </data>	
+  <data name="Explore All Accommodations" xml:space="preserve">
+    <value>Explore All Accommodations </value>
+  </data>	
 </root> 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="AI Assistant" xml:space="preserve">
+    <value>AI Assistant</value>
+  </data>
+	<data name="Online" xml:space="preserve">
+    <value>Online • Ready to help</value>
+  </data>
+	<data name="Hello" xml:space="preserve">
+    <value>Hello! I'm your AI assistant. How can I help you today?</value>
+  </data>
+	<data name="Just now" xml:space="preserve">
+    <value>Just now</value>
+  </data>
+	<data name="message" xml:space="preserve">
+    <value>Type your message...</value>
+  </data>
+	<data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+	
+</root> 

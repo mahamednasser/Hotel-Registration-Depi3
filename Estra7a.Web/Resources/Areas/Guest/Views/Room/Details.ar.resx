@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Starting" xml:space="preserve">
+  <value>تبدأ أسعار الغرف من</value>
+</data>
+	<data name="LE" xml:space="preserve">
+  <value>ج.م. </value>
+</data>
+	<data name="/Per Night" xml:space="preserve">
+  <value>/في الليلة </value>
+</data>
+	<data name="Book" xml:space="preserve">
+  <value>احجز الآن </value>
+</data>
+	<data name="Cart" xml:space="preserve">
+  <value>أضف إلى السلة </value>
+</data>
+<data name="Save For Later" xml:space="preserve">
+  <value>احفظ لوقت لاحق </value>
+</data>
+	<data name="Safe" xml:space="preserve">
+  <value> حجز آمن ومضمون</value>
+</data>
+	<data name="payment" xml:space="preserve">
+  <value> بيانات الدفع والبيانات الشخصية الخاصة بك محمية بالكامل.</value>
+</data>
+	<data name="Have any questions?" xml:space="preserve">
+  <value>هل لديك أي أسئلة؟ </value>
+</data>
+	<data name="support" xml:space="preserve">
+  <value>فريق الدعم لدينا موجود للمساعدة. </value>
+</data>
+	<data name="Contact Us" xml:space="preserve">
+  <value>اتصل بنا </value>
+</data>
+	<data name="m²" xml:space="preserve">
+  <value>م² </value>
+</data>
+	<data name="Guests" xml:space="preserve">
+  <value> نزلاء</value>
+</data>
+	<data name="Luxury Bath" xml:space="preserve">
+  <value>حمام فاخر </value>
+</data>
+	<data name="Room Description" xml:space="preserve">
+  <value> وصف الغرفة</value>
+</data>
+	<data name="Room Amenities" xml:space="preserve">
+  <value> مرافق الغرفة</value>
+</data>
+	<data name="Policies" xml:space="preserve">
+  <value> السياسات</value>
+</data>
+	<data name="Location" xml:space="preserve">
+  <value> الموقع</value>
+</data>
+	<data name="Check" xml:space="preserve">
+  <value> تسجيل الوصول / تسجيل المغادرة</value>
+</data>
+	<data name="Check2" xml:space="preserve">
+  <value> تسجيل الوصول من الساعة 3:00 مساءً، تسجيل المغادرة بحلول الساعة 11:00 صباحاً</value>
+</data>
+	<data name="Cancellation Policy" xml:space="preserve">
+  <value> سياسة الإلغاء</value>
+</data>
+	<data name="cancellation" xml:space="preserve">
+  <value> إلغاء مجاني حتى 24 ساعة قبل الوصول. بعد ذلك، يتم تطبيق رسوم ليلة واحدة.</value>
+</data>
+	<data name="Pets" xml:space="preserve">
+  <value> الحيوانات الأليفة</value>
+</data>
+	<data name="Pets2" xml:space="preserve">
+  <value> يُسمح بالحيوانات الأليفة مع إشعار مسبق (قد يتم تطبيق رسوم إضافية).</value>
+</data>
+	<data name="Children and Extra Beds" xml:space="preserve">
+  <value> الأطفال والأسرّة الإضافية</value>
+</data>
+	<data name="Children" xml:space="preserve">
+  <value>إقامة مجانية للأطفال تحت سن 12 عاماً باستخدام الأسرّة الموجودة. أسرّة إضافية متاحة عند الطلب.</value>
+</data>
+	<data name="Payment Methods" xml:space="preserve">
+  <value> طرق الدفع</value>
+</data>
+	<data name="credit" xml:space="preserve">
+  <value> نقبل بطاقات الائتمان وبطاقات الخصم والدفع النقدي عند تسجيل الوصول.</value>
+</data>
+	<data name="Smoking Policy" xml:space="preserve">
+  <value> سياسة التدخين</value>
+</data>
+	<data name="smoking" xml:space="preserve">
+  <value> الغرف مخصصة لغير المدخنين. تتوفر مناطق مخصصة للتدخين في المبنى.</value>
+</data>
+	<data name="Quiet Hours" xml:space="preserve">
+  <value> ساعات الهدوء</value>
+</data>
+	<data name="Hours" xml:space="preserve">
+  <value> يرجى احترام النزلاء الآخرين بين الساعة 10:00 مساءً و 7:00 صباحاً.</value>
+</data>
+	<data name="Parking" xml:space="preserve">
+  <value> موقف السيارات</value>
+</data>
+	<data name="Parking2" xml:space="preserve">
+  <value> يتوفر موقف سيارات مجاني لنزلاء الفندق.</value>
+</data>
+	<data name="Accessibility" xml:space="preserve">
+  <value> إمكانية الوصول</value>
+</data>
+	<data name="Wheelchair" xml:space="preserve">
+  <value> تتوفر غرف ومرافق يسهل الوصول إليها بواسطة الكراسي المتحركة عند الطلب.</value>
+</data>
+	<data name="Breakfast Package" xml:space="preserve">
+  <value> باقة الإفطار</value>
+</data>
+	<data name="+$35 / person" xml:space="preserve">
+  <value> +35 دولاراً / للشخص</value>
+</data>
+	<data name="Spa Access" xml:space="preserve">
+  <value> دخول المنتجع الصحي (سبا)</value>
+</data>
+	<data name="+$75 / day" xml:space="preserve">
+  <value> +75 دولاراً / لليوم</value>
+</data>
+	<data name="Airport Transfer" xml:space="preserve">
+  <value> خدمة النقل من وإلى المطار</value>
+</data>
+	<data name="+$95 round trip" xml:space="preserve">
+  <value> +95 دولاراً ذهاباً وإياباً</value>
+</data>
+	<data name="Enhance Your Stay" xml:space="preserve">
+  <value> إضافات لتحسين إقامتك</value>
+</data>
+	<data name="Save For Later" xml:space="preserve">
+  <value>احفظ لوقت لاحق</value>
+</data>
+	<data name="Book" xml:space="preserve">
+  <value>احجز الآن</value>
+</data>
+	<data name="Book Now" xml:space="preserve">
+  <value>احجز الآن</value>
+</data>
+	<data name="Save For Later" xml:space="preserve">
+  <value>احفظ لوقت لاحق</value>
+</data>
+	
+</root> 

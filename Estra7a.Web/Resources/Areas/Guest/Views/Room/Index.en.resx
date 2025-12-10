@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	
+	<data name="Price Range" xml:space="preserve">
+    <value>Price Range</value>
+  </data>
+	<data name="All Prices" xml:space="preserve">
+    <value>All Prices</value>
+  </data>
+	<data name="Guest Capacity" xml:space="preserve">
+    <value>Guest Capacity</value>
+  </data>
+	<data name="Any Capacity" xml:space="preserve">
+    <value>Any Capacity</value>
+  </data>
+	<data name="Guests" xml:space="preserve">
+    <value>Guests</value>
+  </data>
+	<data name="EGP" xml:space="preserve">
+    <value>EGP</value>
+  </data>
+	<data name="Room Type" xml:space="preserve">
+    <value>Room Type</value>
+  </data>
+	<data name="Any Type" xml:space="preserve">
+    <value>Any Type</value>
+  </data>
+	
+	<data name="Family" xml:space="preserve">
+    <value>Family</value>
+  </data>
+	
+	<data name="Single" xml:space="preserve">
+    <value>Single</value>
+  </data>
+	
+	<data name="Double" xml:space="preserve">
+    <value>Double</value>
+  </data>
+	
+	<data name="Load" xml:space="preserve">
+    <value>Load More Rooms</value>
+  </data>
+	
+	
+</root> 

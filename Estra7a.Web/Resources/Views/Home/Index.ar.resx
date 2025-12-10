@@ -1,7 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   
+  <data name="Luxury" xml:space="preserve">
+    <value>تجربة فاخرة لا مثيل لها في كل إقامة</value>
+  </data>
+  <data name="Experience" xml:space="preserve">
+    <value>تجربة فاخرة لا مثيل لها في كل إقامة
+
+استمتع براحة وفخامة لا تُضاهى في فندقنا الفاخر. من الأجنحة الأنيقة إلى المرافق العالمية، صُممت كل لحظة من إقامتك بعناية فائقة.</value>
+  </data>
   <data name="ViewRooms" xml:space="preserve">
     <value>مشاهدة الغرف</value>
+  </data>
+	<data name="WiFi" xml:space="preserve">
+    <value>خدمة واي فاي مجانية</value>
+  </data>
+	<data name="Parking" xml:space="preserve">
+    <value>خدمة ركن السيارات</value>
+  </data>
+	<data name="Service" xml:space="preserve">
+    <value>خدمة الغرف على مدار الساعة</value>
+  </data>
+	<data name="Experience" xml:space="preserve">
+    <value>تجربة استثنائية</value>
+  </data>
+	<data name="Absolutely" xml:space="preserve">
+    <value>"فندق رائع بكل معنى الكلمة! كانت الخدمة لا تشوبها شائبة، والإطلالات خلابة."</value>
+  </data>
+	<data name="Sarah Johnson" xml:space="preserve">
+    <value>سارة جونسون</value>
+  </data>
+	<data name="Check In" xml:space="preserve">
+  <value>تسجيل الدخول</value>
+</data>
+	<data name="Check Out" xml:space="preserve">
+  <value>تسجيل الخروج</value>
+</data>
+	<data name="Guests" xml:space="preserve">
+  <value>الضيوف</value>
+</data>
+	<data name="Check Availability" xml:space="preserve">
+  <value>التحقق من التوافر</value>
+</data>
+	<data name="Rooms" xml:space="preserve">
+  <value>الغرف</value>
+</data>
+	<data name="Rooms subtittle" xml:space="preserve">
+  <value>استمتع بالراحة  في غرفنا الحديثة والمجهزة جيدًا — المصممة لضمان إقامة ممتعة ومريحة لكل ضيف.</value>
+</data>
+	<data name="Amenities" xml:space="preserve">
+  <value>المرافق</value>
+</data>
+	<data name="Amenities subtitle" xml:space="preserve">
+  <value>استمتع بمجموعة مختارة من المرافق الحديثة المصممة لجعل إقامتك أكثر راحة وملاءمة ومتعة.</value>
+</data>
+	<data name="High-Speed Internet" xml:space="preserve">
+  <value>إنترنت عالي السرعة</value>
+</data>
+	<data name="High-Speed Internet2" xml:space="preserve">
+  <value>خدمة إنترنت لاسلكي مجانية في جميع أنحاء الفندق بأمان على مستوى الشركات ونطاق ترددي غير محدود لجميع احتياجات الاتصال الخاصة بك.</value>
+</data>
+	<data name="24/7 Available" xml:space="preserve">
+  <value>متوفر 24/7</value>
+</data>
+	<data name="High Speed" xml:space="preserve">
+  <value>سرعة عالية</value>
+</data>
+	<data name="Rooftop Pool" xml:space="preserve">
+  <value>مسبح على السطح</value>
+</data>
+	<data name="Rooftop Pool2" xml:space="preserve">
+  <value>مسبح فاخر على السطح مع إطلالات خلابة على أفق المدينة. يتميز بمياه مدفأة وخدمة بجانب المسبح ومناطق استرخاء فاخرة للاسترخاء المطلق.</value>
+</data>
+	<data name="Heated Pool" xml:space="preserve">
+  <value>مسبح مدفأ</value>
+</data>
+	<data name="City Views" xml:space="preserve">
+  <value>إطلالات على المدينة</value>
+</data>
+	<data name="Valet Parking" xml:space="preserve">
+  <value>خدمة صف السيارات</value>
+</data>
+	<data name="Valet Parking2" xml:space="preserve">
+  <value>خدمة صف سيارات ممتازة مع مرفق آمن تحت الأرض. يضمن الموظفون المحترفون ركن سيارتك بأمان وتوفيرها بسهولة عند الطلب.</value>
+</data>
+	<data name="Secure" xml:space="preserve">
+  <value>آمن</value>
+</data>
+	<data name="Valet Service" xml:space="preserve">
+  <value>خدمة صف</value>
+</data>
+	<data name="Modern Fitness Center" xml:space="preserve">
+  <value>مركز لياقة بدنية حديث</value>
+</data>
+	<data name="Modern Fitness Center2" xml:space="preserve">
+  <value>مرفق لياقة بدنية متطور يضم معدات فاخرة، وخدمات تدريب شخصي، وبرامج صحية مصممة للحفاظ على روتينك الصحي أثناء السفر.</value>
+</data>
+	<data name="24/7 Access" xml:space="preserve">
+  <value>دخول 24/7</value>
+</data>
+	<data name="Personal Training" xml:space="preserve">
+  <value>تدريب شخصي</value>
+</data>
+	<data name="Signature Restaurant" xml:space="preserve">
+  <value>مطعم مميز</value>
+</data>
+	<data name="Signature Restaurant2" xml:space="preserve">
+  <value>تجربة طهي مصرية أصيلة تقدم أشهى الأطباق التقليدية والمصرية الحديثة بإعداد طهاة خبراء. أجواء مريحة وأنيقة مع تشكيلة من المشروبات والعصائر الطبيعية وخدمة ممتازة لضمان تجربة لا تُنسى.</value>
+</data>
+	<data name="Fine Dining" xml:space="preserve">
+  <value>طعام فاخر</value>
+</data>
+	<data name="Wine Selection" xml:space="preserve">
+  <value>مجموعة مختارة من النبيذ</value>
+</data>
+	<data name="Luxury Spa" xml:space="preserve">
+  <value>منتجع صحي فاخر</value>
+</data>
+	<data name="Luxury Spa2" xml:space="preserve">
+  <value>ملاذ هادئ يقدم علاجات علاجية وتدليكًا مجددًا للحيوية وتجارب صحية شاملة. اهرب من ضغوط الحياة اليومية في بيئتنا الهادئة.</value>
+</data>
+	<data name="Full Service" xml:space="preserve">
+  <value>خدمة كاملة</value>
+</data>
+	<data name="Wellness Programs" xml:space="preserve">
+  <value>برامج العافية</value>
+</data>
+	<data name="Testimonials" xml:space="preserve">
+  <value>آراء النزلاء</value>
+</data>
+	<data name="Testimonials2" xml:space="preserve">
+  <value>اكتشف ما يقوله ضيوفنا عن إقامتهم ولماذا يختاروننا لتجربة مريحة ولا تُنسى.</value>
+</data>
+	<data name="Test content 1" xml:space="preserve">
+  <value>كانت إقامتي استثنائية. كانت الغرفة مريحة، والموظفون متعاونون للغاية، وكل شيء كان منظمًا بشكل جيد. أوصي بشدة بهذا المكان وبالتأكيد سأزوره مرة أخرى.</value>
+</data>
+	<data name="Robert Johnson" xml:space="preserve">
+  <value>روبرت جونسون</value>
+</data>
+	<data name="Chief Executive Office" xml:space="preserve">
+  <value>الرئيس التنفيذي</value>
+</data>
+	<data name="Test content 2" xml:space="preserve">
+  <value>حظيت بإقامة مذهلة! كانت الغرفة مريحة، والموظفون ودودون، وكل شيء كان مثاليًا. شعرت براحة كبيرة.</value>
+</data>
+	<data name="Sarah Williams" xml:space="preserve">
+  <value>سارة ويليامز</value>
+</data>
+	<data name="Marketing Director" xml:space="preserve">
+  <value>مدير التسويق</value>
+</data>
+	<data name="Test content 3" xml:space="preserve">
+  <value>كان كل شيء مثاليًا - من عملية تسجيل الدخول إلى جودة الغرفة. كان الموظفون محترفين ومستعدين دائمًا للمساعدة.</value>
+</data>
+	<data name="Michael Davis" xml:space="preserve">
+  <value>مايكل ديفيس</value>
+</data>
+	<data name="Product Manager" xml:space="preserve">
+  <value>مدير المنتج</value>
+</data>
+	<data name="Test content 4" xml:space="preserve">
+  <value>تجربة رائعة! كان الفندق نظيفًا وهادئًا، والخدمة كانت ممتازة. سأعود بالتأكيد.</value>
+</data>
+	<data name="Emily Thompson" xml:space="preserve">
+  <value>إيميلي تومبسون</value>
+</data>
+	<data name="Design Lead" xml:space="preserve">
+  <value>رئيس فريق التصميم</value>
+</data>
+	<data name="Explore All Accommodations" xml:space="preserve">
+    <value>استكشف جميع أماكن الإقامة</value>
   </data>
 </root> 

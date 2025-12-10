@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Room Information" xml:space="preserve">
+  <value>معلومات الغرفة</value>
+</data>
+	<data name="Enter Price" xml:space="preserve">
+  <value>أدخل السعر</value>
+</data>
+	<data name="Enter Area " xml:space="preserve">
+  <value>أدخل المساحة </value>
+</data>
+
+	<data name="m²" xml:space="preserve">
+  <value>م² </value>
+</data>
+
+	<data name="Select Room Capacity " xml:space="preserve">
+  <value>اختر سعة الغرفة </value>
+</data>
+
+	<data name="Guest " xml:space="preserve">
+  <value>نزيل </value>
+</data>
+	<data name="Guests " xml:space="preserve">
+  <value>نزلاء </value>
+</data>
+	<data name="Room Type" xml:space="preserve">
+  <value>نوع الغرفة </value>
+</data>
+	<data name="Select Room Type" xml:space="preserve">
+  <value>اختر نوع الغرفة </value>
+</data>
+	<data name="Add Type" xml:space="preserve">
+  <value>إضافة نوع </value>
+</data>
+	<data name="Hold" xml:space="preserve">
+  <value>اضغط </value>
+</data>
+	<data name="Ctrl " xml:space="preserve">
+  <value>Ctrl </value>
+</data>
+	<data name="(Windows) or " xml:space="preserve">
+  <value>(ويندوز) أو </value>
+</data>
+	<data name="Command" xml:space="preserve">
+  <value>Command </value>
+</data>
+	<data name="(Mac) to select multiple features." xml:space="preserve">
+  <value>(ماك) لتحديد عدة مميزات. </value>
+</data>
+	<data name="Upload Images" xml:space="preserve">
+  <value>تحميل الصور </value>
+</data>
+	<data name="Base Image (Cover)" xml:space="preserve">
+  <value>الصورة الأساسية (الغلاف)</value>
+</data>
+	<data name="Additional Images" xml:space="preserve">
+  <value>صور إضافية </value>
+</data>
+	<data name="Select Images to Delete" xml:space="preserve">
+  <value>اختر الصور لحذفها</value>
+</data>
+	<data name="room-image" xml:space="preserve">
+  <value>صورة الغرفة </value>
+</data>
+	<data name="Base Image" xml:space="preserve">
+  <value>الصورة الأساسية</value>
+</data>
+	<data name="Cover" xml:space="preserve">
+  <value>غلاف </value>
+</data>
+	<data name="Additional" xml:space="preserve">
+  <value>إضافية</value>
+</data>
+	<data name="Img" xml:space="preserve">
+  <value>صورة </value>
+</data>
+	<data name="Save Changes" xml:space="preserve">
+  <value>حفظ التغييرات </value>
+</data>
+	<data name="LE" xml:space="preserve">
+  <value>ج.م. </value>
+</data>
+	<data name="Hold multiple" xml:space="preserve">
+  <value>اضغط على Ctrl/Cmd لتحديد عدة خيارات. </value>
+</data>
+	<data name="details" xml:space="preserve">
+  <value>تفاصيل الغرفة... </value>
+</data>
+	<data name="Create Room" xml:space="preserve">
+  <value>إنشاء غرفة</value>
+</data>
+
+</root> 

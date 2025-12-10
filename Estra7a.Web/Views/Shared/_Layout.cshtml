@@ -51,8 +51,17 @@
 
 
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@using System.Globalization
+@{
+    // Get the current culture info
+    var currentCulture = CultureInfo.CurrentCulture;
+    // Check if the current culture is Right-to-Left (e.g., "ar", "fa")
+    var isRtl = currentCulture.TextInfo.IsRightToLeft;
+    // Set the direction attribute based on the check
+    var dirAttribute = isRtl ? "rtl" : "ltr";
+}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="@currentCulture.Name" dir="@dirAttribute">
 
 <head>
     <meta charset="utf-8">
@@ -121,7 +130,7 @@
                        
 
                         <li><a asp-action="Index" asp-controller="Home" asp-area="" class="active fs-5">@Localizer["Home"]</a></li>
-                        <li><a asp-action="Index" asp-area="Guest" asp-controller="Room" class="fs-5">@Localizer["Room"]</a></li>
+                        <li><a asp-action="Index" asp-area="Guest" asp-controller="Room" class="fs-5">@Localizer["Rooms"]</a></li>
                         @if ( @User.Identity.IsAuthenticated )
                         {
                             <li><a asp-action="MyBookings" asp-area="Guest" asp-controller="Booking" class="fs-5">@Localizer["My Booking"]</a></li>
@@ -245,6 +254,76 @@
                             <span class="sitename">Estra7a</span>
                         </a>
                         <div class="footer-contact pt-3">
+                            <p>@Localizer["35 Nile Street"]</p>
+                            <p>@Localizer["Zamalek, Cairo, Egypt"]</p>
+                            <p class="mt-3"><strong>@Localizer["Phone:"]</strong> <span>+20 2 2736 5555</span></p>
+                            <p><strong>@Localizer["Email:"]</strong> <span>info@estra7a.com</span></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>@Localizer["Quick Links"]</h4>
+                        <ul>
+                            <li><a asp-action="Index" asp-controller="Home" asp-area="">@Localizer["Home"]</a></li>
+                            <li><a asp-area="Guest" asp-controller="Room" asp-action="Index">@Localizer["Rooms"]</a></li>
+                            <li><a asp-controller="Home" asp-action="Index">@Localizer["Amenities"]</a></li>
+                            </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>@Localizer["Hotel Experience"]</h4>
+                        <ul>
+                            <li><a href="#">@Localizer["Signature Restaurant"]</a></li>
+                            <li><a href="#">@Localizer["Luxury Spa"]</a></li>
+                            <li><a href="#">@Localizer["Valet Parking"]</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>@Localizer["Guest Services"]</h4>
+                        <ul>
+                            <li><a asp-area="Guest" asp-controller="ChatBot" asp-action="Index">@Localizer["ChatBot"]</a></li>
+                            <li><a asp-area="Guest" asp-controller="Chat" asp-action="User">@Localizer["Customer Service"]</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright text-center">
+            <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+                <div class="d-flex flex-column align-items-center align-items-lg-start">
+                    <div>
+                        © @Localizer["Copyright"] <strong><span>Estra7a @Localizer["Hotel"]</span></strong>. @Localizer["All Rights Reserved"]
+                    </div>
+                    @* <div class="credits">
+                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    </div> *@
+                </div>
+
+                <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+    @* <footer id="footer" class="footer position-relative dark-background">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6 footer-about">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <span class="sitename">Estra7a</span>
+                        </a>
+                        <div class="footer-contact pt-3">
                             <p>A108 Adam Street</p>
                             <p>New York, NY 535022</p>
                             <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
@@ -326,7 +405,7 @@
             </div>
         </div>
 
-    </footer>
+    </footer> *@
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

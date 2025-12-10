@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Add New Room Type" xml:space="preserve">
+  <value>إضافة نوع غرفة جديد</value>
+</data>
+	<data name="Save" xml:space="preserve">
+  <value>حفظ</value>
+</data>
+	<data name="RoomTypeName" xml:space="preserve">
+  <value>اسم نوع الغرفة</value>
+</data>
+	<data name="RoomTypeDescription" xml:space="preserve">
+  <value>وصف نوع الغرفة</value>
+</data>
+</root>

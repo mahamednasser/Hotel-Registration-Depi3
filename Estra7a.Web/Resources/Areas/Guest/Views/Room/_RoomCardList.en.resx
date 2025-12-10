@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Save For Later" xml:space="preserve">
+  <value>Save For Later</value>
+</data>
+<data name="Edit" xml:space="preserve">
+  <value>Edit</value>
+</data>
+<data name="Delete" xml:space="preserve">
+  <value>Delete</value>
+</data>
+<data name="Up to" xml:space="preserve">
+  <value>Up to</value>
+</data>
+<data name="guests" xml:space="preserve">
+  <value>guests</value>
+</data>
+<data name="m²" xml:space="preserve">
+  <value>m²</value>
+</data>
+<data name="/ night" xml:space="preserve">
+  <value>/ night</value>
+</data>
+<data name="View Details" xml:space="preserve">
+  <value></value>
+</data>
+<data name="filter" xml:space="preserve">
+  <value>No rooms match your filter.</value>
+</data>
+	<data name="From" xml:space="preserve">
+  <value>Form</value>
+</data>
+	
+</root> 

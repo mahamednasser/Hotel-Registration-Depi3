@@ -4,7 +4,7 @@
 	<data name="Home" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
-	<data name="Room" xml:space="preserve">
+	<data name="Rooms" xml:space="preserve">
     <value>الغرف</value>
   </data>
 	<data name="My Booking" xml:space="preserve">
@@ -25,6 +25,62 @@
 	<data name="Register" xml:space="preserve">
     <value>إنشاء حساب جديد</value>
   </data>
-
-
+	<data name="Home" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="Amenities" xml:space="preserve">
+  <value>المرافق</value>
+</data>
+	<data name="Privacy Policy" xml:space="preserve">
+  <value>سياسة الخصوصية</value>
+</data>
+	<data name="Signature Restaurant" xml:space="preserve">
+  <value>مطعم مميز</value>
+</data>
+	<data name="Luxury Spa" xml:space="preserve">
+  <value>منتجع صحي فاخر</value>
+</data>
+	<data name="Valet Parking" xml:space="preserve">
+  <value>خدمة صف السيارات</value>
+</data>
+	<data name="Special Offers" xml:space="preserve">
+  <value>تسجيل</value>
+</data>
+	<data name="ChatBot" xml:space="preserve">
+  <value>روبوت الدردشة</value>
+</data>
+	<data name="Customer Service" xml:space="preserve">
+  <value>خدمة العملاء</value>
+</data>
+	<data name="Copyright" xml:space="preserve">
+  <value>حقوق النشر</value>
+</data>
+	<data name="Hotel" xml:space="preserve">
+  <value>فندق</value>
+</data>
+	<data name="All Rights Reserved" xml:space="preserve">
+  <value>جميع الحقوق محفوظة</value>
+</data>
+	<data name="Guest Services" xml:space="preserve">
+  <value>خدمات الضيوف</value>
+</data>
+	<data name="Quick Links" xml:space="preserve">
+  <value>روابط سريعة</value>
+</data>
+	<data name="Hotel Experience" xml:space="preserve">
+  <value>تجربة الإقامة الفندقية</value>
+</data>
+	<data name="35 Nile Street" xml:space="preserve">
+  <value>35 شارع النيل</value>
+</data>
+	<data name="Zamalek, Cairo, Egypt" xml:space="preserve">
+  <value>الزمالك، القاهرة، مصر</value>
+</data>
+	<data name="Phone:" xml:space="preserve">
+  <value>هاتف:</value>
+</data>
+	<data name="Email:" xml:space="preserve">
+  <value>بريد إلكتروني:</value>
+</data>
+	
 </root>

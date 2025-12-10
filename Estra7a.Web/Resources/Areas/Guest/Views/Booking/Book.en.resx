@@ -131,5 +131,35 @@
 	<data name="NationalID" xml:space="preserve">
     <value>Upload Your National ID</value>
   </data>
+	<data name="SelectGuests" xml:space="preserve">
+    <value>Select Guests </value>
+  </data>
+	<data name="UserName" xml:space="preserve">
+    <value>UserName </value>
+  </data>
+	<data name="Phone Number" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+	<data name="Room Details" xml:space="preserve">
+    <value>Room Details</value>
+  </data>
+	<data name="Room Information" xml:space="preserve">
+    <value>Room Information</value>
+  </data>
+	<data name="Room Name" xml:space="preserve">
+    <value>Room Name</value>
+  </data>
+	<data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+	<data name="Capacity" xml:space="preserve">
+    <value>Capacity</value>
+  </data>
+	<data name="Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+	<data name="Rating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
 	
 </root> 

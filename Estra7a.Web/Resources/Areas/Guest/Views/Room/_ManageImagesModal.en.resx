@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Manage Room Images" xml:space="preserve">
+  <value>Manage Room Images</value>
+</data>
+	<data name="Delete" xml:space="preserve">
+  <value>Delete</value>
+</data>
+	<data name="Upload" xml:space="preserve">
+  <value>Upload</value>
+</data>
+	<data name="Close" xml:space="preserve">
+  <value>Close</value>
+</data>
+	
+</root>

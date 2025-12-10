@@ -1,4 +1,5 @@
-﻿@model EditRoomViewModel
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@model EditRoomViewModel
 @{
     ViewBag.Title = "Edit Room";
 }
@@ -12,7 +13,7 @@
             <!-- LEFT COLUMN -->
             <div class="col-lg-7 bg-white p-4 h-100 border rounded-3">
 
-                <h4 class="mb-3">Room Information</h4>
+                <h4 class="mb-3">@Localizer["Room Information"]</h4>
 
                 <!-- Room Name -->
                 <div class="mb-3">
@@ -34,7 +35,7 @@
                                    type="number"
                                    class="form-control"
                                    required
-                                   placeholder="Enter Price"
+                                   placeholder="@Localizer["Enter Price"]"
                                    aria-describedby="le-addon" />
 
                         </div>
@@ -47,10 +48,10 @@
                                    type="number"
                                    class="form-control"
                                    required
-                                   placeholder="Enter Area"
+                                   placeholder="@Localizer["Enter Area"]"
                                    aria-describedby="area-addon" />
 
-                            <span class="input-group-text" id="area-addon">m²</span>
+                            <span class="input-group-text" id="area-addon">@Localizer["m²"]</span>
                         </div>
                         <span asp-validation-for="Area" class="text-danger d-block"></span>
                     </div>
@@ -62,12 +63,12 @@
                         <label asp-for="Capacity" class="form-label"></label>
                         @* <input asp-for="Capacity" type="number" class="form-control" required /> *@
                         <select asp-for="Capacity" class="form-select" required>
-                            <option value="0">Select Room Capacity</option>
-                            <option value="1">1 Guest</option>
-                            <option value="2">2 Guests</option>
-                            <option value="5">3 Guests</option>
-                            <option value="4">4 Guests</option>
-                            <option value="5">5+ Guests</option>
+                            <option value="0">@Localizer["Select Room Capacity"]</option>
+                            <option value="1">1 @Localizer["Guest"]</option>
+                            <option value="2">2 @Localizer["Guests"]</option>
+                            <option value="5">3 @Localizer["Guests"]</option>
+                            <option value="4">4 @Localizer["Guests"]</option>
+                            <option value="5">5+ @Localizer["Guests"]</option>
                         </select>
                         <span asp-validation-for="Capacity" class="text-danger d-block"></span>
 
@@ -82,13 +83,13 @@
 
                 <!-- Room Type -->
                 <div class="mb-4">
-                    <label class="form-label">Room Type</label>
+                    <label class="form-label">@Localizer["Room Type"]</label>
 
                     <div class="d-flex gap-2">
 
                         <!-- Select list -->
                         <select asp-for="RoomtypeId" asp-items="Model.RoomTypes" id="room-type" class="form-select" required>
-                            <option value="">Select</option>
+                            <option value="">@Localizer["Select"]</option>
                         </select>
 
                         <!-- Add button -->
@@ -97,7 +98,7 @@
                                 data-bs-toggle="modal"
                                 data-bs-target="#addTypeModal">
                             <i class="bi bi-plus-lg"></i>
-                            Add Type
+                            @Localizer["Add Type"]
                         </button>
 
                     </div>
@@ -105,7 +106,7 @@
 
                 <!-- Room Features -->
                 <div class="mb-4">
-                    <label class="form-label">Room Features</label>
+                    <label class="form-label">@Localizer["Room Features"]</label>
 
                     <select asp-items="Model.RoomFeatures" name="RoomFeaturesIds"
                             class="form-select"
@@ -116,7 +117,7 @@
 
                     <div class="form-text text-muted">
                         <i class="bi bi-info-circle me-1"></i>
-                        Hold <strong>Ctrl</strong> (Windows) or <strong>Command</strong> (Mac) to select multiple features.
+                        @Localizer["Hold"] <strong>@Localizer["Ctrl"]</strong> @Localizer["(Windows) or"] <strong>@Localizer["Command"]</strong> @Localizer["(Mac) to select multiple features."]
                     </div>
                 </div>
 
@@ -128,12 +129,12 @@
 
                 <!-- Upload Images -->
                 <div class="mb-4">
-                    <h4 class="mb-3">Upload Images</h4>
+                    <h4 class="mb-3">@Localizer["Upload Images"]</h4>
 
-                    <label asp-for="NewCoverImage">Base Image</label>
+                    <label asp-for="NewCoverImage">@Localizer["Base Image"]</label>
                     <input asp-for="NewCoverImage" type="file" class="form-control" />
                     <span asp-validation-for="NewCoverImage" class="text-danger d-block"></span>
-                    <label class="mt-3">Additional Images</label>
+                    <label class="mt-3">@Localizer["Additional Images"]</label>
                     <input asp-for="NewAdditionalImages" type="file" multiple class="form-control" />
                 </div>
 
@@ -145,7 +146,7 @@
                 <div class="bg-white p-4 border rounded-3" style="border-color:#ecedf0; border-width:2px; min-height:300px;">
 
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="h5 mb-0">Select Images to Delete</h4>
+                        <h4 class="h5 mb-0">@Localizer["Select Images to Delete"]</h4>
                     </div>
 
                     <div class="mb-4">
@@ -163,9 +164,9 @@
 
 
                                 <div class="flex-grow-1">
-                                    <div class="fw-bold">room-image</div>
-                                    <small class="text-muted">Base Image</small>
-                                    <div><span class="badge bg-primary">Cover</span></div>
+                                    <div class="fw-bold">@Localizer["room-image"]</div>
+                                    <small class="text-muted">@Localizer["Base Image"]</small>
+                                    <div><span class="badge bg-primary">@Localizer["Cover"]</span></div>
                                 </div>
                             </label>
                         </div>
@@ -188,8 +189,8 @@
 
                                     <div class="flex-grow-1">
                                         <div class="fw-bold">room-image</div>
-                                        <small class="text-muted">Additional</small>
-                                        <div><span class="badge bg-secondary">Img</span></div>
+                                        <small class="text-muted">@Localizer["Additional"]</small>
+                                        <div><span class="badge bg-secondary">@Localizer["Img"]</span></div>
                                     </div>
                                 </label>
                             </div>
@@ -204,7 +205,7 @@
         <!-- SUBMIT BUTTON -->
         <div class="text-center mt-4">
             <button type="submit" class="btn btn-primary w-50 mt-3">
-                Save Changes
+                @Localizer["Save Changes"]
             </button>
         </div>
 

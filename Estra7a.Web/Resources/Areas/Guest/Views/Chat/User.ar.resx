@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Customer Service" xml:space="preserve">
+  <value>خدمة العملاء</value>
+</data>
+	<data name="Help" xml:space="preserve">
+  <value>نحن هنا لمساعدتك</value>
+</data>
+	<data name="message" xml:space="preserve">
+  <value>أدخل رسالة...</value>
+</data>
+	<data name="Send" xml:space="preserve">
+  <value>إرسال</value>
+</data>
+</root> 

@@ -1,24 +1,25 @@
 ﻿@model AddRoomTypeViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 <!-- Add Room Type Modal -->
 <div class="modal fade" id="addTypeModal" tabindex="-1" aria-labelledby="addTypeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="addTypeModalLabel">Add New Room Type</h5>
+                <h5 class="modal-title" id="addTypeModalLabel">@Localizer["Add New Room Type"]</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="modal-body">
                 <form id="addTypeForm" novalidate>
                     <div class="mb-3">
-                        <label asp-for="RoomTypeName" class="form-label"></label>
+                        <label asp-for="@Localizer["RoomTypeName"]" class="form-label"></label>
                         <input asp-for="RoomTypeName" class="form-control" id="RoomTypeName" />
                         <span asp-validation-for="RoomTypeName" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="RoomTypeDescription" class="form-label"></label>
+                        <label asp-for="@Localizer["RoomTypeDescription"]" class="form-label"></label>
                         <textarea asp-for="RoomTypeDescription" class="form-control" id="RoomTypeDescription" rows="3"></textarea>
                         <span asp-validation-for="RoomTypeDescription" class="text-danger"></span>
                     </div>
@@ -26,7 +27,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="saveTypeBtn">Save</button>
+                <button type="button" class="btn btn-primary" id="saveTypeBtn">@Localizer["Save"]</button>
             </div>
         </div>
     </div>

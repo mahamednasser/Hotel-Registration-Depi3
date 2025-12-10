@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="AI Assistant" xml:space="preserve">
+  <value>مساعد الذكاء الاصطناعي</value>
+</data>
+	<data name="Online" xml:space="preserve">
+  <value>متصل • جاهز للمساعدة</value>
+</data>
+	<data name="Hello" xml:space="preserve">
+  <value>مرحباً! أنا مساعدك الذكي. كيف يمكنني مساعدتك اليوم؟</value>
+</data>
+	<data name="Just now" xml:space="preserve">
+  <value>منذ قليل</value>
+</data>
+	<data name="message" xml:space="preserve">
+  <value>اكتب رسالتك...</value>
+</data>
+	<data name="Send" xml:space="preserve">
+  <value>إرسال</value>
+</data>
+</root> 

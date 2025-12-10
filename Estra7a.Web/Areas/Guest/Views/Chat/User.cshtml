@@ -14,7 +14,6 @@
     body {
         background: #f0f2f5;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        padding: 30px 20px;
         min-height: 100vh;
     }
 
@@ -352,6 +351,7 @@
     }
 </style>
 
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 <div class="container">
     <div class="row clearfix">
@@ -365,8 +365,8 @@
                                     <i class="fa fa-headphones"></i>
                                 </div>
                                 <div class="chat-about">
-                                    <h6 class="m-b-0">Customer Service</h6>
-                                    <small>We are here to help you</small>
+                                    <h6 class="m-b-0">@Localizer["Customer Service"]</h6>
+                                    <small>@Localizer["Help"]</small>
                                 </div>
                             </div>
                         </div>
@@ -378,9 +378,9 @@
 
                     <div class="chat-message clearfix">
                         <div class="input-group mb-0">
-                            <input id="messageInput" type="text" class="form-control" placeholder="Enter message...">
+                            <input id="messageInput" type="text" class="form-control" placeholder="@Localizer["message"]">
                             <div class="input-group-prepend">
-                                <button id="sendButton" class="btn btn-primary"><i class="fa fa-send"></i> Send</button>
+                                <button id="sendButton" class="btn btn-primary"><i class="fa fa-send"></i> @Localizer["Send"]</button>
                             </div>
                         </div>
                     </div>

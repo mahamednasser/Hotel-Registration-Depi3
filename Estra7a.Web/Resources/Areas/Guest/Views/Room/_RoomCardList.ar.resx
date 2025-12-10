@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+	<data name="Save For Later" xml:space="preserve">
+  <value>احفظ لوقت لاحق</value>
+</data>
+	<data name="Edit" xml:space="preserve">
+  <value>تعديل</value>
+</data>
+	<data name="Delete" xml:space="preserve">
+  <value>حذف</value>
+</data>
+	<data name="Up to" xml:space="preserve">
+  <value>تتسع حتى</value>
+</data>
+	<data name="guests" xml:space="preserve">
+  <value>نزلاء</value>
+</data>
+	<data name="m²" xml:space="preserve">
+  <value>م²</value>
+</data>
+	<data name="/ night" xml:space="preserve">
+  <value>/ الليلة</value>
+</data>
+	<data name="View Details" xml:space="preserve">
+  <value>عرض التفاصيل</value>
+</data>
+	<data name="filter" xml:space="preserve">
+  <value>لا توجد غرف تطابق مرشح البحث الخاص بك.</value>
+</data>
+	<data name="From" xml:space="preserve">
+  <value>من</value>
+</data>
+</root> 
