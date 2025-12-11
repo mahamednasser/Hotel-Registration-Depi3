@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Estra7a.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2d66cbab083c2414d425131f7e61ce8b31cc813")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80f28374019935510268e0ba2f8be685e4296cd7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Estra7a.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Estra7a.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

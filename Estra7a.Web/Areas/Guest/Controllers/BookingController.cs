@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Stripe.Checkout;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Estra7a.Web.Areas.Guest.Controllers
@@ -99,7 +100,14 @@ namespace Estra7a.Web.Areas.Guest.Controllers
                 return View("Book", roomViewModel);
 
             }
-            if(guests <=0 || guests > room.Capacity)
+            var phoneRegex = new Regex(@"^(010|011|012|015)[0-9]{8}$");
+
+            if (string.IsNullOrEmpty(PhoneNumber) || !phoneRegex.IsMatch(PhoneNumber))
+            {
+                ModelState.AddModelError("PhoneNumber", "Phone Number Must Start With 010/011/012/015.");
+                return View("Book", roomViewModel);
+            }
+            if (guests <=0 || guests > room.Capacity)
             {
                 ModelState.AddModelError("", $"Invalid number of guests.{room.Capacity} Guests at most.");
                 return View("Book", roomViewModel);

@@ -4308,23 +4308,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AmaZon\\.nuget\\packages\\": {},
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.DataAccess\\Estra7a.DataAccess.csproj",
+      "projectUniqueName": "E:\\AOT\\Estraha\\Estra7a.DataAccess\\Estra7a.DataAccess.csproj",
       "projectName": "Estra7a.DataAccess",
-      "projectPath": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.DataAccess\\Estra7a.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\AmaZon\\.nuget\\packages\\",
-      "outputPath": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.DataAccess\\obj\\",
+      "projectPath": "E:\\AOT\\Estraha\\Estra7a.DataAccess\\Estra7a.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "E:\\AOT\\Estraha\\Estra7a.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\AmaZon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4339,8 +4339,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj": {
-              "projectPath": "D:\\DEPI_content\\ProjectLastVersion\\Hotel-Registration-Depi3\\Estra7a.Models\\Estra7a.Models.csproj"
+            "E:\\AOT\\Estraha\\Estra7a.Models\\Estra7a.Models.csproj": {
+              "projectPath": "E:\\AOT\\Estraha\\Estra7a.Models\\Estra7a.Models.csproj"
             }
           }
         }
@@ -4404,7 +4404,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

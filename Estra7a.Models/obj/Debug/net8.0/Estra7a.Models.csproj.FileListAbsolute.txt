@@ -154,3 +154,16 @@ D:\DEPI_content\ProjectLastVersion\Hotel-Registration-Depi3\Estra7a.Models\obj\D
 D:\DEPI_content\ProjectLastVersion\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\refint\Estra7a.Models.dll
 D:\DEPI_content\ProjectLastVersion\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.pdb
 D:\DEPI_content\ProjectLastVersion\Hotel-Registration-Depi3\Estra7a.Models\obj\Debug\net8.0\ref\Estra7a.Models.dll
+E:\AOT\Estraha\Estra7a.Models\bin\Debug\net8.0\Estra7a.Models.deps.json
+E:\AOT\Estraha\Estra7a.Models\bin\Debug\net8.0\Estra7a.Models.dll
+E:\AOT\Estraha\Estra7a.Models\bin\Debug\net8.0\Estra7a.Models.pdb
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.csproj.AssemblyReference.cache
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.AssemblyInfoInputs.cache
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.AssemblyInfo.cs
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.csproj.CoreCompileInputs.cache
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.sourcelink.json
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.dll
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\refint\Estra7a.Models.dll
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\Estra7a.Models.pdb
+E:\AOT\Estraha\Estra7a.Models\obj\Debug\net8.0\ref\Estra7a.Models.dll
